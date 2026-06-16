@@ -1,600 +1,748 @@
-/* About.css - Cinematic Galaxy Theme */
+/* ============================================
+   ABOUT - ATHMA SOUL THEME
+   Cinematic Hero-Style About Section
+   Expressive, immersive, and emotionally connected
+   ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
-
-:root {
-  --font-display: 'DM Serif Display', Georgia, serif;
-  --font-body: 'DM Sans', -apple-system, sans-serif;
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* ============================================ */
-/* SECTION */
-/* ============================================ */
-.about-cosmic {
+.about {
   position: relative;
-  padding: 8rem 0;
-  background: #040410;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  background: linear-gradient(160deg, #fcf8f4 0%, #f5ede6 40%, #efe4da 100%);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #3d342c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  font-family: var(--font-body);
-  -webkit-font-smoothing: antialiased;
 }
 
-/* ============================================ */
-/* VIDEO BACKGROUND */
-/* ============================================ */
-.cosmic-video-wrap {
+/* ===== CINEMATIC BACKGROUND ===== */
+.about-cinematic-bg {
   position: absolute;
   inset: 0;
-  z-index: 0;
-}
-
-.cosmic-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  opacity: 0.55;
-}
-
-.cosmic-video-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(4, 4, 16, 0.6) 0%,
-    rgba(4, 4, 16, 0.3) 30%,
-    rgba(4, 4, 16, 0.3) 70%,
-    rgba(4, 4, 16, 0.65) 100%
-  );
-}
-
-/* ============================================ */
-/* CINEMATIC LIGHT RAYS */
-/* ============================================ */
-.cosmic-rays {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
   pointer-events: none;
   overflow: hidden;
 }
 
-.cosmic-ray {
+.about-glow {
   position: absolute;
-  top: -100%;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.12;
+}
+
+.about-glow-1 {
+  width: 60vw;
+  height: 60vw;
+  top: -20%;
+  right: -20%;
+  background: radial-gradient(circle, rgba(212, 165, 116, 0.15), transparent 70%);
+  animation: aboutGlowFloat 12s ease-in-out infinite alternate;
+}
+
+.about-glow-2 {
+  width: 50vw;
+  height: 50vw;
+  bottom: -20%;
+  left: -20%;
+  background: radial-gradient(circle, rgba(201, 184, 160, 0.12), transparent 70%);
+  animation: aboutGlowFloat 15s ease-in-out infinite alternate-reverse;
+}
+
+.about-glow-3 {
+  width: 40vw;
+  height: 40vw;
+  top: 50%;
   left: 50%;
-  width: 1px;
-  height: 300%;
-  transform-origin: top center;
-  animation: raySweep linear infinite;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(213, 196, 176, 0.08), transparent 70%);
+}
+
+@keyframes aboutGlowFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, -30px) scale(1.2); }
+}
+
+/* Animated Orbs */
+.about-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
   opacity: 0.04;
+  animation: aboutOrbFloat 20s ease-in-out infinite;
 }
 
-.cosmic-ray-1 {
-  background: linear-gradient(to bottom, transparent, #818cf8, #a78bfa, transparent);
-  animation-duration: 30s;
+.about-orb-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  background: #d4a574;
+  animation-delay: 0s;
 }
 
-.cosmic-ray-2 {
-  background: linear-gradient(to bottom, transparent, #a78bfa, #c084fc, transparent);
-  animation-duration: 40s;
-  animation-direction: reverse;
-  animation-delay: -15s;
+.about-orb-2 {
+  width: 400px;
+  height: 400px;
+  bottom: 10%;
+  right: 10%;
+  background: #c9b8a0;
+  animation-delay: -7s;
 }
 
-.cosmic-ray-3 {
-  background: linear-gradient(to bottom, transparent, #c084fc, #818cf8, transparent);
-  animation-duration: 35s;
-  animation-delay: -25s;
-}
-
-@keyframes raySweep {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* ============================================ */
-/* STARS */
-/* ============================================ */
-.cosmic-stars {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.cosmic-star {
-  position: absolute;
-  border-radius: 50%;
-  background: #ffffff;
-  animation: starTwinkle ease-in-out infinite;
-}
-
-@keyframes starTwinkle {
-  0%, 100% { opacity: 0.1; transform: scale(0.8); }
-  50% { opacity: 0.9; transform: scale(1.6); }
-}
-
-/* ============================================ */
-/* COSMIC DUST */
-/* ============================================ */
-.cosmic-dust {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.cosmic-dust-particle {
-  position: absolute;
-  bottom: -10px;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: #a78bfa;
-  box-shadow: 0 0 6px #a78bfa, 0 0 12px #818cf8;
-  animation: dustRise linear infinite;
-  opacity: 0;
-}
-
-@keyframes dustRise {
-  0% { transform: translateY(0) scale(0.5); opacity: 0; }
-  20% { opacity: 0.6; }
-  80% { opacity: 0.2; }
-  100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
-}
-
-/* ============================================ */
-/* NEBULA */
-/* ============================================ */
-.cosmic-nebula {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(160px);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.cosmic-nebula-1 {
-  width: 700px;
-  height: 700px;
-  top: -250px;
-  right: -200px;
-  background: radial-gradient(circle, rgba(129, 140, 248, 0.1), transparent);
-}
-
-.cosmic-nebula-2 {
-  width: 600px;
-  height: 600px;
-  bottom: -200px;
-  left: -150px;
-  background: radial-gradient(circle, rgba(167, 139, 250, 0.08), transparent);
-}
-
-.cosmic-nebula-3 {
-  width: 500px;
-  height: 500px;
+.about-orb-3 {
+  width: 250px;
+  height: 250px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(192, 132, 252, 0.04), transparent);
+  background: #d5c4b0;
+  animation-delay: -14s;
 }
 
-/* ============================================ */
-/* CONTAINER */
-/* ============================================ */
-.cosmic-container {
+@keyframes aboutOrbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -40px) scale(1.1); }
+  50% { transform: translate(-20px, 30px) scale(0.9); }
+  75% { transform: translate(40px, 20px) scale(1.05); }
+}
+
+/* ===== BREATH WAVES ===== */
+.about-breath-waves {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.about-breath-wave {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(212, 165, 116, 0.03), transparent 70%);
+  animation: aboutBreath 8s ease-in-out infinite alternate;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+}
+
+.wave-a {
+  width: 80vw;
+  height: 80vw;
+  animation-duration: 10s;
+}
+
+.wave-b {
+  width: 110vw;
+  height: 110vw;
+  animation-duration: 14s;
+  animation-delay: -3s;
+  background: radial-gradient(circle at center, rgba(201, 184, 160, 0.025), transparent 70%);
+}
+
+.wave-c {
+  width: 140vw;
+  height: 140vw;
+  animation-duration: 18s;
+  animation-delay: -6s;
+  background: radial-gradient(circle at center, rgba(213, 196, 176, 0.02), transparent 70%);
+}
+
+@keyframes aboutBreath {
+  0% { transform: translate(-50%, -50%) scale(0.4); opacity: 0.08; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.3; }
+  100% { transform: translate(-50%, -50%) scale(0.4); opacity: 0.08; }
+}
+
+/* ===== PARTICLES ===== */
+.about-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.about-particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: aboutFloat linear infinite alternate;
+  opacity: 0.2;
+}
+
+@keyframes aboutFloat {
+  0% { transform: translate(0, 0) scale(0.8); opacity: 0.03; }
+  100% { transform: translate(40px, -40px) scale(1.6); opacity: 0.2; }
+}
+
+/* ===== CONTAINER ===== */
+.about-container {
   position: relative;
-  z-index: 5;
+  z-index: 2;
   max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 2.5rem;
 }
 
-/* ============================================ */
-/* HEADER */
-/* ============================================ */
-.cosmic-header {
+/* ===== HERO HEADER ===== */
+.about-hero {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3.5rem;
   opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+  transform: translateY(50px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
-.cosmic-header.cosmic-visible {
+.about-hero.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.cosmic-eyebrow {
+.about-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-badge-line {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.3));
+  animation: aboutBadgeLine 3s ease-in-out infinite alternate;
+}
+
+.about-badge-line:last-child {
+  background: linear-gradient(90deg, rgba(212, 165, 116, 0.3), transparent);
+}
+
+@keyframes aboutBadgeLine {
+  0% { transform: scaleX(0.6); opacity: 0.3; }
+  100% { transform: scaleX(1.2); opacity: 0.8; }
+}
+
+.about-tag {
+  font-size: 0.75rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(61, 52, 44, 0.35);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.about-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  color: #3d342c;
+}
+
+.about-title-line {
+  display: block;
+  font-size: 0.6em;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: rgba(61, 52, 44, 0.3);
+  margin-bottom: 0.2rem;
+}
+
+.about-title-accent {
+  background: linear-gradient(135deg, #8b7355, #c9a87c, #d4a574);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 500;
+  display: block;
+}
+
+.about-subtitle {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(61, 52, 44, 0.45);
+  letter-spacing: 0.5px;
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ===== CINEMATIC CARD ===== */
+.about-cinematic-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+}
+
+.about-cinematic-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.about-card-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 0;
+  background: rgba(255, 252, 248, 0.5);
+  backdrop-filter: blur(12px);
+  border-radius: 40px;
+  border: 1px solid rgba(212, 165, 116, 0.06);
+  overflow: hidden;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== LEFT: VISUAL STORY ===== */
+.about-visual-story {
+  position: relative;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+  background: linear-gradient(145deg, rgba(212, 165, 116, 0.03), rgba(201, 184, 160, 0.02));
+}
+
+.about-story-frame {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.04);
+}
+
+.about-story-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.about-story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-cinematic-card:hover .about-story-image img {
+  transform: scale(1.03);
+}
+
+.about-story-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(212, 165, 116, 0.05), rgba(20, 16, 12, 0.1));
+}
+
+.about-story-rings {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+}
+
+.about-story-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 165, 116, 0.04);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: aboutRingSpin 20s linear infinite;
+}
+
+.about-story-ring-1 {
+  width: 120%;
+  height: 120%;
+  animation-duration: 25s;
+}
+
+.about-story-ring-2 {
+  width: 150%;
+  height: 150%;
+  animation-duration: 35s;
+  animation-direction: reverse;
+}
+
+@keyframes aboutRingSpin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.about-story-symbol {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.2rem;
+  font-size: 1.5rem;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* Stats */
+.about-story-stats {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 1.25rem;
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: #a78bfa;
-}
-
-.cosmic-eyebrow-line {
-  width: 30px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #a78bfa, transparent);
-}
-
-.cosmic-heading {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  color: #f1f5f9;
-  margin: 0;
-}
-
-.cosmic-heading-accent {
-  background: linear-gradient(135deg, #a78bfa, #818cf8, #c084fc);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-style: italic;
-  animation: accentFlow 4s ease infinite;
-}
-
-@keyframes accentFlow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-/* ============================================ */
-/* GRID */
-/* ============================================ */
-.cosmic-grid {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 5rem;
-  align-items: start;
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.8s var(--ease-out) 0.2s, transform 0.8s var(--ease-out) 0.2s;
-}
-
-.cosmic-grid.cosmic-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============================================ */
-/* VISUAL - Image with Orbits */
-/* ============================================ */
-.cosmic-visual {
-  display: flex;
-  justify-content: center;
-}
-
-.cosmic-image-wrap {
-  position: relative;
-  width: 340px;
-  height: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Orbit Rings */
-.cosmic-orbit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  border: 1px solid;
-  animation: orbitSpin linear infinite;
-}
-
-.cosmic-orbit-outer {
-  width: 380px;
-  height: 380px;
-  margin: -190px 0 0 -190px;
-  border-color: rgba(129, 140, 248, 0.08);
-  animation-duration: 35s;
-}
-
-.cosmic-orbit-inner {
-  width: 300px;
-  height: 300px;
-  margin: -150px 0 0 -150px;
-  border-color: rgba(167, 139, 250, 0.1);
-  border-style: dashed;
-  animation-duration: 25s;
-  animation-direction: reverse;
-}
-
-@keyframes orbitSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Orbiting Energy Dots */
-.cosmic-orbiter {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #a78bfa;
-  box-shadow: 0 0 12px #a78bfa, 0 0 24px #818cf8;
-  animation: orbiterMove linear infinite;
-}
-
-.cosmic-orbiter-1 { animation-duration: 6s; }
-.cosmic-orbiter-2 { animation-duration: 8s; animation-delay: -2s; }
-.cosmic-orbiter-3 { animation-duration: 10s; animation-delay: -5s; }
-.cosmic-orbiter-4 { animation-duration: 7s; animation-delay: -3.5s; }
-
-@keyframes orbiterMove {
-  0% { transform: rotate(0deg) translateX(190px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(190px) rotate(-360deg); }
-}
-
-/* Image Frame */
-.cosmic-image-frame {
-  position: relative;
-  width: 240px;
-  height: 320px;
-  border-radius: 8px;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.cosmic-image-aura {
-  position: absolute;
-  inset: -3px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(129, 140, 248, 0.3), rgba(167, 139, 250, 0.15), rgba(192, 132, 252, 0.1));
-  filter: blur(15px);
-  z-index: -1;
-  animation: auraPulse 3s ease-in-out infinite;
-}
-
-@keyframes auraPulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 0.9; }
-}
-
-.cosmic-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.85) contrast(1.15);
+  max-width: 340px;
+  margin-top: 1.5rem;
+  padding: 1rem 0.5rem;
+  background: rgba(255, 252, 248, 0.3);
+  border-radius: 16px;
+  border: 1px solid rgba(212, 165, 116, 0.04);
 }
 
-/* ============================================ */
-/* CONTENT */
-/* ============================================ */
-.cosmic-content {
+.about-stat-item {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 0.1rem;
 }
 
-.cosmic-text {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: rgba(203, 213, 225, 0.6);
-  margin: 0;
+.about-stat-number {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #3d342c;
 }
 
-.cosmic-name {
-  font-weight: 600;
-  color: #f1f5f9;
-}
-
-.cosmic-highlight {
-  color: #a78bfa;
-  font-weight: 500;
-}
-
-/* Mission Card */
-.cosmic-mission {
-  padding: 1.5rem 1.75rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(129, 140, 248, 0.08);
-  border-left: 2px solid #818cf8;
-  border-radius: 0 8px 8px 0;
-  backdrop-filter: blur(10px);
-}
-
-.cosmic-mission-label {
-  display: block;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
+.about-stat-label {
+  font-size: 0.5rem;
   text-transform: uppercase;
-  color: #818cf8;
-  margin-bottom: 0.6rem;
+  letter-spacing: 1.5px;
+  color: rgba(61, 52, 44, 0.2);
+  font-weight: 300;
 }
 
-.cosmic-mission-text {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #e2e8f0;
-  font-style: italic;
-  margin: 0;
+.about-stat-divider {
+  width: 1px;
+  height: 30px;
+  background: rgba(212, 165, 116, 0.06);
 }
 
-.cosmic-emphasis {
-  color: #c084fc;
-}
-
-/* ============================================ */
-/* VALUES */
-/* ============================================ */
-.cosmic-values {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-}
-
-.cosmic-value {
+/* ===== RIGHT: CONTENT ===== */
+.about-story-content {
+  padding: 2.5rem 2.5rem;
   display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 1rem 1.2rem;
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 8px;
-  backdrop-filter: blur(8px);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out), border-color 0.3s ease, box-shadow 0.3s ease;
+  align-items: center;
 }
 
-.cosmic-grid.cosmic-visible .cosmic-value {
-  opacity: 1;
-  transform: translateY(0);
+.about-content-inner {
+  width: 100%;
 }
 
-.cosmic-value:hover {
-  border-color: rgba(129, 140, 248, 0.25);
-  box-shadow: 0 4px 20px rgba(129, 140, 248, 0.08);
+.about-content-header {
+  margin-bottom: 1.5rem;
 }
 
-.cosmic-value-icon {
-  font-size: 1rem;
-  color: #a78bfa;
-  margin-top: 2px;
-  filter: drop-shadow(0 0 4px #a78bfa);
+.about-content-tag {
+  display: inline-block;
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(212, 165, 116, 0.3);
+  font-weight: 400;
+  margin-bottom: 0.3rem;
 }
 
-.cosmic-value-title {
-  display: block;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #e2e8f0;
-  margin-bottom: 0.15rem;
-}
-
-.cosmic-value-desc {
-  display: block;
-  font-size: 0.7rem;
-  color: rgba(203, 213, 225, 0.4);
-  line-height: 1.4;
-}
-
-/* ============================================ */
-/* STATS */
-/* ============================================ */
-.cosmic-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  padding: 1.5rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.cosmic-stat {
-  text-align: center;
-  padding: 0 1rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.04);
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
-}
-
-.cosmic-grid.cosmic-visible .cosmic-stat {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.cosmic-stat:last-child {
-  border-right: none;
-}
-
-.cosmic-stat-value {
-  display: block;
-  font-family: var(--font-display);
+.about-content-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 1.6rem;
-  background: linear-gradient(135deg, #a78bfa, #818cf8);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+  color: #3d342c;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.about-content-divider {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(212, 165, 116, 0.3), transparent);
+  border-radius: 2px;
+}
+
+.about-content-body {
+  margin-bottom: 1.5rem;
+}
+
+.about-text {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(61, 52, 44, 0.65);
+  margin-bottom: 1rem;
+}
+
+.about-text-secondary {
+  margin-bottom: 0;
+}
+
+.about-name {
+  font-weight: 500;
+  color: #3d342c;
+}
+
+.about-highlight {
+  color: #d4a574;
+  font-weight: 400;
+}
+
+.about-mission-block {
+  background: rgba(212, 165, 116, 0.03);
+  border-left: 2px solid rgba(212, 165, 116, 0.12);
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.about-mission-label {
+  display: block;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: rgba(61, 52, 44, 0.2);
   margin-bottom: 0.2rem;
 }
 
-.cosmic-stat-label {
-  display: block;
-  font-size: 0.62rem;
+.about-mission-text {
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #3d342c;
+}
+
+.about-emphasis {
+  color: #d4a574;
   font-weight: 500;
-  color: rgba(203, 213, 225, 0.35);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
-/* ============================================ */
-/* RESPONSIVE */
-/* ============================================ */
-@media (max-width: 968px) {
-  .cosmic-grid {
+/* Values Grid */
+.about-values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1rem;
+  margin: 1.5rem 0;
+}
+
+.about-value-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: aboutValueSlide 0.5s ease forwards;
+}
+
+.about-value-item:nth-child(1) { animation-delay: 0.1s; }
+.about-value-item:nth-child(2) { animation-delay: 0.2s; }
+.about-value-item:nth-child(3) { animation-delay: 0.3s; }
+.about-value-item:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes aboutValueSlide {
+  0% { opacity: 0; transform: translateX(-10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.about-value-symbol {
+  font-size: 0.8rem;
+  opacity: 0.2;
+  flex-shrink: 0;
+}
+
+.about-value-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #3d342c;
+  display: block;
+}
+
+.about-value-desc {
+  font-size: 0.65rem;
+  font-weight: 300;
+  color: rgba(61, 52, 44, 0.35);
+  display: block;
+}
+
+/* CTA */
+.about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #d4a574, #c9a87c);
+  border: none;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.about-cta:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 40px -10px rgba(212, 165, 116, 0.35);
+}
+
+.about-cta:active {
+  transform: scale(0.97);
+}
+
+.about-cta svg {
+  transition: transform 0.3s ease;
+}
+
+.about-cta:hover svg {
+  transform: translateX(5px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .about-card-inner {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    border-radius: 30px;
   }
-
-  .cosmic-visual { order: -1; }
-
-  .cosmic-image-wrap {
-    width: 280px;
-    height: 360px;
+  
+  .about-visual-story {
+    padding: 2rem 2rem 1rem;
   }
-
-  .cosmic-orbit-outer { width: 320px; height: 320px; margin: -160px 0 0 -160px; }
-  .cosmic-orbit-inner { width: 260px; height: 260px; margin: -130px 0 0 -130px; }
-
-  @keyframes orbiterMove {
-    0% { transform: rotate(0deg) translateX(160px) rotate(0deg); }
-    100% { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
+  
+  .about-story-frame {
+    max-width: 280px;
   }
-
-  .cosmic-image-frame { width: 200px; height: 270px; }
-  .cosmic-content { text-align: center; }
-  .cosmic-mission { text-align: left; }
+  
+  .about-story-stats {
+    max-width: 280px;
+  }
+  
+  .about-story-content {
+    padding: 1.5rem 2rem 2rem;
+  }
+  
+  .about-content-title {
+    font-size: 1.4rem;
+  }
 }
 
-@media (max-width: 600px) {
-  .about-cosmic { padding: 5rem 0; }
-  .cosmic-container { padding: 0 1.25rem; }
-  .cosmic-heading { font-size: clamp(1.6rem, 7vw, 2.2rem); }
-  .cosmic-values { grid-template-columns: 1fr; }
-  .cosmic-stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .cosmic-stat { border-right: none; padding: 0.5rem; }
-
-  .cosmic-image-wrap { width: 240px; height: 310px; }
-  .cosmic-orbit-outer { width: 280px; height: 280px; margin: -140px 0 0 -140px; }
-  .cosmic-orbit-inner { width: 230px; height: 230px; margin: -115px 0 0 -115px; }
-
-  @keyframes orbiterMove {
-    0% { transform: rotate(0deg) translateX(140px) rotate(0deg); }
-    100% { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+@media (max-width: 768px) {
+  .about {
+    padding: 3rem 1rem;
   }
-
-  .cosmic-image-frame { width: 170px; height: 230px; }
+  
+  .about-badge {
+    gap: 0.8rem;
+  }
+  
+  .about-badge-line {
+    width: 20px;
+  }
+  
+  .about-tag {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+  }
+  
+  .about-card-inner {
+    border-radius: 24px;
+  }
+  
+  .about-story-content {
+    padding: 1.2rem 1.2rem 1.5rem;
+  }
+  
+  .about-content-title {
+    font-size: 1.2rem;
+  }
+  
+  .about-values-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem 0.8rem;
+  }
+  
+  .about-story-stats {
+    gap: 0.5rem;
+  }
+  
+  .about-stat-number {
+    font-size: 1.1rem;
+  }
+  
+  .about-stat-divider {
+    height: 20px;
+  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .cosmic-header, .cosmic-grid, .cosmic-value, .cosmic-stat {
-    transition: none; opacity: 1; transform: none;
+@media (max-width: 480px) {
+  .about-title {
+    font-size: clamp(2rem, 6vw, 2.6rem);
   }
-  .cosmic-orbit, .cosmic-orbiter, .cosmic-ray, .cosmic-star, .cosmic-dust-particle, .cosmic-image-aura {
-    animation: none;
+  
+  .about-title-line {
+    font-size: 0.5em;
+  }
+  
+  .about-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .about-visual-story {
+    padding: 1.5rem 1rem 0.5rem;
+  }
+  
+  .about-story-frame {
+    max-width: 220px;
+  }
+  
+  .about-story-stats {
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.8rem 0.5rem;
+  }
+  
+  .about-stat-divider {
+    width: 30px;
+    height: 1px;
+  }
+  
+  .about-story-content {
+    padding: 1rem 1rem 1.5rem;
+  }
+  
+  .about-values-grid {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+  
+  .about-content-title {
+    font-size: 1.1rem;
+  }
+  
+  .about-text {
+    font-size: 0.85rem;
+  }
+  
+  .about-mission-text {
+    font-size: 0.88rem;
+  }
+  
+  .about-cta {
+    font-size: 0.78rem;
+    padding: 0.6rem 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .about-story-symbol {
+    font-size: 1.2rem;
+    bottom: 0.6rem;
+    right: 0.8rem;
   }
 }

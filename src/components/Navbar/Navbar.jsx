@@ -1,3 +1,8 @@
+// ============================================
+// NAVBAR - ATHMA SOUL THEME
+// Cinematic Navigation with Emotional Connection
+// Elegant, smooth, and immersive
+// ============================================
 import "./Navbar.css";
 import { useState, useEffect, useRef } from "react";
 
@@ -13,18 +18,15 @@ function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.pageYOffset;
       
-      // Show/hide navbar based on scroll direction
       if (currentScrollY > lastScrollY.current && currentScrollY > 200) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
       
-      // Add background when scrolled
       setIsScrolled(currentScrollY > 50);
       
-      // Update active section based on scroll position
-      const sections = ['home', 'about', 'services', 'contact'];
+      const sections = ['home', 'about', 'services', 'products', 'testimonials', 'contact'];
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element) {
@@ -43,10 +45,9 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on resize
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 992) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -155,7 +156,10 @@ function Navbar() {
       {/* Mobile Menu */}
       <div className={`navbar-mobile-menu ${isMobileMenuOpen ? 'mobile-menu-active' : ''}`}>
         <div className="mobile-menu-header">
-          <span className="mobile-menu-brand">Anbu Arasan</span>
+          <span className="mobile-menu-brand">
+            <span className="mobile-brand-icon">✦</span>
+            Anbu Arasan
+          </span>
           <button 
             className="mobile-menu-close"
             onClick={() => setIsMobileMenuOpen(false)}
@@ -189,8 +193,9 @@ function Navbar() {
         </nav>
 
         <div className="mobile-menu-footer">
+          <div className="mobile-footer-divider"></div>
           <p className="mobile-footer-text">
-            Transforming Lives Through Spiritual & Financial Wisdom
+            Transforming Lives Through Spiritual &amp; Financial Wisdom
           </p>
           <div className="mobile-footer-social">
             <a href="#" className="mobile-social-link" aria-label="Twitter">TW</a>
