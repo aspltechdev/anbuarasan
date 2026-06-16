@@ -1,0 +1,199 @@
+/* Footer.css - Premium Redesigned */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@200;300;400;500;600&display=swap');
+
+:root {
+  --f-font: 'Cormorant Garamond', Georgia, serif;
+  --f-body: 'Inter', -apple-system, sans-serif;
+  --f-bg: #050310;
+  --f-text: #ece9f5;
+  --f-dim: rgba(220, 215, 235, 0.45);
+  --f-muted: rgba(220, 215, 235, 0.2);
+  --f-gold: #c9a84c;
+  --f-gold-light: #e0ca80;
+}
+
+/* ============================================ */
+/* FOOTER */
+/* ============================================ */
+.footer {
+  position: relative;
+  padding: 5rem 0 0;
+  background: var(--f-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  font-family: var(--f-body);
+}
+
+/* ============================================ */
+/* CONTAINER */
+/* ============================================ */
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+/* ============================================ */
+/* MAIN */
+/* ============================================ */
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr;
+  gap: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* ============================================ */
+/* BRAND */
+/* ============================================ */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.footer-logo-icon {
+  font-size: 1.2rem;
+  color: var(--f-gold);
+}
+
+.footer-logo-text {
+  font-family: var(--f-font);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--f-text);
+  letter-spacing: -0.01em;
+}
+
+.footer-logo-accent {
+  color: var(--f-gold);
+  font-weight: 300;
+}
+
+.footer-desc {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--f-dim);
+  margin: 0;
+  max-width: 280px;
+}
+
+/* ============================================ */
+/* LINKS GRID */
+/* ============================================ */
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-links-title {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--f-muted);
+  margin: 0 0 1.25rem;
+}
+
+.footer-links-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links-col a {
+  font-size: 0.8rem;
+  color: var(--f-dim);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.footer-links-col a:hover {
+  color: var(--f-gold-light);
+}
+
+/* ============================================ */
+/* BOTTOM BAR */
+/* ============================================ */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.footer-bottom-left {
+  font-size: 0.7rem;
+  color: var(--f-muted);
+}
+
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  color: rgba(220, 215, 235, 0.15);
+}
+
+.footer-bottom-divider {
+  color: rgba(255, 255, 255, 0.04);
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+@media (max-width: 800px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-desc {
+    max-width: 100%;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    padding: 3rem 0 0;
+  }
+
+  .footer-container {
+    padding: 0 1.25rem;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

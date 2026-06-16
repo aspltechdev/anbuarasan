@@ -1,0 +1,128 @@
+/* ThreePillars.css */
+.pillars {
+  padding: 6rem 0;
+  background: #080614;
+  font-family: 'Inter', sans-serif;
+}
+
+.pillars-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pillars-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pillars-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pillars-tag {
+  display: inline-block;
+  padding: 0.3rem 1.2rem;
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 100px;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 1rem;
+}
+
+.pillars-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #ece9f5;
+  margin: 0;
+}
+
+.pillars-title-accent {
+  background: linear-gradient(135deg, #c9a84c, #e0ca80);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.pillars-grid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pillar-card {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: rgba(255,255,255,0.012);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.pillars-grid.visible .pillar-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pillar-card:hover {
+  border-color: rgba(201,168,76,0.15);
+}
+
+.pillar-icon-wrap {
+  position: relative;
+  display: inline-flex;
+  margin-bottom: 1.5rem;
+}
+
+.pillar-icon {
+  font-size: 1.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pillar-icon-glow {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(10px);
+}
+
+.pillar-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ece9f5;
+  margin: 0 0 0.75rem;
+}
+
+.pillar-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(220,215,235,0.45);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .pillars { padding: 4rem 0; }
+  .pillars-grid { grid-template-columns: 1fr; }
+}

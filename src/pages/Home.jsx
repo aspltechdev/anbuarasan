@@ -9,6 +9,11 @@ import Gallery from "../components/Gallery/Gallery";
 import Testimonials from "../components/Testimonials/Testimonials";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
+import AthmaConnect from "../components/AthmaConnect/AthmaConnect";
+import BrahmaMuhurta from "../components/Bhrama/BrahmaMuhurta";
+import ThreePillars from "../components/ThreePillars/ThreePillars";
+import Wisdom from "../components/Wellness/Wisdom";
+import FinancialEducation from "../components/Finance/Finance";
 
 function Home() {
   return (
@@ -16,9 +21,13 @@ function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Services />
-      <Programs />
-      <Finance />
+      <AthmaConnect/>
+      <BrahmaMuhurta/>
+      <ThreePillars/>
+      <Wisdom/>
+      {/* <Services />
+      <Programs /> */}
+      <FinancialEducation/>
       <Wellness />
       <Gallery />
       <Testimonials />

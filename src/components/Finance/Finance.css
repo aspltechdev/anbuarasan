@@ -1,0 +1,408 @@
+/* FinancialEducation.css - Clean Educational Design */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap');
+
+:root {
+  --fe-font: 'Cormorant Garamond', Georgia, serif;
+  --fe-body: 'Inter', -apple-system, sans-serif;
+  --fe-bg: #0a0818;
+  --fe-text: #ece9f5;
+  --fe-dim: rgba(220, 215, 235, 0.5);
+  --fe-muted: rgba(220, 215, 235, 0.25);
+  --fe-gold: #c9a84c;
+  --fe-gold-light: #e0ca80;
+  --fe-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================ */
+/* SECTION */
+/* ============================================ */
+.fin-edu {
+  position: relative;
+  padding: 6rem 0;
+  background: var(--fe-bg);
+  overflow: hidden;
+  font-family: var(--fe-body);
+  isolation: isolate;
+}
+
+/* ============================================ */
+/* BACKGROUND */
+/* ============================================ */
+.fin-edu-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.fin-edu-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: feGlowBreathe 8s ease-in-out infinite;
+}
+
+.fin-edu-glow-1 {
+  width: 500px;
+  height: 400px;
+  top: -100px;
+  right: -80px;
+  background: radial-gradient(ellipse, rgba(201, 168, 76, 0.07) 0%, transparent 60%);
+}
+
+.fin-edu-glow-2 {
+  width: 400px;
+  height: 350px;
+  bottom: -80px;
+  left: -60px;
+  background: radial-gradient(ellipse, rgba(224, 202, 128, 0.04) 0%, transparent 60%);
+  animation-delay: -4s;
+}
+
+@keyframes feGlowBreathe {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.08); }
+}
+
+.fin-edu-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse at center, black 25%, transparent 65%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 25%, transparent 65%);
+}
+
+/* ============================================ */
+/* PARTICLES */
+/* ============================================ */
+.fin-edu-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fin-edu-particle {
+  position: absolute;
+  width: 1.5px;
+  height: 1.5px;
+  border-radius: 50%;
+  background: var(--fe-gold);
+  opacity: 0;
+  animation: feParticleDrift 4s ease-in-out infinite;
+}
+
+@keyframes feParticleDrift {
+  0%, 100% { transform: translateY(0); opacity: 0; }
+  25% { opacity: 0.3; }
+  75% { opacity: 0.1; }
+  100% { transform: translateY(-30px); opacity: 0; }
+}
+
+/* ============================================ */
+/* CONTAINER */
+/* ============================================ */
+.fin-edu-container {
+  position: relative;
+  z-index: 5;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============================================ */
+/* HEADER */
+/* ============================================ */
+.fin-edu-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--fe-ease), transform 0.8s var(--fe-ease);
+}
+
+.fin-edu-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fin-edu-tag {
+  display: inline-block;
+  padding: 0.3rem 1.2rem;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 100px;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fe-gold);
+  margin-bottom: 1rem;
+}
+
+.fin-edu-title {
+  font-family: var(--fe-font);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--fe-text);
+  margin: 0 0 0.5rem;
+}
+
+.fin-edu-title-accent {
+  background: linear-gradient(135deg, #c9a84c, #e0ca80);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+
+.fin-edu-subtitle {
+  font-family: var(--fe-font);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--fe-dim);
+  margin: 0;
+}
+
+/* ============================================ */
+/* TABS */
+/* ============================================ */
+.fin-edu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.7s var(--fe-ease) 0.1s, transform 0.7s var(--fe-ease) 0.1s;
+}
+
+.fin-edu-tabs.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fin-edu-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 2px;
+  color: var(--fe-dim);
+  font-family: var(--fe-body);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fin-edu-tab:hover {
+  border-color: rgba(201, 168, 76, 0.15);
+  color: var(--fe-text);
+}
+
+.fin-edu-tab-active {
+  border-color: rgba(201, 168, 76, 0.25);
+  color: var(--fe-gold-light);
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.fin-edu-tab-icon {
+  font-size: 0.9rem;
+}
+
+.fin-edu-tab-line {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 50%;
+  height: 1px;
+  background: var(--fe-gold);
+  transition: transform 0.3s var(--fe-ease);
+}
+
+.fin-edu-tab-active .fin-edu-tab-line {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ============================================ */
+/* TOPICS GRID */
+/* ============================================ */
+.fin-edu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.7s var(--fe-ease) 0.2s, transform 0.7s var(--fe-ease) 0.2s;
+}
+
+.fin-edu-grid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fin-edu-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  background: rgba(255, 255, 255, 0.012);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s var(--fe-ease), transform 0.5s var(--fe-ease), border-color 0.3s ease;
+}
+
+.fin-edu-grid.visible .fin-edu-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fin-edu-card:hover {
+  border-color: rgba(201, 168, 76, 0.15);
+}
+
+.fin-edu-card-icon-wrap {
+  position: relative;
+  display: inline-flex;
+  margin-bottom: 1rem;
+}
+
+.fin-edu-card-icon {
+  font-size: 1.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.fin-edu-card-icon-glow {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.06);
+  filter: blur(6px);
+}
+
+.fin-edu-card-title {
+  font-family: var(--fe-font);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--fe-text);
+  margin: 0 0 0.5rem;
+}
+
+.fin-edu-card-desc {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--fe-dim);
+  margin: 0;
+}
+
+/* ============================================ */
+/* DISCLAIMER */
+/* ============================================ */
+.fin-edu-disclaimer {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s var(--fe-ease) 0.3s, transform 0.6s var(--fe-ease) 0.3s;
+}
+
+.fin-edu-disclaimer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fin-edu-disclaimer-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(201, 168, 76, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.08);
+  border-radius: 6px;
+}
+
+.fin-edu-disclaimer-icon {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.fin-edu-disclaimer-text {
+  font-size: 0.72rem;
+  line-height: 1.55;
+  color: var(--fe-muted);
+  margin: 0;
+}
+
+.fin-edu-disclaimer-text strong {
+  color: var(--fe-gold);
+  font-weight: 500;
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+@media (max-width: 768px) {
+  .fin-edu {
+    padding: 4rem 0;
+  }
+
+  .fin-edu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fin-edu-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fin-edu-tab {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .fin-edu-container {
+    padding: 0 1rem;
+  }
+
+  .fin-edu-card {
+    padding: 1.25rem;
+  }
+
+  .fin-edu-disclaimer-inner {
+    padding: 1rem;
+  }
+}
+
+/* ============================================ */
+/* REDUCED MOTION */
+/* ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .fin-edu-header,
+  .fin-edu-tabs,
+  .fin-edu-grid,
+  .fin-edu-disclaimer,
+  .fin-edu-card {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .fin-edu-glow,
+  .fin-edu-particle {
+    animation: none;
+  }
+}

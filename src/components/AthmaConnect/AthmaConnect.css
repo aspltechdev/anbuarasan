@@ -1,0 +1,555 @@
+/* AthmaConnect.css - Galaxy Universe Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+
+:root {
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================ */
+/* SECTION */
+/* ============================================ */
+.galaxy {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #06060f;
+  overflow: hidden;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================ */
+/* VIDEO BACKGROUND */
+/* ============================================ */
+.galaxy-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.galaxy-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.galaxy-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 6, 15, 0.6) 0%,
+    rgba(6, 6, 15, 0.3) 40%,
+    rgba(6, 6, 15, 0.3) 60%,
+    rgba(6, 6, 15, 0.7) 100%
+  );
+}
+
+/* ============================================ */
+/* STARS */
+/* ============================================ */
+.galaxy-stars {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.galaxy-star {
+  position: absolute;
+  border-radius: 50%;
+  background: #ffffff;
+  animation: starTwinkle ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* ============================================ */
+/* NEBULA */
+/* ============================================ */
+.galaxy-nebula {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(180px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.galaxy-nebula-1 {
+  width: 800px;
+  height: 800px;
+  top: -300px;
+  right: -200px;
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.12), transparent);
+}
+
+.galaxy-nebula-2 {
+  width: 600px;
+  height: 600px;
+  bottom: -200px;
+  left: -150px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.1), transparent);
+}
+
+/* ============================================ */
+/* CONTAINER */
+/* ============================================ */
+.galaxy-container {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* ============================================ */
+/* CENTER - YOGA FIGURE + ORBIT */
+/* ============================================ */
+.galaxy-center {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+}
+
+.galaxy-center-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Orbit Rings */
+.galaxy-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid;
+  animation: orbitSpin linear infinite;
+  pointer-events: none;
+}
+
+.galaxy-orbit-1 {
+  width: 380px;
+  height: 380px;
+  margin: -190px 0 0 -190px;
+  border-color: rgba(129, 140, 248, 0.12);
+  animation-duration: 30s;
+}
+
+.galaxy-orbit-2 {
+  width: 460px;
+  height: 460px;
+  margin: -230px 0 0 -230px;
+  border-color: rgba(167, 139, 250, 0.08);
+  animation-duration: 40s;
+  animation-direction: reverse;
+}
+
+.galaxy-orbit-3 {
+  width: 540px;
+  height: 540px;
+  margin: -270px 0 0 -270px;
+  border-color: rgba(192, 132, 252, 0.05);
+  animation-duration: 50s;
+}
+
+.galaxy-orbit-dot {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #a78bfa;
+  box-shadow: 0 0 10px #a78bfa, 0 0 20px #818cf8;
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Orbiting Cards */
+.galaxy-card-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: cardOrbit 20s linear infinite;
+  z-index: 10;
+}
+
+@keyframes cardOrbit {
+  from { transform: rotate(0deg) translateX(240px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(240px) rotate(-360deg); }
+}
+
+.galaxy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.6rem 1rem;
+  background: rgba(10, 10, 30, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  transition: all 0.4s var(--ease-smooth);
+  min-width: 120px;
+  cursor: default;
+}
+
+.galaxy-card-active {
+  transform: scale(1.15);
+  border-color: var(--card-color, #818cf8);
+  box-shadow: 0 0 30px rgba(129, 140, 248, 0.3);
+  background: rgba(15, 15, 40, 0.9);
+  z-index: 15;
+}
+
+.galaxy-card-icon {
+  font-size: 1rem;
+  filter: drop-shadow(0 0 6px var(--card-color, #818cf8));
+}
+
+.galaxy-card-title {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.galaxy-card-desc {
+  font-size: 0.55rem;
+  color: rgba(226, 232, 240, 0.5);
+  white-space: nowrap;
+}
+
+/* Central Figure */
+.galaxy-figure {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.galaxy-figure-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.3), rgba(129, 140, 248, 0.1), transparent 70%);
+  filter: blur(40px);
+  animation: figureGlow 3s ease-in-out infinite;
+}
+
+@keyframes figureGlow {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+.galaxy-figure-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.galaxy-figure-img-wrap {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 0 50px rgba(129, 140, 248, 0.2);
+}
+
+.galaxy-figure-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* ============================================ */
+/* CONTENT */
+/* ============================================ */
+.galaxy-content {
+  text-align: center;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-out) 0.4s, transform 0.8s var(--ease-out) 0.4s;
+}
+
+.galaxy-content-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.galaxy-badge {
+  display: inline-flex;
+  padding: 0.3rem 1.2rem;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a78bfa;
+  margin-bottom: 1.5rem;
+  background: rgba(167, 139, 250, 0.05);
+}
+
+/* Heading */
+.galaxy-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 1.25rem;
+}
+
+.galaxy-heading-accent {
+  background: linear-gradient(135deg, #a78bfa, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+
+/* Description */
+.galaxy-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(226, 232, 240, 0.6);
+  max-width: 450px;
+  margin: 0 auto 2rem;
+}
+
+/* Journey Steps */
+.galaxy-journey {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.galaxy-journey-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.galaxy-content-visible .galaxy-journey-step {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.galaxy-journey-num {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: #a78bfa;
+}
+
+.galaxy-journey-title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(226, 232, 240, 0.7);
+  letter-spacing: 0.02em;
+}
+
+/* Separator between steps */
+.galaxy-journey-step + .galaxy-journey-step::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-right: 1rem;
+}
+
+/* ============================================ */
+/* CTA */
+/* ============================================ */
+.galaxy-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 2rem;
+  background: linear-gradient(135deg, #818cf8, #a78bfa);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-smooth);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s var(--ease-out) 0.7s, transform 0.5s var(--ease-out) 0.7s, box-shadow 0.3s ease;
+}
+
+.galaxy-content-visible .galaxy-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.galaxy-cta:hover {
+  box-shadow: 0 10px 40px rgba(129, 140, 248, 0.4);
+  transform: translateY(-2px);
+}
+
+.galaxy-cta-arrow {
+  transition: transform 0.3s ease;
+}
+
+.galaxy-cta:hover .galaxy-cta-arrow {
+  transform: translateX(4px);
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+@media (max-width: 900px) {
+  .galaxy-center {
+    width: 260px;
+    height: 260px;
+  }
+
+  .galaxy-orbit-1 { width: 300px; height: 300px; margin: -150px 0 0 -150px; }
+  .galaxy-orbit-2 { width: 360px; height: 360px; margin: -180px 0 0 -180px; }
+  .galaxy-orbit-3 { display: none; }
+
+  .galaxy-card-wrap {
+    animation: cardOrbitMobile 20s linear infinite;
+  }
+
+  @keyframes cardOrbitMobile {
+    from { transform: rotate(0deg) translateX(180px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(180px) rotate(-360deg); }
+  }
+
+  .galaxy-card {
+    padding: 0.4rem 0.7rem;
+    min-width: 90px;
+  }
+
+  .galaxy-card-title { font-size: 0.55rem; }
+  .galaxy-card-desc { display: none; }
+
+  .galaxy-figure-img-wrap {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .galaxy-container {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .galaxy-center {
+    width: 220px;
+    height: 220px;
+  }
+
+  .galaxy-orbit-1 { width: 260px; height: 260px; margin: -130px 0 0 -130px; }
+  .galaxy-orbit-2 { display: none; }
+
+  .galaxy-card-wrap {
+    animation: cardOrbitSmall 20s linear infinite;
+  }
+
+  @keyframes cardOrbitSmall {
+    from { transform: rotate(0deg) translateX(140px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+  }
+
+  .galaxy-card {
+    padding: 0.3rem 0.5rem;
+    min-width: 70px;
+    border-radius: 6px;
+  }
+
+  .galaxy-card-icon { font-size: 0.7rem; }
+  .galaxy-card-title { font-size: 0.5rem; }
+
+  .galaxy-figure-img-wrap {
+    width: 80px;
+    height: 80px;
+  }
+
+  .galaxy-heading {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .galaxy-journey {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .galaxy-journey-step + .galaxy-journey-step::before {
+    display: none;
+  }
+}
+
+/* ============================================ */
+/* REDUCED MOTION */
+/* ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .galaxy-center,
+  .galaxy-content,
+  .galaxy-journey-step,
+  .galaxy-cta {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .galaxy-orbit,
+  .galaxy-card-wrap,
+  .galaxy-star,
+  .galaxy-figure-glow {
+    animation: none;
+  }
+}

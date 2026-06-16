@@ -1,0 +1,630 @@
+/* Wellness.css - Premium Wellness Solutions */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap');
+
+:root {
+  --wl-font: 'Cormorant Garamond', Georgia, serif;
+  --wl-body: 'Inter', -apple-system, sans-serif;
+  --wl-bg: #080614;
+  --wl-text: #ece9f5;
+  --wl-dim: rgba(220, 215, 235, 0.5);
+  --wl-muted: rgba(220, 215, 235, 0.25);
+  --wl-gold: #c9a84c;
+  --wl-gold-light: #e0ca80;
+  --wl-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================ */
+/* SECTION */
+/* ============================================ */
+.wellness {
+  position: relative;
+  padding: 6rem 0;
+  background: var(--wl-bg);
+  overflow: hidden;
+  font-family: var(--wl-body);
+  isolation: isolate;
+}
+
+/* ============================================ */
+/* BACKGROUND */
+/* ============================================ */
+.wellness-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.wellness-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: wlGlowBreathe 8s ease-in-out infinite;
+}
+
+.wellness-glow-1 {
+  width: 550px;
+  height: 450px;
+  top: -150px;
+  right: -100px;
+  background: radial-gradient(ellipse, rgba(201, 168, 76, 0.08) 0%, transparent 60%);
+}
+
+.wellness-glow-2 {
+  width: 450px;
+  height: 400px;
+  bottom: -100px;
+  left: -80px;
+  background: radial-gradient(ellipse, rgba(224, 202, 128, 0.05) 0%, transparent 60%);
+  animation-delay: -4s;
+}
+
+@keyframes wlGlowBreathe {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.1); }
+}
+
+.wellness-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+}
+
+/* ============================================ */
+/* PARTICLES */
+/* ============================================ */
+.wellness-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.wellness-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--wl-gold);
+  opacity: 0;
+  animation: wlParticleFloat 5s ease-in-out infinite;
+}
+
+@keyframes wlParticleFloat {
+  0%, 100% { transform: translateY(0); opacity: 0; }
+  30% { opacity: 0.35; }
+  70% { opacity: 0.15; }
+  100% { transform: translateY(-40px); opacity: 0; }
+}
+
+/* ============================================ */
+/* CONTAINER */
+/* ============================================ */
+.wellness-container {
+  position: relative;
+  z-index: 5;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============================================ */
+/* HEADER */
+/* ============================================ */
+.wellness-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--wl-ease), transform 0.8s var(--wl-ease);
+}
+
+.wellness-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wellness-tag {
+  display: inline-block;
+  padding: 0.3rem 1.2rem;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 100px;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--wl-gold);
+  margin-bottom: 1rem;
+}
+
+.wellness-title {
+  font-family: var(--wl-font);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: var(--wl-text);
+  margin: 0 0 0.5rem;
+}
+
+.wellness-title-accent {
+  background: linear-gradient(135deg, #c9a84c, #e0ca80);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+
+.wellness-subtitle {
+  font-family: var(--wl-font);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--wl-dim);
+  margin: 0;
+}
+
+/* ============================================ */
+/* TABS */
+/* ============================================ */
+.wellness-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.7s var(--wl-ease) 0.1s, transform 0.7s var(--wl-ease) 0.1s;
+}
+
+.wellness-tabs.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wellness-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 2px;
+  color: var(--wl-dim);
+  font-family: var(--wl-body);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wellness-tab:hover {
+  border-color: rgba(201, 168, 76, 0.15);
+  color: var(--wl-text);
+}
+
+.wellness-tab-active {
+  border-color: rgba(201, 168, 76, 0.25);
+  color: var(--wl-gold-light);
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.wellness-tab-icon {
+  font-size: 0.95rem;
+}
+
+.wellness-tab-indicator {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 1px;
+  background: var(--wl-gold);
+  transition: transform 0.3s var(--wl-ease);
+}
+
+.wellness-tab-active .wellness-tab-indicator {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ============================================ */
+/* PRODUCT DISPLAY */
+/* ============================================ */
+.wellness-display {
+  position: relative;
+  min-height: 420px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--wl-ease) 0.2s, transform 0.8s var(--wl-ease) 0.2s;
+}
+
+.wellness-display.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wellness-product {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s var(--wl-ease), transform 0.6s var(--wl-ease);
+  pointer-events: none;
+}
+
+.wellness-product-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.wellness-product-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ============================================ */
+/* PRODUCT VISUAL */
+/* ============================================ */
+.wellness-product-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 360px;
+}
+
+.wellness-product-frame {
+  position: relative;
+  width: 220px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wellness-product-aura {
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.12) 0%, transparent 65%);
+  filter: blur(20px);
+  animation: auraPulse 3s ease-in-out infinite;
+}
+
+@keyframes auraPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.08); }
+}
+
+.wellness-product-image {
+  width: 160px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wellness-product-icon-large {
+  font-size: 3.5rem;
+  opacity: 0.6;
+}
+
+.wellness-product-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.05);
+  animation: ringSpin 25s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes ringSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Floating Highlights */
+.wellness-highlight {
+  position: absolute;
+  padding: 0.4rem 0.9rem;
+  background: rgba(10, 8, 25, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 20px;
+  font-size: 0.65rem;
+  color: var(--wl-dim);
+  white-space: nowrap;
+  animation: highlightFloat 5s ease-in-out infinite;
+}
+
+.wellness-highlight-1 { top: 15px; right: -20px; animation-delay: 0s; }
+.wellness-highlight-2 { bottom: 50px; left: -30px; animation-delay: -1.5s; }
+.wellness-highlight-3 { bottom: 10px; right: -10px; animation-delay: -3s; }
+
+@keyframes highlightFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ============================================ */
+/* PRODUCT INFO */
+/* ============================================ */
+.wellness-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.wellness-product-tagline {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--wl-gold);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.wellness-product-name {
+  font-family: var(--wl-font);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--wl-text);
+  margin: 0;
+}
+
+.wellness-product-desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--wl-dim);
+  margin: 0;
+}
+
+.wellness-product-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.wellness-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.wellness-meta-label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--wl-muted);
+}
+
+.wellness-meta-value {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--wl-text);
+}
+
+.wellness-meta-divider {
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.wellness-product-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.wellness-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--wl-dim);
+}
+
+.wellness-highlight-icon {
+  color: var(--wl-gold);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.wellness-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.8rem;
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 2px;
+  color: var(--wl-gold-light);
+  font-family: var(--wl-body);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.wellness-cta:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.wellness-cta svg {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.3s ease;
+}
+
+.wellness-cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* ============================================ */
+/* CERTIFICATIONS */
+/* ============================================ */
+.wellness-certs {
+  margin-top: 4rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.7s var(--wl-ease) 0.3s, transform 0.7s var(--wl-ease) 0.3s;
+}
+
+.wellness-certs.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wellness-certs-label {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--wl-muted);
+  margin-bottom: 1rem;
+}
+
+.wellness-certs-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.wellness-cert-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.5s var(--wl-ease), transform 0.5s var(--wl-ease);
+}
+
+.wellness-certs.visible .wellness-cert-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wellness-cert-check {
+  color: var(--wl-gold);
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.wellness-cert-text {
+  font-size: 0.7rem;
+  color: var(--wl-dim);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+@media (max-width: 900px) {
+  .wellness-product-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .wellness-product-visual {
+    height: 280px;
+    order: -1;
+  }
+
+  .wellness-product-frame {
+    width: 180px;
+    height: 240px;
+  }
+
+  .wellness-product-image {
+    width: 130px;
+    height: 170px;
+  }
+
+  .wellness-product-ring {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wellness {
+    padding: 4rem 0;
+  }
+
+  .wellness-display {
+    min-height: 380px;
+  }
+
+  .wellness-product-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .wellness-product-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .wellness-meta-divider {
+    display: none;
+  }
+
+  .wellness-certs-row {
+    gap: 0.5rem;
+  }
+}
+
+/* ============================================ */
+/* REDUCED MOTION */
+/* ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .wellness-header,
+  .wellness-tabs,
+  .wellness-display,
+  .wellness-certs,
+  .wellness-cert-item {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .wellness-product {
+    transition: none;
+  }
+
+  .wellness-glow,
+  .wellness-particle,
+  .wellness-product-aura,
+  .wellness-product-ring,
+  .wellness-highlight {
+    animation: none;
+  }
+}
