@@ -8,7 +8,7 @@
   position: relative;
   min-height: 100vh;
   padding: 5rem 2rem;
-  background: linear-gradient(160deg, #fcf8f4 0%, #f5ede6 40%, #efe4da 100%);
+  background: linear-gradient(160deg, #4d80c3 0%, #e0c9b5 40%, #4d80c3 100%);
   font-family: 'Inter', 'Segoe UI', sans-serif;
   color: #3d342c;
   display: flex;
@@ -46,7 +46,7 @@
   height: 40vw;
   top: -10%;
   right: -10%;
-  background: radial-gradient(circle, rgba(201, 184, 160, 0.1), transparent 70%);
+  background: radial-gradient(circle, rgba(20, 18, 17, 0.1), transparent 70%);
 }
 
 .wisdom-glow-bottom {
@@ -168,7 +168,7 @@
   font-size: 0.75rem;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: rgba(61, 52, 44, 0.35);
+  color:  #3d342c;
   font-weight: 400;
   white-space: nowrap;
 }
@@ -183,7 +183,7 @@
 }
 
 .wisdom-title-accent {
-  background: linear-gradient(135deg, #8b7355, #c9a87c, #d4a574);
+  background: linear-gradient(135deg, #bc6f12, #b87927, #8c5519);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -198,7 +198,7 @@
 .wisdom-subtitle {
   font-size: 1rem;
   font-weight: 300;
-  color: rgba(61, 52, 44, 0.4);
+  color: #3d342c;
   letter-spacing: 0.5px;
   max-width: 500px;
   margin: 0 auto;
@@ -258,6 +258,7 @@
   inset: 0;
   z-index: 1;
   transition: background 0.6s ease;
+  opacity: 0.4;
 }
 
 /* Card Content */
@@ -271,7 +272,7 @@
   justify-content: center;
   padding: 3rem;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* Emotion Badge */

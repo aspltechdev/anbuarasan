@@ -5,6 +5,12 @@
 // ============================================
 import "./Wisdom.css";
 import { useEffect, useRef, useState } from "react";
+import strengths from "../../assets/strengths.jpg";
+import awakening from "../../assets/awakening.jpg";
+import growth from "../../assets/growth.png";
+import rhythm from "../../assets/rhythm.png";
+import potentialImg from "../../assets/potential.png";
+import abundance from "../../assets/abundance.jpg";
 
 function Wisdom() {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,7 +22,7 @@ function Wisdom() {
     {
       quote: "Awareness is the beginning of transformation.",
       author: "Anbuarasan",
-      image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=600&fit=crop",
+      image: awakening,
       gradient: "linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 115, 85, 0.6))",
       emotion: "Awakening",
       color: "#d4a574"
@@ -24,7 +30,7 @@ function Wisdom() {
     {
       quote: "Discipline creates the future you desire.",
       author: "Anbuarasan",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop",
+      image: strengths,
       gradient: "linear-gradient(135deg, rgba(201, 184, 160, 0.3), rgba(168, 148, 122, 0.6))",
       emotion: "Strength",
       color: "#c9b8a0"
@@ -32,7 +38,7 @@ function Wisdom() {
     {
       quote: "Inner growth shapes outer success.",
       author: "Anbuarasan",
-      image: "https://images.unsplash.com/photo-1517960413847-0aee8f2b3285?w=800&h=600&fit=crop",
+      image: growth,
       gradient: "linear-gradient(135deg, rgba(213, 196, 176, 0.3), rgba(184, 166, 146, 0.6))",
       emotion: "Growth",
       color: "#d5c4b0"
@@ -40,7 +46,7 @@ function Wisdom() {
     {
       quote: "Your morning routine determines your life's direction.",
       author: "Anbuarasan",
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop",
+      image: rhythm,
       gradient: "linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 115, 85, 0.5))",
       emotion: "Rhythm",
       color: "#d4a574"
@@ -48,7 +54,7 @@ function Wisdom() {
     {
       quote: "True wealth begins with a wealthy mindset.",
       author: "Anbuarasan",
-      image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=600&fit=crop",
+      image: abundance,
       gradient: "linear-gradient(135deg, rgba(201, 184, 160, 0.3), rgba(168, 148, 122, 0.5))",
       emotion: "Abundance",
       color: "#c9b8a0"
@@ -56,7 +62,7 @@ function Wisdom() {
     {
       quote: "Every soul carries infinite potential within.",
       author: "Anbuarasan",
-      image: "https://images.unsplash.com/photo-1518621736915-f3b1c41f505d?w=800&h=600&fit=crop",
+      image: potentialImg,
       gradient: "linear-gradient(135deg, rgba(213, 196, 176, 0.3), rgba(184, 166, 146, 0.5))",
       emotion: "Potential",
       color: "#d5c4b0"
