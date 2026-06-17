@@ -1,0 +1,167 @@
+/* ============================================
+   ABOUT — ATHMA SOUL THEME
+   Video bg · Frost glass · Mosaic with gaps
+   ============================================ */
+
+/* ===== FULL SECTION CYCLING BG VIDEO ===== */
+.about-bg-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.about-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  filter: saturate(0.65) brightness(0.88);
+  transition: opacity 1s ease;
+}
+
+.about-bg-video-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(252, 248, 244, 0.85) 0%,
+    rgba(245, 237, 230, 0.80) 40%,
+    rgba(239, 228, 218, 0.82) 100%
+  );
+}
+
+/* ===== BASE ===== */
+.about {
+  position: relative;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  background: linear-gradient(160deg, #fcf8f4 0%, #f5ede6 40%, #efe4da 100%);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #3d342c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ===== AMBIENT SECTION BG ===== */
+.about-cinematic-bg,
+.about-breath-waves,
+.about-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.about-glow,
+.about-orb,
+.about-breath-wave,
+.about-particle { position: absolute; }
+
+.about-glow {
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.12;
+}
+.about-glow-1 {
+  width: 60vw; height: 60vw;
+  top: -20%; right: -20%;
+  background: radial-gradient(circle, rgba(212,165,116,0.15), transparent 70%);
+  animation: aboutGlowFloat 12s ease-in-out infinite alternate;
+}
+.about-glow-2 {
+  width: 50vw; height: 50vw;
+  bottom: -20%; left: -20%;
+  background: radial-gradient(circle, rgba(201,184,160,0.12), transparent 70%);
+  animation: aboutGlowFloat 15s ease-in-out infinite alternate-reverse;
+}
+.about-glow-3 {
+  width: 40vw; height: 40vw;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  background: radial-gradient(circle, rgba(213,196,176,0.08), transparent 70%);
+}
+@keyframes aboutGlowFloat {
+  0%   { transform: translate(0,0) scale(1); }
+  100% { transform: translate(30px,-30px) scale(1.2); }
+}
+
+.about-orb {
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.04;
+  animation: aboutOrbFloat 20s ease-in-out infinite;
+}
+.about-orb-1 { width:300px; height:300px; top:10%; left:10%; background:#d4a574; }
+.about-orb-2 { width:400px; height:400px; bottom:10%; right:10%; background:#c9b8a0; animation-delay:-7s; }
+.about-orb-3 { width:250px; height:250px; top:50%; left:50%; transform:translate(-50%,-50%); background:#d5c4b0; animation-delay:-14s; }
+@keyframes aboutOrbFloat {
+  0%,100% { transform:translate(0,0) scale(1); }
+  25%  { transform:translate(30px,-40px) scale(1.1); }
+  50%  { transform:translate(-20px,30px) scale(0.9); }
+  75%  { transform:translate(40px,20px) scale(1.05); }
+}
+
+.about-breath-wave {
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%) scale(0.6);
+  background: radial-gradient(circle at center, rgba(212,165,116,0.03), transparent 70%);
+  animation: aboutBreath 8s ease-in-out infinite alternate;
+}
+.wave-a { width:80vw; height:80vw; animation-duration:10s; }
+.wave-b { width:110vw; height:110vw; animation-duration:14s; animation-delay:-3s; }
+.wave-c { width:140vw; height:140vw; animation-duration:18s; animation-delay:-6s; }
+@keyframes aboutBreath {
+  0%   { transform:translate(-50%,-50%) scale(0.4); opacity:0.08; }
+  50%  { transform:translate(-50%,-50%) scale(1.2); opacity:0.3; }
+  100% { transform:translate(-50%,-50%) scale(0.4); opacity:0.08; }
+}
+
+.about-particle {
+  border-radius: 50%;
+  animation: aboutFloatPart linear infinite alternate;
+  opacity: 0.2;
+}
+@keyframes aboutFloatPart {
+  0%   { transform:translate(0,0) scale(0.8); opacity:0.03; }
+  100% { transform:translate(40px,-40px) scale(1.6); opacity:0.2; }
+}
+
+/* ===== LAYOUT ===== */
+.about-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ===== HERO HEADER ===== */
+.about-hero {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.about-hero.visible { opacity:1; transform:translateY(0); }
+
+.about-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.about-badge-line {
+  width: 40px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,165,116,0.3));
+  animation: aboutBadgeLine 3s ease-in-out infinite alternate;
+}
+.about-badge-line:last-child {
+  background: linear-gradient(90deg,
