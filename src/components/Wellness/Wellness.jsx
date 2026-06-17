@@ -3,6 +3,8 @@
 // Cinematic Product Showcase with Premium Feel
 // Hero-style cards with imagery and immersive design
 // ============================================
+import firmax3 from "../../assets/firmax3.png";
+import o2max3 from "../../assets/o2max3.png";
 import "./Wellness.css";
 import { useEffect, useRef, useState } from "react";
 
@@ -44,6 +46,7 @@ function Wellness() {
       description: "A premium wellness cream crafted in Malaysia with a unique blend of 12 medicinal herbs. Designed to complement an active lifestyle and daily wellness routine with nature's finest ingredients.",
       origin: "Malaysia",
       reach: "120+ Countries",
+      productImage: firmax3,
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85f5f2?w=1200&h=800&fit=crop",
       color: "#d4a574",
       gradient: "linear-gradient(145deg, rgba(20, 16, 12, 0.75), rgba(212, 165, 116, 0.20))",
@@ -67,7 +70,7 @@ function Wellness() {
       description: "An innovative oxygen-infused formulation that supports individuals pursuing active lifestyles. Developed with modern science and traditional wisdom for optimal wellness results.",
       origin: "Malaysia",
       reach: "120+ Countries",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&h=800&fit=crop",
+      productImage: o2max3,
       color: "#c9b8a0",
       gradient: "linear-gradient(145deg, rgba(20, 16, 12, 0.75), rgba(201, 184, 160, 0.20))",
       symbol: "◈",
@@ -170,16 +173,10 @@ function Wellness() {
             >
               <div className="wellness-product-hero" style={{ backgroundImage: `url(${product.image})` }}>
                 {/* Overlay */}
-                <div className="wellness-product-overlay" style={{ background: product.gradient }}></div>
+                
                 
                 {/* Decorative Elements */}
-                <div className="wellness-product-decor" style={calcParallax(0.02)}>
-                  <div className="wellness-decor-ring" style={{ borderColor: product.color }}></div>
-                  <div className="wellness-decor-ring-2" style={{ borderColor: product.color }}></div>
-                  <div className="wellness-decor-symbol" style={{ color: product.color }}>
-                    {product.symbol}
-                  </div>
-                </div>
+                
 
                 {/* Content */}
                 <div className="wellness-product-content">
@@ -215,6 +212,7 @@ function Wellness() {
                       </div>
                     ))}
                   </div>
+                  
 
                   <button className="wellness-cta" style={{ borderColor: product.color, color: product.color }}>
                     <span>Explore {product.name}</span>
@@ -222,6 +220,13 @@ function Wellness() {
                       <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </button>
+                </div>
+                <div className="wellness-product-image-wrapper">
+                <img
+                  src={product.productImage}
+                  alt={product.name}
+                  className="wellness-product-image"
+                  />
                 </div>
               </div>
             </div>
