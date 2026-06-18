@@ -1,5 +1,5 @@
 // ============================================
-// TESTIMONIALS - ATHMA SOUL THEME
+// TESTIMONIALS - WARM EARTHY THEME
 // Cinematic Testimonials with Emotional Connection
 // Beautiful card-style testimonials with visual elements
 // ============================================
@@ -19,8 +19,8 @@ function Testimonials() {
       name: "Priya M.",
       role: "Athma Connect Participant",
       symbol: "✦",
-      color: "#d4a574",
-      gradient: "linear-gradient(145deg, #fdf6f0, #f5e6d9)",
+      color: "#8b7355",
+      gradient: "linear-gradient(145deg, #fcf8f4, #efe4da)",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face"
     },
     {
@@ -28,8 +28,8 @@ function Testimonials() {
       name: "Rahul K.",
       role: "Brahma Muhurta Community",
       symbol: "◈",
-      color: "#c9b8a0",
-      gradient: "linear-gradient(145deg, #f8f2ea, #ede3d6)",
+      color: "#8b7355",
+      gradient: "linear-gradient(145deg, #fcf8f4, #efe4da)",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face"
     },
     {
@@ -37,8 +37,8 @@ function Testimonials() {
       name: "Sarah L.",
       role: "Financial Awareness Program",
       symbol: "⬡",
-      color: "#d5c4b0",
-      gradient: "linear-gradient(145deg, #faf3ec, #efe5d9)",
+      color: "#8b7355",
+      gradient: "linear-gradient(145deg, #fcf8f4, #efe4da)",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face"
     },
     {
@@ -46,8 +46,8 @@ function Testimonials() {
       name: "David W.",
       role: "Wellness Customer",
       symbol: "⟐",
-      color: "#d4a574",
-      gradient: "linear-gradient(145deg, #fdf6f0, #f5e6d9)",
+      color: "#8b7355",
+      gradient: "linear-gradient(145deg, #fcf8f4, #efe4da)",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face"
     },
     {
@@ -55,8 +55,8 @@ function Testimonials() {
       name: "Ananya S.",
       role: "Community Member",
       symbol: "◇",
-      color: "#c9b8a0",
-      gradient: "linear-gradient(145deg, #f8f2ea, #ede3d6)",
+      color: "#8b7355",
+      gradient: "linear-gradient(145deg, #fcf8f4, #efe4da)",
       image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=200&h=200&fit=crop&crop=face"
     },
   ];
@@ -113,13 +113,6 @@ function Testimonials() {
         <div className="testimonials-glow testimonials-glow-3"></div>
       </div>
 
-      {/* Breath Waves */}
-      <div className="testimonials-breath-waves">
-        <div className="testimonials-breath-wave wave-a"></div>
-        <div className="testimonials-breath-wave wave-b"></div>
-        <div className="testimonials-breath-wave wave-c"></div>
-      </div>
-
       {/* Floating Particles */}
       <div className="testimonials-particles">
         {[...Array(20)].map((_, i) => (
@@ -133,7 +126,7 @@ function Testimonials() {
               animationDuration: `${4 + Math.random() * 6}s`,
               width: `${3 + Math.random() * 5}px`,
               height: `${3 + Math.random() * 5}px`,
-              background: `radial-gradient(circle, rgba(212, 165, 116, ${0.05 + Math.random() * 0.1}), transparent)`,
+              background: `radial-gradient(circle, rgba(139, 115, 85, ${0.05 + Math.random() * 0.1}), transparent)`,
             }}
           />
         ))}
@@ -161,8 +154,6 @@ function Testimonials() {
           {/* Left: Visual Avatar Card */}
           <div className="testimonials-visual" style={calcParallax(0.02)}>
             <div className="testimonials-visual-card" style={{ background: testimonials[activeTestimonial].gradient }}>
-              <div className="testimonials-visual-ring" style={{ borderColor: testimonials[activeTestimonial].color }}></div>
-              <div className="testimonials-visual-ring-2" style={{ borderColor: testimonials[activeTestimonial].color }}></div>
               
               <div className="testimonials-avatar-wrapper">
                 <img 

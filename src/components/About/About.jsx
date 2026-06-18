@@ -1,433 +1,207 @@
-// ============================================
-// ABOUT - ATHMA SOUL THEME
-// Cinematic Hero-Style About Section
-// Expressive, immersive, and emotionally connected
-// ============================================
-// import "./About.css";
-// import { useEffect, useRef, useState } from "react";
-
-// function About() {
-//   const [isVisible, setIsVisible] = useState(false);
-//   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-//   const sectionRef = useRef(null);
-
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       ([entry]) => {
-//         if (entry.isIntersecting) {
-//           setIsVisible(true);
-//         }
-//       },
-//       { threshold: 0.15 }
-//     );
-//     if (sectionRef.current) observer.observe(sectionRef.current);
-//     return () => observer.disconnect();
-//   }, []);
-
-//   useEffect(() => {
-//     const handleMouseMove = (e) => setMousePos({ x: e.clientX, y: e.clientY });
-//     window.addEventListener("mousemove", handleMouseMove, { passive: true });
-//     return () => window.removeEventListener("mousemove", handleMouseMove);
-//   }, []);
-
-//   const calcParallax = (depth) => {
-//     if (!sectionRef.current) return {};
-//     const rect = sectionRef.current.getBoundingClientRect();
-//     return {
-//       transform: `translate3d(${(mousePos.x - rect.left - rect.width / 2) * depth}px, ${(mousePos.y - rect.top - rect.height / 2) * depth}px, 0)`,
-//     };
-//   };
-
-//   const values = [
-//     { symbol: "✦", title: "Clarity", desc: "Seeing life with renewed perspective" },
-//     { symbol: "◈", title: "Purpose", desc: "Discovering your unique path" },
-//     { symbol: "◆", title: "Awareness", desc: "Living with mindful presence" },
-//     { symbol: "⬡", title: "Success", desc: "Achieving sustainable growth" },
-//   ];
-
-//   return (
-//     <section className="about" ref={sectionRef} id="about">
-//       {/* Cinematic Background */}
-//       <div className="about-cinematic-bg">
-//         <div className="about-glow about-glow-1"></div>
-//         <div className="about-glow about-glow-2"></div>
-//         <div className="about-glow about-glow-3"></div>
-        
-//         {/* Animated gradient orbs */}
-//         <div className="about-orb about-orb-1"></div>
-//         <div className="about-orb about-orb-2"></div>
-//         <div className="about-orb about-orb-3"></div>
-//       </div>
-
-//       {/* Breath Waves */}
-//       <div className="about-breath-waves">
-//         <div className="about-breath-wave wave-a"></div>
-//         <div className="about-breath-wave wave-b"></div>
-//         <div className="about-breath-wave wave-c"></div>
-//       </div>
-
-//       {/* Floating Particles */}
-//       <div className="about-particles">
-//         {[...Array(30)].map((_, i) => (
-//           <span
-//             key={i}
-//             className="about-particle"
-//             style={{
-//               left: `${Math.random() * 100}%`,
-//               top: `${Math.random() * 100}%`,
-//               animationDelay: `${Math.random() * 5}s`,
-//               animationDuration: `${4 + Math.random() * 6}s`,
-//               width: `${2 + Math.random() * 4}px`,
-//               height: `${2 + Math.random() * 4}px`,
-//               background: `radial-gradient(circle, rgba(212, 165, 116, ${0.05 + Math.random() * 0.1}), transparent)`,
-//             }}
-//           />
-//         ))}
-//       </div>
-
-//       <div className="about-container">
-//         {/* Hero Header */}
-//         <div className={`about-hero ${isVisible ? 'visible' : ''}`}>
-//           <div className="about-badge">
-//             <span className="about-badge-line"></span>
-//             <span className="about-tag">✦ The Mission</span>
-//             <span className="about-badge-line"></span>
-//           </div>
-          
-//           <h1 className="about-title">
-//             <span className="about-title-line">A Journey Towards</span>
-//             <span className="about-title-accent">Conscious Living</span>
-//           </h1>
-          
-//           <p className="about-subtitle">
-//             Guiding individuals toward self-awareness, mindset mastery, 
-//             and holistic wellbeing through transformative practices
-//           </p>
-//         </div>
-
-//         {/* Cinematic Card */}
-//         <div className={`about-cinematic-card ${isVisible ? 'visible' : ''}`}>
-//           <div className="about-card-inner">
-//             {/* Left: Visual Story */}
-//             <div className="about-visual-story" style={calcParallax(0.02)}>
-//               <div className="about-story-frame">
-//                 <div className="about-story-image">
-//                   <img
-//                     src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&h=600&fit=crop&crop=face"
-//                     alt="Anbuarasan"
-//                   />
-//                   <div className="about-story-overlay"></div>
-//                 </div>
-                
-//                 {/* Floating decorative elements */}
-//                 <div className="about-story-rings">
-//                   <div className="about-story-ring about-story-ring-1"></div>
-//                   <div className="about-story-ring about-story-ring-2"></div>
-//                 </div>
-                
-//                 <div className="about-story-symbol">◈</div>
-//               </div>
-
-//               {/* Stats floating below */}
-//               <div className="about-story-stats">
-//                 <div className="about-stat-item">
-//                   <span className="about-stat-number">500+</span>
-//                   <span className="about-stat-label">Lives Transformed</span>
-//                 </div>
-//                 <div className="about-stat-divider"></div>
-//                 <div className="about-stat-item">
-//                   <span className="about-stat-number">12+</span>
-//                   <span className="about-stat-label">Years of Service</span>
-//                 </div>
-//                 <div className="about-stat-divider"></div>
-//                 <div className="about-stat-item">
-//                   <span className="about-stat-number">50+</span>
-//                   <span className="about-stat-label">Countries Reached</span>
-//                 </div>
-//               </div>
-//             </div>
-
-//             {/* Right: Content */}
-//             <div className="about-story-content">
-//               <div className="about-content-inner">
-//                 <div className="about-content-header">
-//                   <span className="about-content-tag">About Anbuarasan</span>
-//                   <h3 className="about-content-title">A Life Dedicated to Transformation</h3>
-//                   <div className="about-content-divider"></div>
-//                 </div>
-
-//                 <div className="about-content-body">
-//                   <p className="about-text">
-//                     For years, <span className="about-name">Anbuarasan</span> has dedicated 
-//                     his life to guiding individuals toward{" "}
-//                     <span className="about-highlight">self-awareness</span>,{" "}
-//                     <span className="about-highlight">mindset mastery</span>,{" "}
-//                     <span className="about-highlight">financial consciousness</span>, and{" "}
-//                     <span className="about-highlight">holistic wellness</span>.
-//                   </p>
-
-//                   <div className="about-mission-block">
-//                     <span className="about-mission-label">✦ His mission is simple</span>
-//                     <p className="about-mission-text">
-//                       Help people live with greater{" "}
-//                       <span className="about-emphasis">clarity</span>, stronger{" "}
-//                       <span className="about-emphasis">purpose</span>, deeper{" "}
-//                       <span className="about-emphasis">awareness</span>, and sustainable{" "}
-//                       <span className="about-emphasis">success</span>.
-//                     </p>
-//                   </div>
-
-//                   <p className="about-text about-text-secondary">
-//                     Through daily transformation programs, spiritual coaching sessions, 
-//                     financial awareness initiatives, and wellness education, he continues 
-//                     to impact lives globally with compassion and wisdom.
-//                   </p>
-//                 </div>
-
-
-
-//                 {/* CTA */}
-//                 <a href="#contact" className="about-cta">
-//                   <span>Begin Your Transformation</span>
-//                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18">
-//                     <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-//                   </svg>
-//                 </a>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default About;
-
+// About.jsx
 import "./About.css";
 import { useEffect, useRef, useState } from "react";
-
-import bgVideo from "../../assets/about.mp4";
-import bgImg from "../../assets/bg.png";
 import bgImage from "../../assets/bginnercard.png";
 
 function About() {
   const [isVisible, setIsVisible] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
   const sectionRef = useRef(null);
-  const sectionVidRef = useRef(null);
-  const [secVidIndex, setSecVidIndex] = useState(0);
-
-  const sectionVideos = [
-    "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
-    "https://videos.pexels.com/video-files/3045163/3045163-uhd_2560_1440_25fps.mp4",
-    "https://videos.pexels.com/video-files/7579476/7579476-hd_1920_1080_25fps.mp4",
-    "https://videos.pexels.com/video-files/3875977/3875977-hd_1280_720_25fps.mp4",
-  ];
-
-  const handleSectionVideoEnd = () => {
-    setSecVidIndex((prev) => (prev + 1) % sectionVideos.length);
-  };
-
-  useEffect(() => {
-    if (sectionVidRef.current) {
-      sectionVidRef.current.load();
-      sectionVidRef.current.play();
-    }
-  }, [secVidIndex]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e) => setMousePos({ x: e.clientX, y: e.clientY });
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+    let smoothX = 0.5, smoothY = 0.5;
+    let rafId;
 
-  const calcParallax = (depth) => {
-    if (!sectionRef.current) return {};
-    const rect = sectionRef.current.getBoundingClientRect();
-    return {
-      transform: `translate3d(${
-        (mousePos.x - rect.left - rect.width / 2) * depth
-      }px, ${(mousePos.y - rect.top - rect.height / 2) * depth}px, 0)`,
+    const handleMouseMove = (e) => {
+      const rect = sectionRef.current?.getBoundingClientRect();
+      if (rect) {
+        smoothX = (e.clientX - rect.left) / rect.width;
+        smoothY = (e.clientY - rect.top) / rect.height;
+      }
     };
-  };
+
+    const animate = () => {
+      setMousePos(prev => ({
+        x: prev.x + (smoothX - prev.x) * 0.04,
+        y: prev.y + (smoothY - prev.y) * 0.04
+      }));
+      rafId = requestAnimationFrame(animate);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    animate();
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(rafId);
+    };
+  }, []);
 
   return (
     <section className="about" ref={sectionRef} id="about">
-
-      {/* ── FULL SECTION CYCLING BG VIDEO ── */}
-      <div className="about-bg-video-wrap">
-       <img
-    className="about-bg-video"
-    src={bgImg}
-    alt=""
-  />
-        <div className="about-bg-video-shade" />
+      {/* Background */}
+      <div className="about-bg-light">
+        <div className="about-bg-gradient-light"></div>
+        <div className="about-bg-grid-light"></div>
+        <div className="about-bg-pattern-light"></div>
       </div>
 
-      {/* ── Ambient section background ── */}
-      <div className="about-cinematic-bg">
-        <div className="about-glow about-glow-1"></div>
-        <div className="about-glow about-glow-2"></div>
-        <div className="about-glow about-glow-3"></div>
-        <div className="about-orb about-orb-1"></div>
-        <div className="about-orb about-orb-2"></div>
-        <div className="about-orb about-orb-3"></div>
+      {/* Ambient Glows */}
+      <div className="about-ambient-light">
+        <div className="about-glow-light about-glow-1-light"></div>
+        <div className="about-glow-light about-glow-2-light"></div>
+        <div className="about-glow-light about-glow-3-light"></div>
       </div>
 
-      <div className="about-breath-waves">
-        <div className="about-breath-wave wave-a"></div>
-        <div className="about-breath-wave wave-b"></div>
-        <div className="about-breath-wave wave-c"></div>
+      {/* Geometry */}
+      <div className="about-geometry-light">
+        <div className="about-geo-ring-light about-geo-ring-1-light"></div>
+        <div className="about-geo-ring-light about-geo-ring-2-light"></div>
       </div>
 
-      <div className="about-particles">
-        {[...Array(24)].map((_, i) => (
+      {/* Particles */}
+      <div className="about-particles-light">
+        {[...Array(20)].map((_, i) => (
           <span
             key={i}
-            className="about-particle"
+            className="about-particle-light"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${4 + Math.random() * 6}s`,
-              width: `${2 + Math.random() * 4}px`,
-              height: `${2 + Math.random() * 4}px`,
-              background: `radial-gradient(circle, rgba(212, 165, 116, ${
-                0.05 + Math.random() * 0.1
-              }), transparent)`,
+              animationDelay: `${Math.random() * 12}s`,
+              animationDuration: `${10 + Math.random() * 16}s`,
+              width: `${1.5 + Math.random() * 2}px`,
+              height: `${1.5 + Math.random() * 2}px`,
             }}
           />
         ))}
       </div>
 
-      <div className="about-container">
-
-        {/* ── Section header ── */}
-        <div className={`about-hero ${isVisible ? "visible" : ""}`}>
-          <div className="about-badge">
-            <span className="about-badge-line"></span>
-            <span className="about-tag">✦ The Mission</span>
-            <span className="about-badge-line"></span>
+      <div className="about-container-light">
+        {/* Professional Layout */}
+        <div className={`about-layout-light ${isVisible ? "visible-light" : ""}`}>
+          {/* Left - Image with Professional Framing */}
+          <div className="about-left-light">
+            <div className="about-image-wrapper-light">
+              <div className="about-image-aura-light"></div>
+              <div className="about-image-ring-light about-image-ring-1-light"></div>
+              <div className="about-image-ring-light about-image-ring-2-light"></div>
+              <div className="about-image-frame-light">
+                <img src={bgImage} alt="Anbuarasan" className="about-image-light" />
+                <div className="about-image-overlay-light"></div>
+              </div>
+              
+              {/* Experience Badge */}
+              <div className="about-experience-badge-light">
+                <span className="about-exp-number-light">12+</span>
+                <span className="about-exp-label-light">Years of<br/>Experience</span>
+              </div>
+            </div>
           </div>
-          <h1 className="about-title">
-            <span className="about-title-line">A Journey Towards</span>
-            <span className="about-title-accent">Conscious Living</span>
-          </h1>
-          <p className="about-subtitle">
-            Guiding individuals toward self-awareness, mindset mastery,
-            and holistic wellbeing through transformative practices
-          </p>
-        </div>
 
-        {/* ── Main cinematic card ── */}
-        <div className={`about-cinematic-card ${isVisible ? "visible" : ""}`}>
-          <div className="about-card-inner">
-
-            {/* ════ LEFT PANEL — video bg + frost + mosaic ════ */}
-            <div className="about-visual-panel">
-
-             <img
-  className="about-panel-image"
-  src={bgImage}
-  alt="Background"
-/>
-
-              <div className="about-frost-grain"></div>
-              <div className="about-frost-tint"></div>
-              <div className="about-frost-shine"></div>
-              <div className="about-frost-vignette"></div>
-
-              {/* ── MOSAIC CARDS (float above frost) ── */}
-              <div className="about-mosaic" style={calcParallax(0.012)}>
-                <div className="about-mosaic-bg"></div>
-
-                {/* Large — top-left */}
-                {/* <div className="about-mosaic-card about-mosaic-card-lg">
-                  <img src={yogaImg} alt="Anbuarasan yoga" />
-                  <div className="about-mosaic-chip about-chip-arrow">↗</div>
-                </div> */}
-
-                {/* Small — top-right */}
-                {/* <div className="about-mosaic-card about-mosaic-card-sm">
-                  <img src={cryptoImg} alt="Coaching" />
-                </div> */}
-
-                {/* Medium — bottom-centre-right */}
-                {/* <div className="about-mosaic-card about-mosaic-card-md">
-                  <img src={creamImg} alt="Wellness" />
-                </div> */}
-
-                <span className="about-mosaic-sparkle about-sparkle-1">✦</span>
-                <span className="about-mosaic-sparkle about-sparkle-2">✦</span>
+          {/* Right - Professional Content */}
+          <div className="about-right-light">
+            <div className="about-content-light">
+              {/* Label */}
+              <div className="about-label-light">
+                <span className="about-label-line-light"></span>
+                <span className="about-label-text-light">About The Founder</span>
+                <span className="about-label-line-light"></span>
               </div>
 
-              {/* Right-edge separator line */}
-              <div className="about-panel-sep"></div>
-            </div>
+              {/* Name & Title */}
+              <h2 className="about-name-title-light">Anbuarasan</h2>
+              <p className="about-role-light">Transformational Coach & Wellness Guide</p>
 
-            {/* ════ RIGHT PANEL — content ════ */}
-            <div className="about-story-content">
-              <div className="about-content-inner">
+              {/* Professional Divider */}
+              <div className="about-divider-light">
+                <span className="about-divider-line-light"></span>
+                <span className="about-divider-dot-light"></span>
+                <span className="about-divider-line-light"></span>
+              </div>
 
-                <div className="about-content-header">
-                  <span className="about-content-tag">About Anbuarasan</span>
-                  <h3 className="about-content-title">
-                    A Life Dedicated to Transformation
-                  </h3>
-                  <div className="about-content-divider"></div>
-                </div>
+              {/* Bio */}
+              <p className="about-bio-light">
+                Dedicated to guiding individuals toward{" "}
+                <span className="about-highlight-light">self-awareness</span>,{" "}
+                <span className="about-highlight-light">mindset mastery</span>,{" "}
+                <span className="about-highlight-light">financial consciousness</span>,
+                and <span className="about-highlight-light">holistic wellness</span>{" "}
+                through transformative daily practices and personalized coaching.
+              </p>
 
-                <div className="about-content-body">
-                  <p className="about-text">
-                    For years,{" "}
-                    <span className="about-name">Anbuarasan</span> has dedicated
-                    his life to guiding individuals toward{" "}
-                    <span className="about-highlight">self-awareness</span>,{" "}
-                    <span className="about-highlight">mindset mastery</span>,{" "}
-                    <span className="about-highlight">financial consciousness</span>
-                    , and{" "}
-                    <span className="about-highlight">holistic wellness</span>.
-                  </p>
-
-                  <div className="about-mission-block">
-                    <span className="about-mission-label">✦ His mission is simple</span>
+              {/* Key Points */}
+              <div className="about-key-points-light">
+                <div className="about-point-light">
+                  <span className="about-point-icon-light">◈</span>
+                  <div className="about-point-content-light">
+                    <span className="about-point-title-light">Global Impact</span>
+                    <span className="about-point-desc-light">Transforming lives across 50+ countries</span>
                   </div>
-
-                  <p className="about-text about-text-secondary">
-                    Through daily transformation programs, spiritual coaching
-                    sessions, financial awareness initiatives, and wellness
-                    education, he continues to impact lives globally with
-                    compassion and wisdom.
-                  </p>
                 </div>
+                <div className="about-point-light">
+                  <span className="about-point-icon-light">✦</span>
+                  <div className="about-point-content-light">
+                    <span className="about-point-title-light">Holistic Approach</span>
+                    <span className="about-point-desc-light">Mind, body, and financial wellness integrated</span>
+                  </div>
+                </div>
+                <div className="about-point-light">
+                  <span className="about-point-icon-light">⟐</span>
+                  <div className="about-point-content-light">
+                    <span className="about-point-title-light">Proven Methods</span>
+                    <span className="about-point-desc-light">Research-backed transformation techniques</span>
+                  </div>
+                </div>
+              </div>
 
-                <a href="#contact" className="about-cta">
-                  <span>Begin Your Transformation</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18">
-                    <path
-                      d="M5 12h14M12 5l7 7-7 7"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+              {/* CTA */}
+              <div className="about-actions-light">
+                <a href="#contact" className="about-cta-light">
+                  <span>Begin Your Journey</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </a>
-
+                <a href="#programs" className="about-cta-secondary-light">
+                  Explore Programs
+                </a>
               </div>
             </div>
+          </div>
+        </div>
 
+        {/* Stats Bar */}
+        <div className={`about-stats-bar-light ${isVisible ? "visible-light" : ""}`}>
+          <div className="about-stat-item-light">
+            <span className="about-stat-number-light">500+</span>
+            <span className="about-stat-label-light">Clients Transformed</span>
+          </div>
+          <span className="about-stat-separator-light"></span>
+          <div className="about-stat-item-light">
+            <span className="about-stat-number-light">50+</span>
+            <span className="about-stat-label-light">Countries Reached</span>
+          </div>
+          <span className="about-stat-separator-light"></span>
+          <div className="about-stat-item-light">
+            <span className="about-stat-number-light">12+</span>
+            <span className="about-stat-label-light">Years of Practice</span>
+          </div>
+          <span className="about-stat-separator-light"></span>
+          <div className="about-stat-item-light">
+            <span className="about-stat-number-light">3</span>
+            <span className="about-stat-label-light">Core Programs</span>
           </div>
         </div>
       </div>

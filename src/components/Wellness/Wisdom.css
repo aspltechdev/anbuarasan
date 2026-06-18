@@ -1,144 +1,206 @@
-/* ============================================
-   WISDOM - ATHMA SOUL CONNECTION THEME
-   Cinematic Card Layout with Image Overlays
-   Expressing emotions through visual storytelling
-   ============================================ */
+/* Wisdom.css - Warm Earthy Cinematic Wisdom Theme */
 
+/* ==================== BASE SECTION ==================== */
 .wisdom {
   position: relative;
   min-height: 100vh;
-  padding: 5rem 2rem;
-  background: linear-gradient(160deg, #4d80c3 0%, #e0c9b5 40%, #4d80c3 100%);
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-  color: #3d342c;
+  background: linear-gradient(
+    180deg,
+    #efe4da 0%,      /* Warm cream */
+    #fcf8f4 50%,     /* Light cream */
+    #efe4da 100%     /* Warm cream */
+  );
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  padding: 6rem 0;
 }
 
-/* ===== BACKGROUND ATMOSPHERE ===== */
+/* ==================== BACKGROUND ATMOSPHERE ==================== */
 .wisdom-bg {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
   pointer-events: none;
-  overflow: hidden;
 }
 
 .wisdom-glow {
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.2;
 }
 
 .wisdom-glow-center {
-  width: 60vw;
-  height: 60vw;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(212, 165, 116, 0.12), transparent 70%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 115, 85, 0.08),
+    transparent
+  );
+  animation: centerGlow 8s ease-in-out infinite;
 }
 
 .wisdom-glow-top {
-  width: 40vw;
-  height: 40vw;
-  top: -10%;
+  top: -15%;
   right: -10%;
-  background: radial-gradient(circle, rgba(20, 18, 17, 0.1), transparent 70%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 115, 85, 0.06),
+    transparent
+  );
+  animation: floatGlow 10s ease-in-out infinite;
 }
 
 .wisdom-glow-bottom {
-  width: 40vw;
-  height: 40vw;
-  bottom: -10%;
+  bottom: -20%;
   left: -10%;
-  background: radial-gradient(circle, rgba(213, 196, 176, 0.08), transparent 70%);
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 115, 85, 0.05),
+    transparent
+  );
+  animation: floatGlow 12s ease-in-out infinite reverse;
 }
 
-/* ===== BREATH WAVES ===== */
-.wisdom-breath-waves {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
+@keyframes centerGlow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.9;
+  }
 }
 
-.wisdom-breath-wave {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(212, 165, 116, 0.03), transparent 70%);
-  animation: wisdomBreath 8s ease-in-out infinite alternate;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.6);
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-30px, 20px) scale(0.95);
+  }
 }
 
-.wave-a {
-  width: 80vw;
-  height: 80vw;
-  animation-duration: 10s;
-}
-
-.wave-b {
-  width: 110vw;
-  height: 110vw;
-  animation-duration: 14s;
-  animation-delay: -3s;
-  background: radial-gradient(circle at center, rgba(201, 184, 160, 0.025), transparent 70%);
-}
-
-.wave-c {
-  width: 140vw;
-  height: 140vw;
-  animation-duration: 18s;
-  animation-delay: -6s;
-  background: radial-gradient(circle at center, rgba(213, 196, 176, 0.02), transparent 70%);
-}
-
-@keyframes wisdomBreath {
-  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.15; }
-  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.5; }
-  100% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.15; }
-}
-
-/* ===== FLOATING PARTICLES ===== */
+/* ==================== PARTICLES ==================== */
 .wisdom-particles {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
   pointer-events: none;
-  overflow: hidden;
 }
 
 .wisdom-particle {
   position: absolute;
   border-radius: 50%;
-  animation: wisdomFloat linear infinite alternate;
-  opacity: 0.3;
+  animation: particleDrift ease-in-out infinite;
+  filter: blur(2px);
 }
 
-@keyframes wisdomFloat {
-  0% { transform: translate(0, 0) scale(0.8); opacity: 0.05; }
-  100% { transform: translate(40px, -40px) scale(1.5); opacity: 0.4; }
+@keyframes particleDrift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(30px, -40px) scale(1.5);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-20px, -80px) scale(1);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(-40px, -40px) scale(0.8);
+    opacity: 0.5;
+  }
 }
 
-/* ===== CONTAINER ===== */
+/* ==================== BREATH WAVES ==================== */
+.wisdom-breath-waves {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.wisdom-breath-wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(139, 115, 85, 0.08);
+  animation: breathWave 8s ease-in-out infinite;
+}
+
+.wave-a {
+  width: 400px;
+  height: 400px;
+}
+
+.wave-b {
+  width: 500px;
+  height: 500px;
+  animation-delay: 2s;
+  border-color: rgba(139, 115, 85, 0.05);
+}
+
+.wave-c {
+  width: 600px;
+  height: 600px;
+  animation-delay: 4s;
+  border-color: rgba(139, 115, 85, 0.03);
+}
+
+@keyframes breathWave {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+/* ==================== CONTAINER ==================== */
 .wisdom-container {
   position: relative;
   z-index: 2;
-  max-width: 1000px;
-  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
 }
 
-/* ===== HEADER ===== */
+/* ==================== HEADER ==================== */
 .wisdom-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .wisdom-header.visible {
@@ -150,296 +212,279 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
 
 .wisdom-badge-line {
-  width: 40px;
+  width: 30px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.3));
-}
-
-.wisdom-badge-line:last-child {
-  background: linear-gradient(90deg, rgba(212, 165, 116, 0.3), transparent);
+  background: #8b7355;
 }
 
 .wisdom-tag {
-  font-size: 0.75rem;
-  letter-spacing: 5px;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  color:  #3d342c;
-  font-weight: 400;
-  white-space: nowrap;
+  letter-spacing: 0.2em;
+  color: #8b7355; /* Warm brown - VISIBLE */
+  font-weight: 600;
 }
 
 .wisdom-title {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 400;
+  color: #6b5a3e; /* Medium brown - VISIBLE */
+  margin: 0 0 1rem 0;
   line-height: 1.2;
-  margin-bottom: 0.75rem;
-  letter-spacing: -1px;
 }
 
 .wisdom-title-accent {
-  background: linear-gradient(135deg, #bc6f12, #b87927, #8c5519);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 500;
+  font-weight: 800;
+  color: #8b7355; /* Warm brown - VISIBLE */
+  position: relative;
+}
+
+.wisdom-title-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #8b7355, #efe4da);
+  border-radius: 2px;
+  opacity: 0.5;
 }
 
 .wisdom-title-dot {
-  color: #d4a574;
-  -webkit-text-fill-color: #d4a574;
+  color: #8b7355;
 }
 
 .wisdom-subtitle {
-  font-size: 1rem;
-  font-weight: 300;
-  color: #3d342c;
-  letter-spacing: 0.5px;
-  max-width: 500px;
+  font-size: 1.05rem;
+  color: #8b7355; /* Warm brown - VISIBLE */
+  max-width: 550px;
   margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
-/* ===== CAROUSEL ===== */
+/* ==================== CAROUSEL ==================== */
 .wisdom-carousel {
-  position: relative;
-  background: rgba(255, 252, 248, 0.4);
-  backdrop-filter: blur(8px);
-  border-radius: 40px;
-  padding: 2rem;
-  border: 1px solid rgba(212, 165, 116, 0.06);
-  box-shadow: 0 20px 60px -20px rgba(61, 52, 44, 0.06);
   opacity: 0;
-  transform: translateY(30px) scale(0.98);
-  transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0.3s;
 }
 
 .wisdom-carousel.visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
 }
 
-/* ===== CARD CONTAINER ===== */
+/* Card Container */
 .wisdom-card-container {
   position: relative;
   width: 100%;
-  height: 480px;
+  max-width: 800px;
+  margin: 0 auto 3rem;
   border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 15px 50px -15px rgba(61, 52, 44, 0.15);
+  box-shadow: 
+    0 25px 60px rgba(139, 115, 85, 0.2),
+    0 10px 30px rgba(139, 115, 85, 0.15);
+  aspect-ratio: 16/10;
+  min-height: 450px;
 }
 
-/* ===== INDIVIDUAL CARD ===== */
+/* Individual Card */
 .wisdom-card {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  transform: scale(0.92);
-  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), 
-              transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: scale(1.05);
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 28px;
-  overflow: hidden;
-  will-change: transform, opacity;
 }
 
 .wisdom-card-active {
   opacity: 1;
   transform: scale(1);
-  z-index: 2;
 }
 
 /* Card Overlay */
 .wisdom-card-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
-  transition: background 0.6s ease;
-  opacity: 0.4;
 }
 
 /* Card Content */
 .wisdom-card-content {
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem;
   text-align: center;
-  color: #ffffff;
+  padding: 3rem;
+  max-width: 600px;
 }
 
 /* Emotion Badge */
 .wisdom-card-badge {
   display: inline-block;
-  padding: 0.35rem 1.2rem;
+  padding: 0.4rem 1.2rem;
   border-radius: 50px;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 1.5rem;
-  animation: wisdomBadgeIn 0.8s ease forwards;
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.wisdom-card-active .wisdom-card-badge {
-  animation: wisdomBadgeIn 0.8s ease 0.3s forwards;
-}
-
-@keyframes wisdomBadgeIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .wisdom-card-badge span {
-  background: inherit;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #fcf8f4; /* Light cream - VISIBLE */
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Quote */
 .wisdom-card-quote {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: clamp(1.5rem, 3vw, 2.4rem);
-  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 600;
+  color: #fcf8f4; /* Light cream - VISIBLE */
   line-height: 1.5;
-  margin: 0 0 1.5rem;
-  max-width: 600px;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transform: translateY(20px) scale(0.95);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.wisdom-card-active .wisdom-card-quote {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  transition-delay: 0.2s;
+  margin: 0 0 2rem 0;
+  font-style: italic;
+  text-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.02em;
 }
 
 /* Author */
 .wisdom-card-author {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.95rem;
-  font-weight: 300;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.wisdom-card-active .wisdom-card-author {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.4s;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
 }
 
 .wisdom-card-author-line {
   width: 30px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(252, 248, 244, 0.6); /* Light cream */
 }
 
 .wisdom-card-author cite {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #efe4da; /* Warm cream - VISIBLE */
   font-style: normal;
-  letter-spacing: 0.5px;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Symbol */
 .wisdom-card-symbol {
-  position: absolute;
-  bottom: 1.5rem;
-  right: 2rem;
-  font-size: 1.6rem;
-  opacity: 0.3;
-  animation: wisdomSymbolRotate 8s linear infinite;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  animation: symbolPulse 2s ease-in-out infinite;
+  display: inline-block;
 }
 
-@keyframes wisdomSymbolRotate {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.1); }
-  100% { transform: rotate(360deg) scale(1); }
+@keyframes symbolPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
 }
 
-/* ===== CONTROLS ===== */
+/* ==================== CONTROLS ==================== */
 .wisdom-controls {
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
-/* Indicators */
+/* Progress Indicators */
 .wisdom-indicators {
   display: flex;
+  gap: 0.5rem;
   justify-content: center;
-  gap: 0.8rem;
   flex-wrap: wrap;
 }
 
 .wisdom-indicator {
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 0.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
   transition: all 0.3s ease;
-  opacity: 0.4;
+  min-width: 50px;
 }
 
 .wisdom-indicator:hover {
-  opacity: 0.7;
-}
-
-.wisdom-indicator-active {
-  opacity: 1;
+  background: rgba(139, 115, 85, 0.08);
 }
 
 .wisdom-indicator-bar {
-  display: block;
-  width: 28px;
+  width: 100%;
   height: 2px;
-  background: rgba(61, 52, 44, 0.15);
+  background: rgba(139, 115, 85, 0.2);
   border-radius: 2px;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.wisdom-indicator-active .wisdom-indicator-bar {
-  background: var(--indicator-color, #d4a574);
-  width: 40px;
-  box-shadow: 0 0 12px rgba(212, 165, 116, 0.2);
+.wisdom-indicator-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--indicator-color, #8b7355);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.wisdom-indicator-active .wisdom-indicator-bar::after {
+  transform: scaleX(1);
 }
 
 .wisdom-indicator-number {
-  font-size: 0.6rem;
-  font-weight: 300;
-  color: rgba(61, 52, 44, 0.2);
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease;
+  font-size: 0.7rem;
+  color: #8b7355; /* Warm brown - VISIBLE */
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .wisdom-indicator-active .wisdom-indicator-number {
-  color: var(--indicator-color, #d4a574);
+  color: #5a4a32; /* Dark brown - VISIBLE */
+  font-weight: 700;
 }
 
-/* Navigation */
+/* Navigation Buttons */
 .wisdom-nav {
   display: flex;
   align-items: center;
@@ -447,68 +492,67 @@
 }
 
 .wisdom-nav-btn {
-  background: rgba(255, 252, 248, 0.6);
-  border: 1px solid rgba(212, 165, 116, 0.08);
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  border: 1px solid rgba(139, 115, 85, 0.2);
+  background: rgba(252, 248, 244, 0.8);
+  color: #8b7355;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  color: rgba(61, 52, 44, 0.3);
   transition: all 0.3s ease;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .wisdom-nav-btn:hover {
-  background: rgba(212, 165, 116, 0.08);
-  border-color: rgba(212, 165, 116, 0.15);
-  color: #3d342c;
+  background: #8b7355;
+  color: #fcf8f4;
+  border-color: #8b7355;
   transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3);
 }
 
 .wisdom-nav-btn:active {
-  transform: scale(0.92);
+  transform: scale(0.95);
 }
 
 .wisdom-nav-counter {
   display: flex;
   align-items: baseline;
-  gap: 0.2rem;
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: rgba(61, 52, 44, 0.2);
-  letter-spacing: 1px;
-  min-width: 60px;
-  justify-content: center;
+  gap: 0.3rem;
+  font-family: 'Georgia', serif;
 }
 
 .wisdom-nav-current {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: rgba(61, 52, 44, 0.6);
-  transition: color 0.4s ease;
+  font-size: 1.8rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
 }
 
 .wisdom-nav-separator {
-  margin: 0 0.2rem;
+  font-size: 1.2rem;
+  color: rgba(139, 115, 85, 0.4);
 }
 
 .wisdom-nav-total {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  color: rgba(139, 115, 85, 0.4);
+  font-weight: 400;
 }
 
-/* ===== FOOTER ===== */
+/* ==================== FOOTER ==================== */
 .wisdom-footer {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 3rem;
+  margin-top: 4rem;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease 0.6s, transform 1s ease 0.6s;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.6s;
 }
 
 .wisdom-footer.visible {
@@ -519,144 +563,131 @@
 .wisdom-footer-line {
   width: 60px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.12));
+  background: linear-gradient(90deg, transparent, #8b7355);
 }
 
 .wisdom-footer-line:last-child {
-  background: linear-gradient(90deg, rgba(212, 165, 116, 0.12), transparent);
+  background: linear-gradient(90deg, #8b7355, transparent);
 }
 
 .wisdom-footer-symbol {
-  color: rgba(212, 165, 116, 0.12);
-  font-size: 1.2rem;
-  animation: wisdomSymbolFloat 4s ease-in-out infinite alternate;
+  color: #8b7355;
+  font-size: 1rem;
+  animation: rotate 4s linear infinite;
 }
 
-@keyframes wisdomSymbolFloat {
-  0% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
-  100% { transform: translateY(-6px) rotate(15deg); opacity: 0.25; }
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .wisdom {
-    padding: 3rem 1rem;
-  }
-  
-  .wisdom-carousel {
-    padding: 1rem;
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 992px) {
+  .wisdom-card-container {
+    min-height: 380px;
     border-radius: 24px;
   }
-  
+
+  .wisdom-card {
+    border-radius: 24px;
+  }
+
+  .wisdom-card-content {
+    padding: 2rem;
+  }
+
+  .wisdom-card-quote {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wisdom {
+    padding: 4rem 0;
+  }
+
+  .wisdom-container {
+    padding: 0 1.5rem;
+  }
+
+  .wisdom-title {
+    font-size: 2rem;
+  }
+
   .wisdom-card-container {
-    height: 400px;
+    min-height: 350px;
     border-radius: 20px;
   }
-  
+
   .wisdom-card {
     border-radius: 20px;
   }
-  
+
   .wisdom-card-content {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
   }
-  
+
   .wisdom-card-quote {
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  }
-  
-  .wisdom-card-badge {
-    font-size: 0.6rem;
-    padding: 0.25rem 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .wisdom-card-symbol {
-    bottom: 1rem;
-    right: 1.2rem;
     font-size: 1.2rem;
   }
-  
-  .wisdom-controls {
-    gap: 1rem;
+
+  .wisdom-card-badge {
+    padding: 0.3rem 1rem;
   }
-  
-  .wisdom-indicator-bar {
-    width: 20px;
+
+  .wisdom-card-badge span {
+    font-size: 0.7rem;
   }
-  
-  .wisdom-indicator-active .wisdom-indicator-bar {
-    width: 30px;
-  }
-  
-  .wisdom-badge {
-    gap: 0.8rem;
-  }
-  
-  .wisdom-badge-line {
-    width: 20px;
-  }
-  
-  .wisdom-tag {
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-  }
-  
+
   .wisdom-nav-btn {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
   }
-  
-  .wisdom-footer-line {
-    width: 30px;
+
+  .wisdom-nav-current {
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .wisdom-card-container {
-    height: 350px;
+    min-height: 320px;
+    border-radius: 16px;
   }
-  
+
+  .wisdom-card {
+    border-radius: 16px;
+  }
+
   .wisdom-card-content {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem;
   }
-  
+
   .wisdom-card-quote {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
-  
-  .wisdom-card-author {
-    font-size: 0.8rem;
-    gap: 0.6rem;
-  }
-  
-  .wisdom-card-author-line {
-    width: 20px;
-  }
-  
+
   .wisdom-indicators {
-    gap: 0.5rem;
+    gap: 0.25rem;
   }
-  
-  .wisdom-indicator-bar {
-    width: 16px;
-    height: 1.5px;
+
+  .wisdom-indicator {
+    padding: 0.4rem 0.5rem;
+    min-width: 40px;
   }
-  
-  .wisdom-indicator-active .wisdom-indicator-bar {
-    width: 24px;
-  }
-  
+
   .wisdom-nav {
     gap: 1rem;
   }
-  
-  .wisdom-nav-counter {
-    font-size: 0.75rem;
-    min-width: 48px;
-  }
-  
-  .wisdom-nav-current {
-    font-size: 1rem;
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

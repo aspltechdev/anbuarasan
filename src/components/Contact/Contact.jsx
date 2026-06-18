@@ -1,6 +1,6 @@
 // ============================================
-// CONTACT - ATHMA SOUL THEME
-// Cinematic Contact with Emotional Connection
+// CONTACT - WARM EARTHY THEME
+// Elegant Contact Section
 // Beautiful card-style sections with visual elements
 // ============================================
 import "./Contact.css";
@@ -40,28 +40,28 @@ function Contact() {
       value: "+91 XXXXXXXXXX", 
       href: "tel:+91XXXXXXXXXX",
       symbol: "◈",
-      color: "#d4a574"
+      color: "#8b7355"
     },
     { 
       label: "Email", 
       value: "hello@anbuarasan.com", 
       href: "mailto:hello@anbuarasan.com",
       symbol: "✦",
-      color: "#c9b8a0"
+      color: "#8b7355"
     },
     { 
       label: "Location", 
       value: "India", 
       href: "#",
       symbol: "⬡",
-      color: "#d5c4b0"
+      color: "#8b7355"
     },
     { 
       label: "Zoom Community", 
       value: "Join Free Sessions", 
       href: "#",
       symbol: "⟐",
-      color: "#d4a574"
+      color: "#8b7355"
     },
   ];
 
@@ -72,13 +72,6 @@ function Contact() {
         <div className="contact-glow contact-glow-1"></div>
         <div className="contact-glow contact-glow-2"></div>
         <div className="contact-glow contact-glow-3"></div>
-      </div>
-
-      {/* Breath Waves */}
-      <div className="contact-breath-waves">
-        <div className="contact-breath-wave wave-a"></div>
-        <div className="contact-breath-wave wave-b"></div>
-        <div className="contact-breath-wave wave-c"></div>
       </div>
 
       {/* Floating Particles */}
@@ -94,7 +87,7 @@ function Contact() {
               animationDuration: `${4 + Math.random() * 6}s`,
               width: `${3 + Math.random() * 5}px`,
               height: `${3 + Math.random() * 5}px`,
-              background: `radial-gradient(circle, rgba(212, 165, 116, ${0.05 + Math.random() * 0.1}), transparent)`,
+              background: `radial-gradient(circle, rgba(139, 115, 85, ${0.05 + Math.random() * 0.1}), transparent)`,
             }}
           />
         ))}
@@ -138,7 +131,7 @@ function Contact() {
                     className="contact-info-item"
                     style={{ transitionDelay: `${i * 0.08}s` }}
                   >
-                    <div className="contact-info-icon-wrapper" style={{ background: item.color }}>
+                    <div className="contact-info-icon-wrapper">
                       <span className="contact-info-symbol-icon">{item.symbol}</span>
                     </div>
                     <div className="contact-info-text">

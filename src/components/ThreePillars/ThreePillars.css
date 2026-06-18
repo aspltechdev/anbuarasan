@@ -1,596 +1,777 @@
-/* ============================================
-   THREE PILLARS - ATHMA SOUL CONNECTION THEME
-   Light & emotionally warm palette
-   All animations, parallax & interactions preserved
-   ============================================ */
+/* ThreePillars.css - Warm Earthy Three Pillars Theme */
 
-.athma-section * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.athma-section {
+/* ==================== BASE SECTION ==================== */
+.pillars {
   position: relative;
   min-height: 100vh;
-  padding: 4rem 2rem 5rem;
-  background: linear-gradient(160deg, #fcf8f4 0%, #f5ede6 40%, #efe4da 100%);
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-  color: #3d342c;
+  background: linear-gradient(
+    180deg,
+    #fcf8f4 0%,      /* Light cream */
+    #efe4da 50%,     /* Warm cream */
+    #fcf8f4 100%     /* Light cream */
+  );
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 6rem 0;
 }
 
-/* ----- SOUL ATMOSPHERE (background layers) ----- */
-.soul-atmosphere {
+/* ==================== BACKGROUND EFFECTS ==================== */
+.pillars-bg {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-/* Breath Waves - soft warm tones */
-.breath-waves {
-  position: absolute;
-  inset: 0;
-  will-change: transform;
-}
-
-.breath-wave {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(212, 165, 116, 0.06) 0%, transparent 70%);
-  animation: breathPulse 6s ease-in-out infinite alternate;
-  width: 80vw;
-  height: 80vw;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
-}
-
-.wave-1 {
-  animation-duration: 8s;
-  width: 100vw;
-  height: 100vw;
-  opacity: 0.5;
-  background: radial-gradient(circle at center, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
-}
-
-.wave-2 {
-  animation-duration: 11s;
-  width: 130vw;
-  height: 130vw;
-  opacity: 0.3;
-  animation-delay: -2s;
-  background: radial-gradient(circle at center, rgba(201, 184, 160, 0.06) 0%, transparent 70%);
-}
-
-.wave-3 {
-  animation-duration: 14s;
-  width: 160vw;
-  height: 160vw;
-  opacity: 0.15;
-  animation-delay: -4s;
-  background: radial-gradient(circle at center, rgba(213, 196, 176, 0.05) 0%, transparent 70%);
-}
-
-@keyframes breathPulse {
-  0% { transform: translate(-50%, -50%) scale(0.6); opacity: 0.2; }
-  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.6; }
-  100% { transform: translate(-50%, -50%) scale(0.6); opacity: 0.2; }
-}
-
-/* Soul Particles - warm golden */
-.soul-particles {
-  position: absolute;
-  inset: 0;
-  will-change: transform;
-  transition: transform 0.1s ease-out;
-}
-
-.soul-particle {
-  position: absolute;
-  border-radius: 50%;
-  animation: floatParticle linear infinite alternate;
-  opacity: 0.5;
-  will-change: transform;
-}
-
-@keyframes floatParticle {
-  0% { transform: translate(0, 0) scale(0.8); opacity: 0.15; }
-  100% { transform: translate(30px, -30px) scale(1.6); opacity: 0.6; }
-}
-
-/* Energy Streams */
-.energy-streams {
-  position: absolute;
-  inset: 0;
-  opacity: 0.4;
-}
-
-.streams-svg {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* ----- CONTAINER (content layer) ----- */
-.athma-container {
+.pillars-bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(
+      ellipse at 25% 30%,
+      rgba(139, 115, 85, 0.06) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 75% 70%,
+      rgba(139, 115, 85, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(239, 228, 218, 0.15) 0%,
+      transparent 60%
+    );
+}
+
+.pillars-bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(139, 115, 85, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 115, 85, 0.04) 1px, transparent 1px);
+  background-size: 70px 70px;
+}
+
+.pillars-bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(139, 115, 85, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(139, 115, 85, 0.03) 0%, transparent 40%);
+}
+
+/* ==================== AMBIENT GLOWS ==================== */
+.pillars-ambient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pillars-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.pillars-glow-1 {
+  top: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 115, 85, 0.1),
+    transparent
+  );
+  animation: glowFloat 10s ease-in-out infinite;
+}
+
+.pillars-glow-2 {
+  top: 40%;
+  right: -15%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 115, 85, 0.08),
+    transparent
+  );
+  animation: glowFloat 12s ease-in-out infinite reverse;
+}
+
+.pillars-glow-3 {
+  bottom: -25%;
+  left: 30%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(239, 228, 218, 0.12),
+    transparent
+  );
+  animation: glowPulse 8s ease-in-out infinite;
+}
+
+@keyframes glowFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+/* ==================== GEOMETRY ==================== */
+.pillars-geometry {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pillars-geo-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 115, 85, 0.08);
+}
+
+.pillars-geo-ring-1 {
+  top: -40%;
+  right: -20%;
+  width: 700px;
+  height: 700px;
+  animation: ringRotate 25s linear infinite;
+}
+
+.pillars-geo-ring-2 {
+  bottom: -45%;
+  left: -25%;
+  width: 750px;
+  height: 750px;
+  border-color: rgba(139, 115, 85, 0.06);
+  animation: ringRotate 30s linear infinite reverse;
+}
+
+.pillars-geo-ring-3 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border-style: dashed;
+  border-color: rgba(139, 115, 85, 0.05);
+}
+
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==================== PARTICLES ==================== */
+.pillars-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pillars-particle {
+  position: absolute;
+  background: rgba(139, 115, 85, 0.2);
+  border-radius: 50%;
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(60px);
+    opacity: 0;
+  }
+}
+
+/* ==================== CONTAINER ==================== */
+.pillars-container {
   position: relative;
   z-index: 2;
   max-width: 1400px;
-  width: 100%;
   margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
 }
 
-/* ----- HEADER ----- */
-.athma-header {
+/* ==================== HEADER ==================== */
+.pillars-header {
   text-align: center;
   margin-bottom: 4rem;
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.athma-header.visible {
+.pillars-header.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.soul-badge {
+.pillars-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #8b7355; /* Warm brown - VISIBLE */
+  font-weight: 600;
+}
+
+.pillars-badge-icon {
+  font-size: 0.9rem;
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.pillars-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  color: #6b5a3e; /* Medium brown - VISIBLE */
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.pillars-title-emphasis {
+  font-weight: 800;
+  color: #8b7355; /* Warm brown - VISIBLE */
+  position: relative;
+  display: inline-block;
+}
+
+.pillars-title-emphasis::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #8b7355, #efe4da);
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+.pillars-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
 
-.badge-breath {
+.pillars-divider-line {
   width: 40px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.3));
-  animation: breathLine 3s ease-in-out infinite alternate;
+  background: linear-gradient(90deg, transparent, #8b7355);
 }
 
-.badge-breath.right {
-  background: linear-gradient(90deg, rgba(212, 165, 116, 0.3), transparent);
+.pillars-divider-line:last-child {
+  background: linear-gradient(90deg, #8b7355, transparent);
 }
 
-@keyframes breathLine {
-  0% { transform: scaleX(0.5); opacity: 0.2; }
-  100% { transform: scaleX(1.2); opacity: 0.7; }
+.pillars-divider-icon {
+  color: #8b7355;
+  font-size: 0.9rem;
+  animation: rotate 4s linear infinite reverse;
 }
 
-.badge-text {
-  font-size: 0.8rem;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: rgba(61, 52, 44, 0.4);
-  font-weight: 400;
-}
-
-.athma-title {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: clamp(2.8rem, 10vw, 5.5rem);
-  font-weight: 400;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-
-.title-whisper {
-  display: block;
-  font-size: 0.55em;
-  font-weight: 300;
-  letter-spacing: 8px;
-  color: rgba(61, 52, 44, 0.3);
-  margin-bottom: 0.25rem;
-  font-style: italic;
-}
-
-.title-soul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.3rem 0.8rem;
-}
-
-.soul-word {
-  background: linear-gradient(135deg, #8b7355 0%, #c9a87c 50%, #d4a574 80%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 500;
-  letter-spacing: -1px;
-}
-
-.soul-connector {
-  display: inline-flex;
-  align-items: center;
-  color: rgba(212, 165, 116, 0.25);
-}
-
-.connector-svg {
-  width: 32px;
-  height: 32px;
-}
-
-.athma-subtitle {
+.pillars-subtitle {
+  font-size: 1.1rem;
+  color: #8b7355; /* Warm brown - VISIBLE */
   max-width: 600px;
   margin: 0 auto;
-  font-size: 1.1rem;
-  font-weight: 300;
-  color: rgba(61, 52, 44, 0.55);
-  letter-spacing: 0.5px;
   line-height: 1.7;
+  font-weight: 400;
 }
 
-/* ----- PILLARS GRID ----- */
-.athma-grid {
+/* ==================== PILLARS GRID ==================== */
+.pillars-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  margin: 2rem 0 4rem;
-  opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
 }
 
-.athma-grid.visible {
+.pillars-grid.visible .pillar-card {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ----- CARD - Light theme with warmth ----- */
-.athma-card {
+/* ==================== PILLAR CARD ==================== */
+.pillar-card {
   position: relative;
-  background: rgba(255, 252, 248, 0.75);
-  backdrop-filter: blur(8px);
-  border-radius: 40px;
-  border: 1px solid rgba(212, 165, 116, 0.12);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  will-change: transform;
-  cursor: default;
-  overflow: hidden;
-  box-shadow: 0 20px 40px -20px rgba(61, 52, 44, 0.08);
-}
-
-.athma-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(212, 165, 116, 0.2);
-  box-shadow: 0 30px 60px -20px rgba(212, 165, 116, 0.15);
-}
-
-.athma-card.active {
-  border-color: rgba(212, 165, 116, 0.3);
-  box-shadow: 0 30px 60px -20px rgba(212, 165, 116, 0.2);
-}
-
-.card-soul-layer {
-  position: relative;
-  padding: 2.5rem 2rem 2.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: rgba(252, 248, 244, 0.8);
+  border: 1px solid rgba(139, 115, 85, 0.15);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
   text-align: center;
-  will-change: transform;
-  transition: transform 0.1s ease-out;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0;
+  transform: translateY(40px);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-/* Breathing Aura */
-.breathing-aura {
+.pillar-card:hover,
+.pillar-card.active {
+  transform: translateY(-8px);
+  border-color: rgba(139, 115, 85, 0.3);
+  box-shadow: 
+    0 20px 50px rgba(139, 115, 85, 0.15),
+    0 5px 20px rgba(139, 115, 85, 0.1);
+  background: rgba(252, 248, 244, 0.95);
+}
+
+/* Card Glow */
+.pillar-card-glow {
   position: absolute;
-  top: 20%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  animation: auraPulse 4s ease-in-out infinite alternate;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  border-radius: 24px;
+}
+
+/* Ornamental Border */
+.pillar-ornament-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
 }
 
-@keyframes auraPulse {
-  0% { transform: translateX(-50%) scale(0.8); opacity: 0.3; }
-  100% { transform: translateX(-50%) scale(1.2); opacity: 0.7; }
-}
-
-.aura-ring {
+.pillar-ornament-corner {
   position: absolute;
-  inset: -10%;
-  border-radius: 50%;
-  border: 1px solid;
-  opacity: 0.15;
-  animation: ringSpin 12s linear infinite;
+  width: 30px;
+  height: 30px;
+  border-color: rgba(139, 115, 85, 0.2);
+  border-style: solid;
+  transition: all 0.5s ease;
 }
 
-.aura-ring-1 {
-  animation-duration: 10s;
-  inset: -20%;
+.pillar-ornament-tl {
+  top: 12px;
+  left: 12px;
+  border-width: 2px 0 0 2px;
+  border-radius: 4px 0 0 0;
 }
 
-.aura-ring-2 {
-  animation-duration: 16s;
-  inset: -40%;
-  animation-direction: reverse;
+.pillar-ornament-tr {
+  top: 12px;
+  right: 12px;
+  border-width: 2px 2px 0 0;
+  border-radius: 0 4px 0 0;
 }
 
-@keyframes ringSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.pillar-ornament-bl {
+  bottom: 12px;
+  left: 12px;
+  border-width: 0 0 2px 2px;
+  border-radius: 0 0 0 4px;
 }
 
-/* Soul Portal */
-.soul-portal {
+.pillar-ornament-br {
+  bottom: 12px;
+  right: 12px;
+  border-width: 0 2px 2px 0;
+  border-radius: 0 0 4px 0;
+}
+
+.pillar-card:hover .pillar-ornament-corner,
+.pillar-card.active .pillar-ornament-corner {
+  border-color: rgba(139, 115, 85, 0.5);
+  width: 40px;
+  height: 40px;
+}
+
+.pillar-card:hover .pillar-ornament-tl,
+.pillar-card.active .pillar-ornament-tl {
+  top: 8px;
+  left: 8px;
+}
+
+.pillar-card:hover .pillar-ornament-tr,
+.pillar-card.active .pillar-ornament-tr {
+  top: 8px;
+  right: 8px;
+}
+
+.pillar-card:hover .pillar-ornament-bl,
+.pillar-card.active .pillar-ornament-bl {
+  bottom: 8px;
+  left: 8px;
+}
+
+.pillar-card:hover .pillar-ornament-br,
+.pillar-card.active .pillar-ornament-br {
+  bottom: 8px;
+  right: 8px;
+}
+
+/* Icon Wrapper */
+.pillar-icon-wrapper {
   position: relative;
-  width: 120px;
-  height: 120px;
-  margin-bottom: 1.5rem;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
 }
 
-.portal-ripples {
+.pillar-icon-ring {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.portal-ripple {
-  position: absolute;
-  inset: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  border: 1px solid;
-  opacity: 0;
-  animation: rippleExpand 4s ease-out infinite;
+  border: 2px solid;
+  animation: ringPulse 3s ease-in-out infinite;
 }
 
-@keyframes rippleExpand {
-  0% { transform: scale(0.8); opacity: 0.3; }
-  100% { transform: scale(1.6); opacity: 0; }
-}
-
-.portal-icon {
-  position: relative;
-  z-index: 3;
+.pillar-icon-ring-2 {
+  position: absolute;
   width: 80px;
   height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid;
+  opacity: 0.5;
+  animation: ringPulse 3s ease-in-out infinite reverse;
+}
+
+.pillar-icon-mandala {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(139, 115, 85, 0.08),
+    transparent
+  );
+  animation: mandalaRotate 8s linear infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes mandalaRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.pillar-icon {
+  font-size: 2rem;
+  position: relative;
+  z-index: 1;
   transition: transform 0.3s ease;
 }
 
-.athma-card:hover .portal-icon {
-  transform: scale(1.05) rotate(2deg);
+.pillar-card:hover .pillar-icon,
+.pillar-card.active .pillar-icon {
+  transform: scale(1.2);
 }
 
-.pillar-svg-icon {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 20px rgba(212, 165, 116, 0.1));
-}
-
-.portal-core {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  filter: blur(8px);
-  opacity: 0.2;
-  animation: corePulse 3s ease-in-out infinite alternate;
+/* Content */
+.pillar-content {
+  position: relative;
   z-index: 1;
 }
 
-@keyframes corePulse {
-  0% { transform: scale(0.8); opacity: 0.15; }
-  100% { transform: scale(1.8); opacity: 0.4; }
-}
-
-/* Card Content */
-.card-essence {
-  position: relative;
-  z-index: 2;
-}
-
-.essence-subtitle {
-  font-size: 0.7rem;
-  letter-spacing: 4px;
+.pillar-subtitle-text {
+  font-size: 0.8rem;
   text-transform: uppercase;
-  font-weight: 400;
-  opacity: 0.6;
+  letter-spacing: 0.15em;
+  font-weight: 600;
   display: block;
   margin-bottom: 0.5rem;
 }
 
-.essence-title {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: #3d342c;
-  margin-bottom: 1rem;
-  letter-spacing: -0.5px;
+.pillar-title-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #5a4a32; /* Dark brown - VISIBLE */
+  margin: 0 0 1rem 0;
 }
 
-.energy-divider {
+/* Content Divider */
+.pillar-content-divider {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin: 1rem 0 1.2rem;
+  margin-bottom: 1.25rem;
 }
 
-.divider-dot {
-  width: 6px;
-  height: 6px;
+.pillar-content-dot {
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  opacity: 0.5;
 }
 
-.divider-line {
-  flex: 1;
+.pillar-content-line {
+  width: 30px;
   height: 1px;
-  max-width: 120px;
-  opacity: 0.3;
+  background: rgba(139, 115, 85, 0.2);
 }
 
-.essence-description {
+.pillar-description {
   font-size: 0.95rem;
-  font-weight: 300;
+  color: #6b5a3e; /* Medium brown - VISIBLE */
   line-height: 1.7;
-  color: rgba(61, 52, 44, 0.65);
-  max-width: 300px;
-  margin: 0 auto 1.5rem;
-}
-
-/* Soul Connection Points */
-.soul-connections {
-  display: flex;
-  justify-content: center;
-  gap: 0.8rem;
   margin-bottom: 1.5rem;
 }
 
-.connection-point {
-  width: 8px;
-  height: 8px;
+/* Features */
+.pillar-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pillar-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #5a4a32; /* Dark brown - VISIBLE */
+  font-weight: 500;
+}
+
+.pillar-feature-dot {
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  opacity: 0.3;
-  animation: pointPulse 2s ease-in-out infinite alternate;
+  flex-shrink: 0;
 }
 
-@keyframes pointPulse {
-  0% { transform: scale(0.8); opacity: 0.15; }
-  100% { transform: scale(1.4); opacity: 0.6; }
-}
-
-/* Essence Mantra */
-.essence-mantra {
+/* Essence */
+.pillar-essence {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(139, 115, 85, 0.06);
+  border-radius: 50px;
+  border: 1px solid rgba(139, 115, 85, 0.1);
+}
+
+.pillar-essence-icon {
+  font-size: 0.7rem;
+}
+
+.pillar-essence-text {
   font-size: 0.85rem;
-  letter-spacing: 2px;
-  font-weight: 300;
-  opacity: 0.6;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
-.mantra-symbol {
-  font-size: 1.2rem;
-  opacity: 0.4;
-}
-
-.mantra-text {
-  font-style: italic;
-}
-
-/* Card Glow Border */
-.card-glow-border {
+/* Border Glow */
+.pillar-border-glow {
   position: absolute;
-  inset: -1px;
-  border-radius: 40px;
-  border: 1px solid;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  border: 2px solid;
   pointer-events: none;
-  transition: box-shadow 0.5s ease, border-color 0.5s ease;
-  z-index: 1;
+  transition: all 0.5s ease;
 }
 
-/* ----- FOOTER ----- */
-.soul-footer {
-  text-align: center;
-  margin-top: 3rem;
+/* ==================== FOOTER ==================== */
+.pillars-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1.2s ease 0.6s, transform 1.2s ease 0.6s;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.6s;
 }
 
-.soul-footer.visible {
+.pillars-footer.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.footer-wisdom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
+.pillars-footer-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #8b7355);
 }
 
-.wisdom-line {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
+.pillars-footer-line:last-child {
+  background: linear-gradient(90deg, #8b7355, transparent);
 }
 
-.wisdom-svg {
-  width: 100%;
-  height: auto;
-}
-
-.wisdom-text {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 1.1rem;
-  font-weight: 300;
-  color: rgba(61, 52, 44, 0.4);
-  letter-spacing: 1px;
+.pillars-footer-text {
+  font-size: 0.95rem;
+  color: #8b7355; /* Warm brown - VISIBLE */
   font-style: italic;
+  font-weight: 400;
+  white-space: nowrap;
 }
 
-/* ----- RESPONSIVE ----- */
-@media (max-width: 768px) {
-  .athma-section {
-    padding: 2rem 1rem 3rem;
-  }
-  .athma-grid {
-    grid-template-columns: 1fr;
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1200px) {
+  .pillars-grid {
     gap: 1.5rem;
   }
-  .athma-title {
-    font-size: clamp(2.2rem, 8vw, 3.5rem);
+
+  .pillar-card {
+    padding: 2rem 1.5rem;
   }
-  .card-soul-layer {
-    padding: 2rem 1.2rem 1.8rem;
+}
+
+@media (max-width: 992px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .soul-portal {
-    width: 100px;
-    height: 100px;
+
+  .pillar-card {
+    padding: 2.5rem 2rem;
   }
-  .portal-icon {
-    width: 60px;
-    height: 60px;
+}
+
+@media (max-width: 768px) {
+  .pillars {
+    padding: 4rem 0;
   }
-  .essence-title {
-    font-size: 1.5rem;
+
+  .pillars-container {
+    padding: 0 1.5rem;
   }
-  .breath-wave {
-    width: 120vw;
-    height: 120vw;
+
+  .pillars-title {
+    font-size: 2rem;
+  }
+
+  .pillars-subtitle {
+    font-size: 1rem;
+  }
+
+  .pillar-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .pillars-footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pillars-footer-text {
+    white-space: normal;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  .soul-badge {
-    gap: 0.5rem;
+  .pillars-grid {
+    gap: 1rem;
   }
-  .badge-breath {
-    width: 20px;
+
+  .pillar-icon-wrapper {
+    width: 75px;
+    height: 75px;
   }
-  .badge-text {
-    font-size: 0.65rem;
-    letter-spacing: 2px;
+
+  .pillar-icon {
+    font-size: 1.6rem;
   }
-  .essence-description {
-    font-size: 0.9rem;
+
+  .pillar-title-text {
+    font-size: 1.3rem;
   }
-  .wisdom-text {
-    font-size: 0.95rem;
-  }
-  .athma-title {
-    font-size: clamp(1.8rem, 6vw, 2.8rem);
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
