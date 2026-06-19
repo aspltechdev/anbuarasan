@@ -218,6 +218,14 @@
 // ============================================
 import "./Finance.css";
 import { useEffect, useRef, useState } from "react";
+import F1 from "../../assets/F1.jpg"
+import F2 from "../../assets/F2.jpg"
+import F3 from "../../assets/F3.jpg"
+import F4 from "../../assets/F4.jpg"
+import F5 from "../../assets/F5.png"
+import F6 from "../../assets/F6.png"
+import F7 from "../../assets/F7.jpg"
+import F8 from "../../assets/F8.jpeg"
 
 function FinancialEducation() {
   const [isVisible, setIsVisible] = useState(false);
@@ -244,7 +252,7 @@ function FinancialEducation() {
     {
       title: "Financial Planning",
       desc: "Understanding budgeting, savings, and long-term financial goal setting for a secure future.",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
+      image: F1,
       gradient: "linear-gradient(145deg, rgba(61, 52, 44, 0.7), rgba(212, 165, 116, 0.3))",
       borderColor: "#d4a574",
       symbol: "◈",
@@ -253,7 +261,7 @@ function FinancialEducation() {
     {
       title: "Insurance Awareness",
       desc: "Protecting what matters through informed insurance decisions and risk management.",
-      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop",
+      image: F2,
       gradient: "linear-gradient(145deg, rgba(61, 52, 44, 0.7), rgba(201, 184, 160, 0.3))",
       borderColor: "#c9b8a0",
       symbol: "◆",
@@ -262,7 +270,7 @@ function FinancialEducation() {
     {
       title: "Loan Guidance",
       desc: "Understanding responsible borrowing, financial commitments, and debt management.",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      image: F3,
       gradient: "linear-gradient(145deg, rgba(61, 52, 44, 0.7), rgba(213, 196, 176, 0.3))",
       borderColor: "#d5c4b0",
       symbol: "⬡",
@@ -271,7 +279,7 @@ function FinancialEducation() {
     {
       title: "Wealth Creation",
       desc: "Developing sustainable habits and principles for long-term financial growth.",
-      image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&fit=crop",
+      image: F4,
       gradient: "linear-gradient(145deg, rgba(61, 52, 44, 0.7), rgba(212, 165, 116, 0.3))",
       borderColor: "#d4a574",
       symbol: "✦",
@@ -283,7 +291,7 @@ function FinancialEducation() {
     {
       title: "Bitcoin",
       desc: "Understanding the world's first decentralized digital currency and its underlying technology.",
-      image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=800&h=600&fit=crop",
+      image: F5,
       gradient: "linear-gradient(145deg, rgba(61, 52, 44, 0.7), rgba(201, 184, 160, 0.3))",
       borderColor: "#c9b8a0",
       symbol: "⟐",
@@ -292,7 +300,7 @@ function FinancialEducation() {
     {
       title: "Ethereum",
       desc: "Exploring smart contracts, decentralized applications, and the Ethereum ecosystem.",
-      image: "https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=800&h=600&fit=crop",
+      image: F6,
       gradient: "linear-gradient(145deg, rgba(61, 52, 44, 0.7), rgba(213, 196, 176, 0.3))",
       borderColor: "#d5c4b0",
       symbol: "◇",
@@ -301,7 +309,7 @@ function FinancialEducation() {
     {
       title: "Beldex",
       desc: "Learning about privacy-focused blockchain technology and decentralized solutions.",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f6bb0f8?w=800&h=600&fit=crop",
+      image: F7,
       gradient: "linear-gradient(145deg, rgba(61, 52, 44, 0.7), rgba(212, 165, 116, 0.3))",
       borderColor: "#d4a574",
       symbol: "⬡",
@@ -310,7 +318,7 @@ function FinancialEducation() {
     {
       title: "Blockchain & Web3",
       desc: "Understanding distributed ledger technology and the next generation of the internet.",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f6bb0f8?w=800&h=600&fit=crop",
+      image: F8,
       gradient: "linear-gradient(145deg, rgba(61, 52, 44, 0.7), rgba(201, 184, 160, 0.3))",
       borderColor: "#c9b8a0",
       symbol: "◈",

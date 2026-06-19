@@ -5,6 +5,15 @@
 // ============================================
 import "./Gallery.css";
 import { useEffect, useRef, useState } from "react";
+import Athma1 from "../../assets/Athma1.png";
+import Athma2 from "../../assets/Athma2.png";
+import Athma3 from "../../assets/Athma3.jpg";
+import Athma4 from "../../assets/Athma4.jpg";
+import Athma5 from "../../assets/Athma5.png";
+import Athma6 from "../../assets/Athma6.jpg";
+import Athma7 from "../../assets/Athma7.jpg";
+import Athma8 from "../../assets/Athma8.jpeg";
+import Athma9 from "../../assets/Athma9.jpeg";
 
 function Gallery() {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,74 +41,65 @@ function Gallery() {
   const images = [
     { 
       id: 1, 
-      src: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=600&fit=crop", 
+      src: Athma1, 
       alt: "Morning Meditation",
       category: "brahma",
-      emotion: "Awakening",
       quote: "The quiet of dawn holds infinite wisdom"
     },
     { 
       id: 2, 
-      src: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop", 
+      src: Athma2, 
       alt: "Yoga Practice",
-      category: "athma",
-      emotion: "Stillness",
+      category: "brahma",
       quote: "In stillness, the soul speaks"
     },
     { 
       id: 3, 
-      src: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&h=600&fit=crop", 
+      src: Athma3, 
       alt: "Group Session",
-      category: "community",
-      emotion: "Togetherness",
+      category: "brahma",
       quote: "United we rise, together we grow"
     },
     { 
       id: 4, 
-      src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop", 
-      alt: "Nature Wellness",
-      category: "wellness",
-      emotion: "Harmony",
+      src: Athma4, 
+      alt: "Nature ",
+      category: "athma",
       quote: "Nature is the ultimate healer"
     },
     { 
       id: 5, 
-      src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop", 
+      src: Athma5, 
       alt: "Sunrise Practice",
-      category: "brahma",
-      emotion: "Renewal",
+      category: "Community",
       quote: "Each sunrise brings new beginnings"
     },
     { 
       id: 6, 
-      src: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&h=600&fit=crop", 
+      src: Athma6, 
       alt: "Community Gathering",
       category: "community",
-      emotion: "Connection",
       quote: "Souls connected, hearts aligned"
     },
     { 
       id: 7, 
-      src: "https://images.unsplash.com/photo-1570194065650-d99fb4ee8e39?w=800&h=600&fit=crop", 
-      alt: "Wellness Products",
-      category: "wellness",
-      emotion: "Nourishment",
+      src: Athma7, 
+      alt: "meditation",
+      category: "athma",
       quote: "Wellness begins with mindful choices"
     },
     { 
       id: 8, 
-      src: "https://images.unsplash.com/photo-1593811167562-9cef47f5f5d5?w=800&h=600&fit=crop", 
-      alt: "Spiritual Session",
-      category: "athma",
-      emotion: "Transcendence",
+      src: Athma8, 
+      alt: "cream",
+      category: "wellness",
       quote: "The journey inward is the greatest adventure"
     },
     { 
       id: 9, 
-      src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop", 
-      alt: "Morning Nature",
-      category: "brahma",
-      emotion: "Serenity",
+      src: Athma9, 
+      alt: "wellness product",
+      category: "wellness",
       quote: "Find peace in the morning light"
     },
   ];
