@@ -5,12 +5,12 @@
 // ============================================
 import "./Wisdom.css";
 import { useEffect, useRef, useState } from "react";
-import strengths from "../../assets/strengths.jpg";
-import awakening from "../../assets/awakening.jpg";
+import strengths from "../../assets/strengthf.jpg";
+import awakening from "../../assets/awakening1.png";
 import growth from "../../assets/growth.png";
-import rhythm from "../../assets/rhythm.png";
-import potentialImg from "../../assets/potential.png";
-import abundance from "../../assets/abundance.jpg";
+import rhythm from "../../assets/rhythm1.png";
+import potentialImg from "../../assets/potential1.png";
+import abundance from "../../assets/abundance1.jpg";
 
 function Wisdom() {
   const [isVisible, setIsVisible] = useState(false);
