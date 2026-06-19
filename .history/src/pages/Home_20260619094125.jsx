@@ -32,7 +32,6 @@ function Home() {
       <Wellness />
       <Gallery />
       <Testimonials />
-      <SocialWall />
       <Contact />
       <Footer />
     </>

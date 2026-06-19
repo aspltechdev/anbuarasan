@@ -2138,14 +2138,14 @@
   align-items: flex-start;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  background: rgba(139, 115, 85, 0.05);
-  border: 1px solid rgba(139, 115, 85, 0.1);
+ background: rgba(127, 72, 6, 0.15);
+border: 1px solid rgba(139, 115, 85, 0.30);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .about-point-light:hover {
-  background: rgba(139, 115, 85, 0.08);
+  background: rgba(139, 89, 27, 0.08);
   border-color: rgba(139, 115, 85, 0.2);
   transform: translateX(5px);
   box-shadow: 0 5px 20px rgba(139, 115, 85, 0.1);
@@ -2153,7 +2153,7 @@
 
 .about-point-icon-light {
   font-size: 1.2rem;
-  color: #8b7355;
+  color: #8f632c;
   margin-top: 0.1rem;
   flex-shrink: 0;
 }

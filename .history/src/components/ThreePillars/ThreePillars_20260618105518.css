@@ -1,0 +1,642 @@
+/* ============================================
+   THREE PILLARS - BUBBA BEAR BOUTIQUE THEME
+   Color theory extracted from Bubba Bear Boutique:
+   
+   PRIMARY    #6B8FA3  — dusty steel blue (hero banners)
+   SECONDARY  #4D7A8A  — muted teal-slate (buttons, accents)
+   ACCENT     #E8C4AD  — soft blush/peach (blob shapes, warmth)
+   WARM-TAN   #C4A98A  — warm taupe (labels, dividers)
+   BASE       #F7F5F2  — warm off-white (cards, page bg)
+   TEXT       #3A3A3A  — soft charcoal (body text)
+   TEXT-LIGHT #7A6E66  — muted brown-grey (secondary text)
+   
+   All animations, parallax & interactions preserved
+   ============================================ */
+
+.athma-section * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.athma-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 4rem 2rem 5rem;
+  /* Bubba Bear: warm off-white base bleeding into blush */
+  background: linear-gradient(160deg, #f7f5f2 0%, #f0e9e2 40%, #e8ddd5 100%);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #3a3a3a;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----- SOUL ATMOSPHERE (background layers) ----- */
+.soul-atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Breath Waves — dusty blue & blush radials like the hero blob shapes */
+.breath-waves {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.breath-wave {
+  position: absolute;
+  border-radius: 50%;
+  /* Bubba Bear blush blob */
+  background: radial-gradient(circle at center, rgba(232, 196, 173, 0.1) 0%, transparent 70%);
+  animation: breathPulse 6s ease-in-out infinite alternate;
+  width: 80vw;
+  height: 80vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.wave-1 {
+  animation-duration: 8s;
+  width: 100vw;
+  height: 100vw;
+  opacity: 0.55;
+  /* Dusty blue wave */
+  background: radial-gradient(circle at center, rgba(107, 143, 163, 0.08) 0%, transparent 70%);
+}
+
+.wave-2 {
+  animation-duration: 11s;
+  width: 130vw;
+  height: 130vw;
+  opacity: 0.35;
+  animation-delay: -2s;
+  /* Soft blush wave */
+  background: radial-gradient(circle at center, rgba(232, 196, 173, 0.07) 0%, transparent 70%);
+}
+
+.wave-3 {
+  animation-duration: 14s;
+  width: 160vw;
+  height: 160vw;
+  opacity: 0.18;
+  animation-delay: -4s;
+  /* Warm taupe wave */
+  background: radial-gradient(circle at center, rgba(196, 169, 138, 0.05) 0%, transparent 70%);
+}
+
+@keyframes breathPulse {
+  0%   { transform: translate(-50%, -50%) scale(0.6); opacity: 0.2; }
+  50%  { transform: translate(-50%, -50%) scale(1.1); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(0.6); opacity: 0.2; }
+}
+
+/* Soul Particles — tiny blush & blue dots like the dot scatter in hero */
+.soul-particles {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+.soul-particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: floatParticle linear infinite alternate;
+  opacity: 0.5;
+  will-change: transform;
+}
+
+@keyframes floatParticle {
+  0%   { transform: translate(0, 0) scale(0.8);   opacity: 0.15; }
+  100% { transform: translate(30px, -30px) scale(1.6); opacity: 0.6; }
+}
+
+/* Energy Streams */
+.energy-streams {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+}
+
+.streams-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ----- CONTAINER ----- */
+.athma-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ----- HEADER ----- */
+.athma-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.athma-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.soul-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.badge-breath {
+  width: 40px;
+  height: 1px;
+  /* Dusty blue line */
+  background: linear-gradient(90deg, transparent, rgba(107, 143, 163, 0.35));
+  animation: breathLine 3s ease-in-out infinite alternate;
+}
+
+.badge-breath.right {
+  background: linear-gradient(90deg, rgba(107, 143, 163, 0.35), transparent);
+}
+
+@keyframes breathLine {
+  0%   { transform: scaleX(0.5); opacity: 0.2; }
+  100% { transform: scaleX(1.2); opacity: 0.8; }
+}
+
+.badge-text {
+  font-size: 0.8rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  /* Muted blue-grey like the "EST. 2022" label in the logo */
+  color: rgba(107, 143, 163, 0.55);
+  font-weight: 400;
+}
+
+.athma-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(2.8rem, 10vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.title-whisper {
+  display: block;
+  font-size: 0.55em;
+  font-weight: 300;
+  letter-spacing: 8px;
+  /* Very light blush text — mirrors "BOUTIQUE" sub-label */
+  color: rgba(196, 169, 138, 0.45);
+  margin-bottom: 0.25rem;
+  font-style: italic;
+}
+
+.title-soul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.8rem;
+}
+
+.soul-word {
+  /* Gradient: dusty blue → muted teal → warm taupe — Bubba Bear palette sweep */
+  background: linear-gradient(135deg, #4d7a8a 0%, #6b8fa3 50%, #c4a98a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.soul-connector {
+  display: inline-flex;
+  align-items: center;
+  /* Faded blush connector */
+  color: rgba(232, 196, 173, 0.4);
+}
+
+.connector-svg {
+  width: 32px;
+  height: 32px;
+}
+
+.athma-subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  font-weight: 300;
+  /* Muted charcoal like body copy in the site */
+  color: rgba(58, 58, 58, 0.55);
+  letter-spacing: 0.5px;
+  line-height: 1.7;
+}
+
+/* ----- PILLARS GRID ----- */
+.athma-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin: 2rem 0 4rem;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.athma-grid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----- CARD — product card feel from "Most Loved" grid ----- */
+.athma-card {
+  position: relative;
+  /* Clean white card body like the product tiles */
+  background: rgba(247, 245, 242, 0.82);
+  backdrop-filter: blur(8px);
+  border-radius: 40px;
+  /* Subtle dusty-blue border — like the teal CTA button edge */
+  border: 1px solid rgba(107, 143, 163, 0.14);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+  cursor: default;
+  overflow: hidden;
+  /* Blush-tinted shadow */
+  box-shadow: 0 20px 40px -20px rgba(107, 143, 163, 0.1);
+}
+
+.athma-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(107, 143, 163, 0.25);
+  /* Blue-blush combined hover glow */
+  box-shadow: 0 30px 60px -20px rgba(77, 122, 138, 0.18);
+}
+
+.athma-card.active {
+  border-color: rgba(107, 143, 163, 0.3);
+  box-shadow: 0 30px 60px -20px rgba(77, 122, 138, 0.22);
+}
+
+.card-soul-layer {
+  position: relative;
+  padding: 2.5rem 2rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* Breathing Aura — blush tinted */
+.breathing-aura {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: auraPulse 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes auraPulse {
+  0%   { transform: translateX(-50%) scale(0.8); opacity: 0.25; }
+  100% { transform: translateX(-50%) scale(1.2); opacity: 0.65; }
+}
+
+.aura-ring {
+  position: absolute;
+  inset: -10%;
+  border-radius: 50%;
+  border: 1px solid;
+  opacity: 0.15;
+  animation: ringSpin 12s linear infinite;
+}
+
+.aura-ring-1 {
+  animation-duration: 10s;
+  inset: -20%;
+}
+
+.aura-ring-2 {
+  animation-duration: 16s;
+  inset: -40%;
+  animation-direction: reverse;
+}
+
+@keyframes ringSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Soul Portal */
+.soul-portal {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.portal-ripples {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.portal-ripple {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid;
+  opacity: 0;
+  animation: rippleExpand 4s ease-out infinite;
+}
+
+@keyframes rippleExpand {
+  0%   { transform: scale(0.8); opacity: 0.35; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.portal-icon {
+  position: relative;
+  z-index: 3;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.athma-card:hover .portal-icon {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.pillar-svg-icon {
+  width: 100%;
+  height: 100%;
+  /* Dusty blue drop shadow on icons */
+  filter: drop-shadow(0 0 18px rgba(107, 143, 163, 0.18));
+}
+
+.portal-core {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  filter: blur(8px);
+  opacity: 0.2;
+  animation: corePulse 3s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes corePulse {
+  0%   { transform: scale(0.8); opacity: 0.15; }
+  100% { transform: scale(1.8); opacity: 0.4; }
+}
+
+/* Card Content */
+.card-essence {
+  position: relative;
+  z-index: 2;
+}
+
+.essence-subtitle {
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 400;
+  /* Muted teal — mirrors the "MOST LOVED" section header tone */
+  color: rgba(77, 122, 138, 0.65);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.essence-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  /* Soft charcoal — matches product name text */
+  color: #3a3a3a;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.energy-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0 1.2rem;
+}
+
+.divider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  opacity: 0.5;
+  /* Blush dot — matches the floating dot accents in the Bubba Bear hero */
+  background-color: #e8c4ad;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  max-width: 120px;
+  opacity: 0.3;
+  /* Dusty blue line */
+  background-color: #6b8fa3;
+}
+
+.essence-description {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+  /* Matches the "Thank you SO much" body copy tone */
+  color: rgba(58, 58, 58, 0.6);
+  max-width: 300px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Soul Connection Points — blush & teal dots */
+.soul-connections {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.connection-point {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.35;
+  animation: pointPulse 2s ease-in-out infinite alternate;
+  /* Alternating blush & teal */
+  background-color: #6b8fa3;
+}
+
+.connection-point:nth-child(even) {
+  background-color: #e8c4ad;
+  animation-delay: -1s;
+}
+
+@keyframes pointPulse {
+  0%   { transform: scale(0.8); opacity: 0.15; }
+  100% { transform: scale(1.4); opacity: 0.65; }
+}
+
+/* Essence Mantra */
+.essence-mantra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 300;
+  /* Warm taupe — matches price text color */
+  color: rgba(196, 169, 138, 0.7);
+}
+
+.mantra-symbol {
+  font-size: 1.2rem;
+  opacity: 0.4;
+}
+
+.mantra-text {
+  font-style: italic;
+}
+
+/* Card Glow Border — dusty blue glow on hover like the teal button */
+.card-glow-border {
+  position: absolute;
+  inset: -1px;
+  border-radius: 40px;
+  border: 1px solid rgba(107, 143, 163, 0.18);
+  pointer-events: none;
+  transition: box-shadow 0.5s ease, border-color 0.5s ease;
+  z-index: 1;
+}
+
+.athma-card:hover .card-glow-border {
+  border-color: rgba(77, 122, 138, 0.3);
+  box-shadow: inset 0 0 20px rgba(107, 143, 163, 0.06);
+}
+
+/* ----- FOOTER ----- */
+.soul-footer {
+  text-align: center;
+  margin-top: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease 0.6s, transform 1.2s ease 0.6s;
+}
+
+.soul-footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-wisdom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.wisdom-line {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.wisdom-svg {
+  width: 100%;
+  height: auto;
+}
+
+.wisdom-text {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  /* Muted teal-grey — like the "Subscribe" footer section text */
+  color: rgba(77, 122, 138, 0.45);
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 768px) {
+  .athma-section {
+    padding: 2rem 1rem 3rem;
+  }
+  .athma-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .athma-title {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+  }
+  .card-soul-layer {
+    padding: 2rem 1.2rem 1.8rem;
+  }
+  .soul-portal {
+    width: 100px;
+    height: 100px;
+  }
+  .portal-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .essence-title {
+    font-size: 1.5rem;
+  }
+  .breath-wave {
+    width: 120vw;
+    height: 120vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .soul-badge {
+    gap: 0.5rem;
+  }
+  .badge-breath {
+    width: 20px;
+  }
+  .badge-text {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+  }
+  .essence-description {
+    font-size: 0.9rem;
+  }
+  .wisdom-text {
+    font-size: 0.95rem;
+  }
+  .athma-title {
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+  }
+}

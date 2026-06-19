@@ -2138,7 +2138,7 @@
   align-items: flex-start;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  background: rgba(139, 115, 85, 0.05);
+  background: rgba(130, 94, 49, 0.05);
   border: 1px solid rgba(139, 115, 85, 0.1);
   border-radius: 12px;
   transition: all 0.3s ease;
@@ -2153,7 +2153,7 @@
 
 .about-point-icon-light {
   font-size: 1.2rem;
-  color: #8b7355;
+  color: #8f632c;
   margin-top: 0.1rem;
   flex-shrink: 0;
 }

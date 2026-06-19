@@ -14,7 +14,7 @@ import BrahmaMuhurta from "../components/Bhrama/BrahmaMuhurta";
 import ThreePillars from "../components/ThreePillars/ThreePillars";
 import Wisdom from "../components/Wellness/Wisdom";
 import FinancialEducation from "../components/Finance/Finance";
-import SocialWall from "../components/SocialWall";
+import Social from "../components/Finance/Finance";
 
 function Home() {
   return (
@@ -32,7 +32,6 @@ function Home() {
       <Wellness />
       <Gallery />
       <Testimonials />
-      <SocialWall />
       <Contact />
       <Footer />
     </>
