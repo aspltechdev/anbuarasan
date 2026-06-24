@@ -319,7 +319,7 @@ function FinancialEducation() {
       image: F8,
       gradient: "linear-gradient(145deg, rgba(61, 52, 44, 0.7), rgba(201, 184, 160, 0.3))",
       borderColor: "#c9b8a0",
-    
+      
       accentColor: "#c9b8a0"
     },
   ];
@@ -417,7 +417,7 @@ function FinancialEducation() {
                   <span className="fin-edu-card-symbol" style={{ color: topic.accentColor }}>
                     {topic.symbol}
                   </span>
-                  {/* <div className="fin-edu-card-ring" style={{ borderColor: topic.accentColor }}></div> */}
+                  <div className="fin-edu-card-ring" style={{ borderColor: topic.accentColor }}></div>
                 </div>
                 <h3 className="fin-edu-card-title">{topic.title}</h3>
                 <div className="fin-edu-card-divider" style={{ background: topic.accentColor }}></div>
@@ -435,7 +435,7 @@ function FinancialEducation() {
         {/* Disclaimer */}
         <div className={`fin-edu-disclaimer ${isVisible ? 'visible' : ''}`}>
           <div className="fin-edu-disclaimer-inner">
-            {/* <div className="fin-edu-disclaimer-symbol">⬡</div> */}
+            <div className="fin-edu-disclaimer-symbol">⬡</div>
             <div className="fin-edu-disclaimer-line"></div>
             <p className="fin-edu-disclaimer-text">
               <strong>Educational guidance only.</strong> No guarantees or investment promises. 
@@ -443,7 +443,7 @@ function FinancialEducation() {
               should conduct their own research before making any financial decisions.
             </p>
             <div className="fin-edu-disclaimer-line"></div>
-            {/* <div className="fin-edu-disclaimer-symbol">⬡</div> */}
+            <div className="fin-edu-disclaimer-symbol">⬡</div>
           </div>
         </div>
       </div>

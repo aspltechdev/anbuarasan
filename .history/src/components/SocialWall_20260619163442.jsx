@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./SocialWall.css";
 import { InstagramEmbed } from "react-social-media-embed";
 import { FaInstagram, FaFacebook } from "react-icons/fa6";
-// import socialWallBg from "../assets/bg.png";
+import socialWallBg from "../assets/bg.png";
 
 const instagramPosts = [
   "https://www.instagram.com/reel/PLACEHOLDER_1/",
@@ -31,12 +31,12 @@ export default function SocialWall() {
   return (
     <section
       className="sw-section"
-      // style={{
-      //   backgroundImage: `url(${socialWallBg})`,
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      //   backgroundRepeat: "no-repeat"
-      // }}
+      style={{
+        backgroundImage: `url(${socialWallBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
     >
       <div className="sw-bg-overlay"></div>
 

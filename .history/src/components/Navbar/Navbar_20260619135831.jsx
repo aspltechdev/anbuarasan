@@ -54,7 +54,7 @@ function Navbar() {
   const navItems = [
     { href: "#home", label: "Home", icon: "✦" },
   { href: "#about", label: "About", icon: "◆" },
-    { href: "#athma-connect", label: "Services", icon: "◇" },
+    { href: "#AthmaConnect", label: "Services", icon: "◇" },
    { href: "#wellness", label: "Products", icon: "◈" },
     { href: "#testimonials", label: "Testimonials", icon: "◆" },
   { href: "#contact", label: "Contact", icon: "◇" },

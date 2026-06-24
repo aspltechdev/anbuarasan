@@ -360,9 +360,9 @@
 /* ==================== MASONRY GRID ==================== */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 240px;
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 280px;
+  gap: 1.5rem;
 }
 
 .gallery-grid.visible .gallery-item {
@@ -371,10 +371,7 @@
 }
 
 /* Gallery Item */
-.gallery-item {
-  overflow: hidden;
-  border-radius: 24px;
-}
+
 
 .gallery-item:hover {
   transform: translateY(-6px) !important;
@@ -705,7 +702,7 @@
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1200px) {
   .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 260px;
     gap: 1.25rem;
   }
@@ -713,7 +710,6 @@
 
 @media (max-width: 992px) {
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 240px;
     gap: 1rem;
   }

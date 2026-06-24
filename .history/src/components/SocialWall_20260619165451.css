@@ -139,20 +139,6 @@
   z-index: 5;
 }
 
-.sw-header-music-bg {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 850px;
-  height: auto;
-  aspect-ratio: 800 / 250;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.95;
-  animation: swHeaderMusicFloat 14s ease-in-out infinite;
-}
 
 .sw-header-svg {
   width: 100%;

@@ -443,7 +443,7 @@ function FinancialEducation() {
               should conduct their own research before making any financial decisions.
             </p>
             <div className="fin-edu-disclaimer-line"></div>
-            {/* <div className="fin-edu-disclaimer-symbol">⬡</div> */}
+            <div className="fin-edu-disclaimer-symbol">⬡</div>
           </div>
         </div>
       </div>

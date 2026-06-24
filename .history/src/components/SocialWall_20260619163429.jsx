@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./SocialWall.css";
 import { InstagramEmbed } from "react-social-media-embed";
 import { FaInstagram, FaFacebook } from "react-icons/fa6";
-// import socialWallBg from "../assets/bg.png";
+import socialWallBg from "../assets/bg.png";
 
 const instagramPosts = [
   "https://www.instagram.com/reel/PLACEHOLDER_1/",
@@ -31,12 +31,12 @@ export default function SocialWall() {
   return (
     <section
       className="sw-section"
-      // style={{
-      //   backgroundImage: `url(${socialWallBg})`,
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      //   backgroundRepeat: "no-repeat"
-      // }}
+      style={{
+        backgroundImage: `url(${socialWallBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
     >
       <div className="sw-bg-overlay"></div>
 
@@ -68,15 +68,15 @@ export default function SocialWall() {
               <path d="M-20,130 Q200,90 400,130 T820,130" fill="none" stroke="rgba(201, 160, 61, 0.35)" strokeWidth="1.5" /> */}
 
               {/* Treble Clef left */}
-              {/* <g transform="translate(40, 65) scale(0.9)" stroke="rgba(201, 160, 61, 0.58)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none">
+              <g transform="translate(40, 65) scale(0.9)" stroke="rgba(201, 160, 61, 0.58)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none">
                 <path d="M12,40c0,0-8-6-8-16c0-5,3-8,6-8c3,0,5,2,5,5c0,5-5,6-5,10c0,5,5,6,7,6c4,0,6-3,6-9c0-11-9-19-9-19" />
                 <path d="M12,3 v38 c0,2-1,3-3,3" />
-              </g> */}
+              </g>
 
               {/* Quarter note middle-left */}
-              {/* <g transform="translate(210, 50) scale(1.1)" fill="rgba(201, 160, 61, 0.45)">
+              <g transform="translate(210, 50) scale(1.1)" fill="rgba(201, 160, 61, 0.45)">
                 <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V3h2z" />
-              </g> */}
+              </g>
 
               {/* Eighth note middle-right */}
               {/* <g transform="translate(570, 90) scale(1.1)" fill="rgba(201, 160, 61, 0.48)">

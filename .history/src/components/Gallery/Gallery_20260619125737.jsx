@@ -154,7 +154,7 @@ function Gallery() {
         <div className={`gallery-header ${isVisible ? 'visible' : ''}`}>
           <div className="gallery-badge">
             <span className="gallery-badge-line"></span>
-            <span className="gallery-tag">✦ Moments & Memories ✦</span>
+            <span className="gallery-tag">✦ Moments & Memories</span>
             <span className="gallery-badge-line"></span>
           </div>
           <h2 className="gallery-title">

@@ -116,6 +116,46 @@
   100% { transform: rotate(35deg) translateY(100%); opacity: 0; }
 }
 
+/* ============================================
+   Floating Music Notes
+   ============================================ */
+.sw-notes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.sw-note {
+  position: absolute;
+  bottom: -60px;
+  color: #8b7355;
+  opacity: 0;
+  animation: swNoteFloat linear infinite;
+  user-select: none;
+}
+
+@keyframes swNoteFloat {
+  0% {
+    transform: translateY(0) rotate(-10deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-45vh) rotate(12deg);
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-95vh) rotate(-8deg);
+    opacity: 0;
+  }
+}
 
 /* ============================================
    Container
@@ -191,9 +231,9 @@
 }
 
 .sw-badge-text {
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   letter-spacing: 2.5px;
-  color: #6b5a3e;
+  color: #ffffff;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -246,11 +286,11 @@
 }
 
 .sw-subtitle {
-  color: #6b5a3e;
-  font-size: 1.05rem;
-  line-height: 1.5;
-  max-width: 480px;
-  margin: 0 auto 0.6rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.25rem;
+  line-height: 1.75;
+  max-width: 520px;
+  margin: 0 auto 1.4rem;
 }
 
 /* ============================================

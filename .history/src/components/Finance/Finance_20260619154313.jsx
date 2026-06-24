@@ -329,11 +329,11 @@ function FinancialEducation() {
   return (
     <section className="fin-edu" ref={sectionRef} id="financial-education">
       {/* Background Atmosphere */}
-      <div className="fin-edu-bg">
+      {/* <div className="fin-edu-bg">
         <div className="fin-edu-glow fin-edu-glow-1"></div>
         <div className="fin-edu-glow fin-edu-glow-2"></div>
         <div className="fin-edu-glow fin-edu-glow-3"></div>
-      </div>
+      </div> */}
 
       {/* Breath Waves */}
       <div className="fin-edu-breath-waves">
@@ -417,7 +417,7 @@ function FinancialEducation() {
                   <span className="fin-edu-card-symbol" style={{ color: topic.accentColor }}>
                     {topic.symbol}
                   </span>
-                  {/* <div className="fin-edu-card-ring" style={{ borderColor: topic.accentColor }}></div> */}
+                  <div className="fin-edu-card-ring" style={{ borderColor: topic.accentColor }}></div>
                 </div>
                 <h3 className="fin-edu-card-title">{topic.title}</h3>
                 <div className="fin-edu-card-divider" style={{ background: topic.accentColor }}></div>
@@ -435,7 +435,7 @@ function FinancialEducation() {
         {/* Disclaimer */}
         <div className={`fin-edu-disclaimer ${isVisible ? 'visible' : ''}`}>
           <div className="fin-edu-disclaimer-inner">
-            {/* <div className="fin-edu-disclaimer-symbol">⬡</div> */}
+            <div className="fin-edu-disclaimer-symbol">⬡</div>
             <div className="fin-edu-disclaimer-line"></div>
             <p className="fin-edu-disclaimer-text">
               <strong>Educational guidance only.</strong> No guarantees or investment promises. 
@@ -443,7 +443,7 @@ function FinancialEducation() {
               should conduct their own research before making any financial decisions.
             </p>
             <div className="fin-edu-disclaimer-line"></div>
-            {/* <div className="fin-edu-disclaimer-symbol">⬡</div> */}
+            <div className="fin-edu-disclaimer-symbol">⬡</div>
           </div>
         </div>
       </div>

@@ -31,12 +31,12 @@ export default function SocialWall() {
   return (
     <section
       className="sw-section"
-      // style={{
-      //   backgroundImage: `url(${socialWallBg})`,
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      //   backgroundRepeat: "no-repeat"
-      // }}
+      style={{
+        backgroundImage: `url(${socialWallBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
     >
       <div className="sw-bg-overlay"></div>
 
