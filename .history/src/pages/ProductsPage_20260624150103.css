@@ -1,0 +1,198 @@
+.products-page {
+  min-height: 100vh;
+  background: #f7f1e7;
+}
+
+/* HERO */
+
+.products-hero {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      rgba(55,45,35,.55),
+      rgba(55,45,35,.75)
+    ),
+    url("../assets/strengths.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 10%;
+}
+
+.products-content {
+  max-width: 750px;
+}
+
+.products-tag {
+  display: inline-block;
+
+  color: #d5c18b;
+
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.products-content h1 {
+  font-size: 5rem;
+  line-height: 1.15;
+  color: white;
+  margin-bottom: 25px;
+}
+
+.products-content h1 span {
+  color: #e0c27b;
+}
+
+.products-content p {
+  color: rgba(255,255,255,.9);
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.products-btn {
+  display: inline-block;
+
+  margin-top: 35px;
+  padding: 18px 40px;
+
+  border-radius: 60px;
+
+  background: #9b8158;
+  color: white;
+
+  text-decoration: none;
+}
+
+.products-btn:hover {
+  opacity: .9;
+}
+
+/* PRODUCTS */
+
+.products-section {
+  padding: 120px 10%;
+}
+
+.products-section h2 {
+  text-align: center;
+  color: #5d4c3a;
+  font-size: 3rem;
+  margin-bottom: 60px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 30px;
+}
+
+.product-card {
+  background: white;
+
+  padding: 40px;
+  border-radius: 30px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.05);
+
+  transition: .3s;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-number {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #9b8158;
+  color: white;
+
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.product-card h3 {
+  color: #5d4c3a;
+  margin-bottom: 15px;
+}
+
+.product-card p {
+  color: #746a5e;
+  line-height: 1.8;
+}
+
+.product-card a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #9b8158;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* BENEFITS */
+
+.benefits-section {
+  padding: 120px 10%;
+  background: #fcf8f2;
+}
+
+.benefits-section h2 {
+  text-align: center;
+  color: #5d4c3a;
+  font-size: 3rem;
+  margin-bottom: 60px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 25px;
+}
+
+.benefit-card {
+  background: white;
+
+  padding: 35px;
+  border-radius: 24px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.05);
+}
+
+.benefit-card h3 {
+  color: #9b8158;
+  margin-bottom: 15px;
+}
+
+.benefit-card p {
+  color: #746a5e;
+}
+
+/* MOBILE */
+
+@media(max-width:768px) {
+
+  .products-content h1 {
+    font-size: 3rem;
+  }
+
+  .products-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,213 @@
+.services-page{
+  min-height:100vh;
+  position:relative;
+
+  background:
+  linear-gradient(
+  rgba(50,40,30,.65),
+  rgba(50,40,30,.65)
+  ),
+  url("../assets/rhythm1.png");
+
+  background-size:cover;
+  background-position:center;
+
+  overflow:hidden;
+
+  padding:120px 8%;
+}
+
+.services-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:60px;
+}
+
+/* LEFT */
+
+.services-journey{
+  position:relative;
+  width:600px;
+  height:600px;
+  margin:auto;
+}
+
+.services-journey::before{
+  content:"";
+  position:absolute;
+  inset:50px;
+
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:50%;
+}
+
+.center-circle{
+  position:absolute;
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%,-50%);
+
+  width:120px;
+  height:120px;
+
+  border-radius:50%;
+
+  background:#a38b6b;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:white;
+  font-size:2rem;
+
+  border:4px solid rgba(255,255,255,.3);
+}
+
+.service-box{
+  position:absolute;
+
+  width:190px;
+  padding:25px;
+
+  background:rgba(160,140,110,.25);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  backdrop-filter:blur(10px);
+
+  border-radius:24px;
+
+  text-align:center;
+
+  color:white;
+}
+
+.service-box h3{
+  margin-bottom:8px;
+}
+
+.service-box p{
+  font-size:.85rem;
+  opacity:.8;
+}
+
+.top{
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.left{
+  left:0;
+  top:35%;
+}
+
+.right{
+  right:0;
+  top:35%;
+}
+
+.bottom-left{
+  bottom:0;
+  left:0;
+}
+
+.bottom-right{
+  bottom:0;
+  right:0;
+}
+
+.active{
+  background:#9c8768;
+}
+
+/* RIGHT */
+
+.services-content{
+  color:white;
+}
+
+.service-label{
+  letter-spacing:4px;
+  font-size:.9rem;
+  color:#e5d2b2;
+}
+
+.services-content h1{
+  font-size:5rem;
+  line-height:1.15;
+  margin:30px 0;
+}
+
+.services-content p{
+  font-size:1.1rem;
+  line-height:2;
+  max-width:700px;
+
+  color:rgba(255,255,255,.9);
+
+  margin-bottom:40px;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-bottom:40px;
+}
+
+.service-grid div{
+  background:rgba(160,140,110,.4);
+
+  padding:22px;
+
+  border-radius:18px;
+
+  font-weight:600;
+}
+
+.service-grid span{
+  margin-right:12px;
+  color:#f3d28f;
+}
+
+.services-content button{
+  padding:22px 55px;
+
+  border:none;
+  border-radius:50px;
+
+  background:#9c8768;
+
+  color:white;
+
+  font-size:1rem;
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+  .services-container{
+    grid-template-columns:1fr;
+  }
+
+  .services-journey{
+    width:100%;
+    height:650px;
+  }
+
+  .services-content h1{
+    font-size:3rem;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+}

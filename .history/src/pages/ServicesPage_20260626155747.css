@@ -1,0 +1,130 @@
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.services-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 90vh;
+  padding: 180px 10% 120px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.services-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(18, 14, 8, 0.55),
+    rgba(18, 14, 8, 0.45)
+  );
+  z-index: 1;
+}
+
+.services-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Small Label */
+
+.services-hero span {
+  display: inline-block;
+  margin-bottom: 22px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+
+  color: #e6c37b;
+}
+
+/* Heading */
+
+.services-hero h1 {
+  max-width: 1100px;
+
+  margin: 0 auto 30px;
+
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -2px;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 8px 30px rgba(0,0,0,.45);
+}
+
+/* Paragraph */
+
+.services-hero p {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.9;
+  font-weight: 400;
+
+  color: rgba(255,255,255,.9);
+}
+
+/* Optional Button */
+
+.services-hero .hero-btn {
+  margin-top: 45px;
+
+  padding: 18px 42px;
+
+  background: #c49a55;
+  color: #fff;
+
+  border: none;
+  border-radius: 60px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .35s ease;
+}
+
+.services-hero .hero-btn:hover {
+  background: #d5aa61;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 35px rgba(196,154,85,.35);
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .services-hero {
+    min-height: 75vh;
+    padding: 140px 24px 80px;
+  }
+
+  .services-hero span {
+    letter-spacing: 3px;
+    font-size: .8rem;
+  }
+
+  .services-hero h1 {
+    font-size: clamp(2.6rem, 10vw, 4rem);
+    line-height: 1.15;
+    letter-spacing: -1px;
+  }
+
+  .services-hero p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}

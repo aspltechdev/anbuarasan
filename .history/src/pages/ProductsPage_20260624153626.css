@@ -1,0 +1,179 @@
+.services-page {
+  background: #f8f3eb;
+  overflow: hidden;
+}
+
+/* HERO */
+
+.services-hero {
+  min-height: 90vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 120px 10%;
+
+  background:
+    linear-gradient(
+      rgba(40,30,20,.65),
+      rgba(40,30,20,.65)
+    ),
+    url("../assets/rhythm1.png");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content span {
+  color: #d4af37;
+  letter-spacing: 4px;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 5rem;
+  max-width: 900px;
+  margin: 25px auto;
+}
+
+.hero-content p {
+  color: rgba(255,255,255,.9);
+  font-size: 1.2rem;
+}
+
+/* SERVICE BLOCKS */
+
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+}
+
+.reverse {
+  direction: rtl;
+}
+
+.reverse .service-content {
+  direction: ltr;
+}
+
+.service-image {
+  background: url("../assets/strength.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.second {
+  background-image: url("../assets/rhythm.png");
+}
+
+.third {
+  background-image: url("../assets/strengths.jpg");
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 80px;
+}
+
+.service-content h2 {
+  color: #6b5538;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.service-content p {
+  color: #6d6458;
+  line-height: 1.9;
+  font-size: 1.1rem;
+}
+
+/* JOURNEY */
+
+.journey {
+  padding: 120px 10%;
+  text-align: center;
+}
+
+.journey h2 {
+  color: #6b5538;
+  margin-bottom: 60px;
+  font-size: 3rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 30px;
+}
+
+.step {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+}
+
+.step span {
+  font-size: 3rem;
+  color: #d4af37;
+  font-weight: 700;
+}
+
+/* CTA */
+
+.cta-banner {
+  padding: 120px 10%;
+  text-align: center;
+
+  background:
+  linear-gradient(
+    135deg,
+    #8b7355,
+    #d4af37
+  );
+}
+
+.cta-banner h2 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.cta-banner a {
+  display: inline-block;
+
+  padding: 18px 40px;
+
+  background: white;
+  color: #8b7355;
+
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .hero-content h1{
+    font-size:3rem;
+  }
+
+  .service-row{
+    grid-template-columns:1fr;
+  }
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .service-content{
+    padding:40px 25px;
+  }
+}

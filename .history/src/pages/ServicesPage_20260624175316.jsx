@@ -1,0 +1,166 @@
+import "./ServicesPage.css";
+
+function ServicesPage() {
+  return (
+    <div className="services-page">
+
+      <section className="services-hero">
+        <span>OUR SERVICES</span>
+
+        <h1>
+          Transform Your Life Through
+          Conscious Living
+        </h1>
+
+        <p>
+          Empowering individuals through spiritual growth,
+          financial awareness, mindset transformation and
+          holistic wellness practices.
+        </p>
+      </section>
+
+      {/* Service 1 */}
+      <section className="service-section">
+        <div className="service-image">
+          <img src="/src/assets/yoga.png" alt="Athma Connect" />
+        </div>
+
+        <div className="service-content">
+          <span>01</span>
+          <h2>Athma Connect</h2>
+
+          <p>
+            A transformative self-discovery program designed
+            to reconnect individuals with their purpose,
+            inner peace and higher consciousness.
+          </p>
+
+          <button>Enquire Now</button>
+        </div>
+      </section>
+
+      {/* Service 2 */}
+      <section className="service-section reverse">
+        <div className="service-image">
+          <img src="/src/assets/rhythm.png" alt="Brahma Muhurta" />
+        </div>
+
+        <div className="service-content">
+          <span>02</span>
+          <h2>Brahma Muhurta Kriya</h2>
+
+          <p>
+            Sacred morning practices that improve discipline,
+            focus, clarity and spiritual alignment for a
+            successful life.
+          </p>
+
+          <button>Enquire Now</button>
+        </div>
+      </section>
+
+     {/* Service 3 */}
+<section className="service-section service-finance">
+  <div className="service-finance-header">
+    <span>03</span>
+    <h2>Financial Education</h2>
+    <p>
+      Empowering individuals with financial literacy, digital asset
+      knowledge, and the clarity to make confident money decisions.
+    </p>
+  </div>
+
+  {/* Financial Awareness Row */}
+  <div className="service-finance-row">
+    <h4 className="service-finance-row-label">◆ Financial Awareness</h4>
+    <div className="service-finance-grid">
+      {[
+        { title: "Financial Planning", desc: "Understanding budgeting, savings, and long-term financial goal setting for a secure future.", image: "/src/assets/F1.jpg", accent: "#d4a574" },
+        { title: "Insurance Awareness", desc: "Protecting what matters through informed insurance decisions and risk management.", image: "/src/assets/F2.jpg", accent: "#c9b8a0" },
+        { title: "Loan Guidance", desc: "Understanding responsible borrowing, financial commitments, and debt management.", image: "/src/assets/F3.jpg", accent: "#d5c4b0" },
+        { title: "Wealth Creation", desc: "Developing sustainable habits and principles for long-term financial growth.", image: "/src/assets/F4.jpg", accent: "#d4a574" },
+      ].map((card) => (
+        <div
+          key={card.title}
+          className="svc-fin-card"
+          style={{ backgroundImage: `url(${card.image})` }}
+        >
+          <div className="svc-fin-card-overlay" style={{ background: `linear-gradient(145deg, rgba(61,52,44,0.75), rgba(212,165,116,0.25))` }} />
+          <div className="svc-fin-card-content">
+            <h3>{card.title}</h3>
+            <div className="svc-fin-divider" style={{ background: card.accent }} />
+            <p>{card.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Digital Assets Row */}
+  <div className="service-finance-row">
+    <h4 className="service-finance-row-label">◈ Digital Assets</h4>
+    <div className="service-finance-grid">
+      {[
+        { title: "Bitcoin", desc: "Understanding the world's first decentralized digital currency and its underlying technology.", image: "/src/assets/F5.png", accent: "#c9b8a0" },
+        { title: "Ethereum", desc: "Exploring smart contracts, decentralized applications, and the Ethereum ecosystem.", image: "/src/assets/F6.png", accent: "#d5c4b0" },
+        { title: "Beldex", desc: "Learning about privacy-focused blockchain technology and decentralized solutions.", image: "/src/assets/F7.jpg", accent: "#d4a574" },
+        { title: "Blockchain & Web3", desc: "Understanding distributed ledger technology and the next generation of the internet.", image: "/src/assets/F8.jpeg", accent: "#c9b8a0" },
+      ].map((card) => (
+        <div
+          key={card.title}
+          className="svc-fin-card"
+          style={{ backgroundImage: `url(${card.image})` }}
+        >
+          <div className="svc-fin-card-overlay" style={{ background: `linear-gradient(145deg, rgba(61,52,44,0.75), rgba(201,184,160,0.25))` }} />
+          <div className="svc-fin-card-content">
+            <h3>{card.title}</h3>
+            <div className="svc-fin-divider" style={{ background: card.accent }} />
+            <p>{card.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <button>Enquire Now</button>
+</section>
+
+      
+
+      <section className="why-us">
+        <h2>Why Choose Anbu Arasan?</h2>
+
+        <div className="why-grid">
+          <div>
+            <h3>12+</h3>
+            <p>Years Experience</p>
+          </div>
+
+          <div>
+            <h3>180+</h3>
+            <p>Countries Reached</p>
+          </div>
+
+          <div>
+            <h3>1000+</h3>
+            <p>Lives Impacted</p>
+          </div>
+
+          <div>
+            <h3>4</h3>
+            <p>Core Transformation Areas</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="services-cta">
+        <h2>Begin Your Transformation Journey Today</h2>
+
+        <button>Book Consultation</button>
+      </section>
+
+    </div>
+  );
+}
+
+export default ServicesPage;

@@ -1,0 +1,188 @@
+/* App.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  width:100%;
+  overflow-x:hidden;
+  background:#f6f6f6;
+  font-family:"Poppins", sans-serif;
+  color:#222222;
+}
+
+/* =========================
+   ROOT
+========================= */
+
+#root{
+  width:100%;
+  min-height:100vh;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+  font-family:"Poppins", sans-serif;
+  border:none;
+  outline:none;
+}
+
+/* =========================
+   LISTS
+========================= */
+
+ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+/* =========================
+   FORM ELEMENTS
+========================= */
+
+input,
+textarea,
+select{
+  font-family:"Poppins", sans-serif;
+}
+
+/* =========================
+   PAGE SPACING
+========================= */
+
+.page-section{
+  width:100%;
+  padding:70px 0;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.custom-container{
+  width:100%;
+  max-width:1280px;
+  margin:auto;
+  padding:0 24px;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:#f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#0066df;
+  border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:#0054b8;
+}
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection{
+  background:#0066df;
+  color:#ffffff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .page-section{
+    padding:55px 0;
+  }
+
+  .custom-container{
+    padding:0 18px;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .page-section{
+    padding:45px 0;
+  }
+
+  .custom-container{
+    padding:0 16px;
+  }
+
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+  background: #25d366;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 2rem;
+
+  z-index: 9999;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,619 @@
+/* ThreePillars.css - Warm Earthy Three Pillars Theme */
+
+/* ==================== BASE SECTION ==================== */
+.pillars {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #fcf8f4 0%,
+    #efe4da 50%,
+    #fcf8f4 100%
+  );
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 0;
+}
+
+/* ==================== BACKGROUND EFFECTS ==================== */
+.pillars-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pillars-bg-gradient {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background:
+    radial-gradient(ellipse at 25% 30%, rgba(139,115,85,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 70%, rgba(139,115,85,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(239,228,218,0.15) 0%, transparent 60%);
+}
+
+.pillars-bg-grid {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image:
+    linear-gradient(rgba(139,115,85,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139,115,85,0.04) 1px, transparent 1px);
+  background-size: 70px 70px;
+}
+
+.pillars-bg-pattern {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(139,115,85,0.03) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(139,115,85,0.03) 0%, transparent 40%);
+}
+
+/* ---- SECTION BG IMAGE (sits behind everything) ---- */
+.pillars-bg-image {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---- SECTION BG OVERLAY (keeps text/cards readable over the photo) ---- */
+.pillars-bg-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(252, 248, 244, 0.55) 0%,
+    rgba(239, 228, 218, 0.45) 50%,
+    rgba(252, 248, 244, 0.55) 100%
+  );
+}
+
+/* ==================== AMBIENT GLOWS ==================== */
+.pillars-ambient {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pillars-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.pillars-glow-1 {
+  top: -20%; left: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(139,115,85,0.1), transparent);
+  animation: glowFloat 10s ease-in-out infinite;
+}
+
+.pillars-glow-2 {
+  top: 40%; right: -15%;
+  width: 450px; height: 450px;
+  background: radial-gradient(circle, rgba(139,115,85,0.08), transparent);
+  animation: glowFloat 12s ease-in-out infinite reverse;
+}
+
+.pillars-glow-3 {
+  bottom: -25%; left: 30%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(239,228,218,0.12), transparent);
+  animation: glowPulse 8s ease-in-out infinite;
+}
+
+@keyframes glowFloat {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  33%       { transform: translate(30px,-30px) scale(1.1); }
+  66%       { transform: translate(-20px,20px) scale(0.9); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1);   opacity: 0.4; }
+  50%       { transform: scale(1.1); opacity: 0.7; }
+}
+
+/* ==================== GEOMETRY ==================== */
+.pillars-geometry {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pillars-geo-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(139,115,85,0.08);
+}
+
+.pillars-geo-ring-1 {
+  top: -40%; right: -20%;
+  width: 700px; height: 700px;
+  animation: ringRotate 25s linear infinite;
+}
+
+.pillars-geo-ring-2 {
+  bottom: -45%; left: -25%;
+  width: 750px; height: 750px;
+  border-color: rgba(139,115,85,0.06);
+  animation: ringRotate 30s linear infinite reverse;
+}
+
+.pillars-geo-ring-3 {
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px; height: 500px;
+  border-style: dashed;
+  border-color: rgba(139,115,85,0.05);
+}
+
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ==================== PARTICLES ==================== */
+.pillars-particles {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pillars-particle {
+  position: absolute;
+  background: rgba(139,115,85,0.2);
+  border-radius: 50%;
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  0%   { transform: translateY(0) translateX(0);    opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.8; }
+  100% { transform: translateY(-100vh) translateX(60px); opacity: 0; }
+}
+
+/* ==================== CONTAINER ==================== */
+.pillars-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* ==================== HEADER ==================== */
+.pillars-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.23,1,0.32,1);
+}
+
+.pillars-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pillars-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #8b7355;
+  font-weight: 600;
+}
+
+.pillars-badge-icon {
+  font-size: 0.9rem;
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.pillars-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  color: #6b5a3e;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.pillars-title-emphasis {
+  font-weight: 800;
+  color: #8b7355;
+  position: relative;
+  display: inline-block;
+}
+
+.pillars-title-emphasis::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, #8b7355, #efe4da);
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+.pillars-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.pillars-divider-line {
+  width: 40px; height: 1px;
+  background: linear-gradient(90deg, transparent, #8b7355);
+}
+
+.pillars-divider-line:last-child {
+  background: linear-gradient(90deg, #8b7355, transparent);
+}
+
+.pillars-divider-icon {
+  color: #8b7355;
+  font-size: 0.9rem;
+  animation: rotate 4s linear infinite reverse;
+}
+
+.pillars-subtitle {
+  font-size: 1.1rem;
+  color: #8b7355;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ==================== PILLARS GRID ==================== */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.pillars-grid.visible .pillar-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==================== PILLAR CARD ==================== */
+.pillar-card {
+  position: relative;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
+  opacity: 0;
+  transform: translateY(40px);
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(139, 115, 85, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 30px rgba(139, 115, 85, 0.1);
+}
+
+.pillar-card:hover,
+.pillar-card.active {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 24px 60px rgba(139, 115, 85, 0.18),
+    0 6px 20px rgba(232,201,122,0.2);
+}
+
+/* Card Hover Glow */
+.pillar-card-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+/* Ornamental Border */
+.pillar-ornament-border {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.pillar-ornament-corner {
+  position: absolute;
+  width: 30px; height: 30px;
+  border-color: rgba(139,115,85,0.35);
+  border-style: solid;
+  transition: all 0.5s ease;
+}
+
+.pillar-ornament-tl { top: 12px;    left: 12px;  border-width: 2px 0 0 2px; border-radius: 4px 0 0 0; }
+.pillar-ornament-tr { top: 12px;    right: 12px; border-width: 2px 2px 0 0; border-radius: 0 4px 0 0; }
+.pillar-ornament-bl { bottom: 12px; left: 12px;  border-width: 0 0 2px 2px; border-radius: 0 0 0 4px; }
+.pillar-ornament-br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; border-radius: 0 0 4px 0; }
+
+.pillar-card:hover .pillar-ornament-corner,
+.pillar-card.active .pillar-ornament-corner {
+  border-color: rgba(139,115,85,0.7);
+  width: 40px; height: 40px;
+}
+
+.pillar-card:hover .pillar-ornament-tl, .pillar-card.active .pillar-ornament-tl { top: 8px;    left: 8px;  }
+.pillar-card:hover .pillar-ornament-tr, .pillar-card.active .pillar-ornament-tr { top: 8px;    right: 8px; }
+.pillar-card:hover .pillar-ornament-bl, .pillar-card.active .pillar-ornament-bl { bottom: 8px; left: 8px;  }
+.pillar-card:hover .pillar-ornament-br, .pillar-card.active .pillar-ornament-br { bottom: 8px; right: 8px; }
+
+/* Icon Wrapper */
+.pillar-icon-wrapper {
+  position: relative;
+  z-index: 4;
+  width: 90px; height: 90px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillar-icon-ring {
+  position: absolute;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  border: 2px solid;
+  animation: ringPulse 3s ease-in-out infinite;
+}
+
+.pillar-icon-ring-2 {
+  position: absolute;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  opacity: 0.5;
+  animation: ringPulse 3s ease-in-out infinite reverse;
+}
+
+.pillar-icon-mandala {
+  position: absolute;
+  width: 65px; height: 65px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,201,122,0.15), transparent);
+  animation: mandalaRotate 8s linear infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1);    opacity: 0.6; }
+  50%       { transform: scale(1.08); opacity: 1;   }
+}
+
+@keyframes mandalaRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.pillar-icon {
+  font-size: 2rem;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 6px rgba(139,115,85,0.3));
+}
+
+.pillar-card:hover .pillar-icon,
+.pillar-card.active .pillar-icon {
+  transform: scale(1.2);
+}
+
+/* Content */
+.pillar-content {
+  position: relative;
+  z-index: 4;
+}
+
+.pillar-subtitle-text {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.pillar-title-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6b5a3e;
+  margin: 0 0 1rem 0;
+}
+
+/* Content Divider */
+.pillar-content-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.pillar-content-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+}
+
+.pillar-content-line {
+  width: 30px; height: 1px;
+  background: rgba(139,115,85,0.3);
+}
+
+.pillar-description {
+  font-size: 0.95rem;
+  color: #7a6850;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Features */
+.pillar-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pillar-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #6b5a3e;
+  font-weight: 500;
+}
+
+.pillar-feature-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Essence */
+.pillar-essence {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(139, 115, 85, 0.08);
+  border-radius: 50px;
+  border: 1px solid rgba(139,115,85,0.2);
+}
+
+.pillar-essence-icon {
+  font-size: 0.7rem;
+}
+
+.pillar-essence-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Border Glow */
+.pillar-border-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  border: 2px solid;
+  pointer-events: none;
+  transition: all 0.5s ease;
+  z-index: 5;
+}
+
+/* ==================== FOOTER ==================== */
+.pillars-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.23,1,0.32,1) 0.6s;
+}
+
+.pillars-footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pillars-footer-line {
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, #8b7355);
+}
+
+.pillars-footer-line:last-child {
+  background: linear-gradient(90deg, #8b7355, transparent);
+}
+
+.pillars-footer-text {
+  font-size: 0.95rem;
+  color: #8b7355;
+  font-style: italic;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1200px) {
+  .pillars-grid { gap: 1.5rem; }
+  .pillar-card  { padding: 2rem 1.5rem; }
+}
+
+@media (max-width: 992px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pillar-card { padding: 2.5rem 2rem; min-height: 460px; }
+}
+
+@media (max-width: 768px) {
+  .pillars { padding: 4rem 0; }
+  .pillars-container { padding: 0 1.5rem; }
+  .pillars-title    { font-size: 2rem; }
+  .pillars-subtitle { font-size: 1rem; }
+  .pillar-card      { padding: 2rem 1.5rem; }
+  .pillars-footer   { flex-direction: column; gap: 1rem; }
+  .pillars-footer-text { white-space: normal; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .pillars-grid { gap: 1rem; }
+  .pillar-icon-wrapper { width: 75px; height: 75px; }
+  .pillar-icon  { font-size: 1.6rem; }
+  .pillar-title-text { font-size: 1.3rem; }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

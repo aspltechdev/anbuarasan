@@ -1,0 +1,277 @@
+.products-page {
+  background: #f8f4ee;
+  min-height: 100vh;
+}
+
+/* HERO */
+
+.products-hero {
+  text-align: center;
+  padding: 180px 10% 100px;
+}
+
+.products-hero span {
+  color: #c49a55;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+.products-hero h1 {
+  font-size: 5rem;
+  color: #5b4630;
+  margin: 25px 0;
+  line-height: 1.1;
+}
+
+.products-hero p {
+  max-width: 700px;
+  margin: auto;
+  color: #74695d;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* PRODUCT SECTION */
+
+.product-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  gap: 80px;
+
+  padding: 80px 10%;
+}
+
+.reverse {
+  background: #f2ece3;
+}
+
+.product-image {
+  display: flex;
+  justify-content: center;
+}
+
+.product-image img {
+  width: 100%;
+  max-width: 550px;
+
+  border-radius: 30px;
+
+  box-shadow:
+  0 30px 80px rgba(0,0,0,.12);
+}
+
+.product-content h2 {
+  font-size: 4.5rem;
+  color: #5b4630;
+  margin-top: 15px;
+}
+
+.product-tag {
+  background: #d7b27c;
+  color: white;
+
+  padding: 10px 20px;
+
+  border-radius: 30px;
+
+  font-size: .85rem;
+  letter-spacing: 2px;
+}
+
+.line {
+  width: 80px;
+  height: 4px;
+
+  background: #c49a55;
+
+  margin: 25px 0;
+}
+
+.product-content p {
+  color: #6d6257;
+  line-height: 2;
+}
+
+.product-features {
+  display: flex;
+  gap: 50px;
+
+  margin: 35px 0;
+}
+
+.product-features h4 {
+  color: #5b4630;
+  margin-bottom: 8px;
+}
+
+.product-features p {
+  color: #8b7d6f;
+}
+
+.product-content ul {
+  margin-bottom: 30px;
+}
+
+.product-content li {
+  margin-bottom: 15px;
+  color: #5b4630;
+}
+
+.product-content button {
+  padding: 18px 45px;
+
+  border: none;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    135deg,
+    #c49a55,
+    #9e7a3f
+  );
+
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.product-content button:hover {
+  transform: translateY(-3px);
+}
+
+@media(max-width:992px){
+
+  .product-section{
+    grid-template-columns:1fr;
+  }
+
+  .reverse{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .products-hero h1{
+    font-size:3rem;
+  }
+
+  .product-content h2{
+    font-size:3rem;
+  }
+}
+.products-hero {
+  position: relative;
+  text-align: center;
+  padding: 180px 10% 100px;
+  overflow: hidden;
+}
+.products-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* TINT LAYER (adjust color if needed) */
+  background: rgba(90, 70, 48, 0.45);
+
+  z-index: 1;
+}
+.products-hero span,
+.products-hero h1,
+.products-hero p {
+  position: relative;
+  z-index: 2;
+}
+.products-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* darker + gradient for better readability */
+  background: linear-gradient(
+    to right,
+    rgba(40, 30, 20, 0.65),
+    rgba(40, 30, 20, 0.35)
+  );
+
+  z-index: 1;
+}
+.products-hero span {
+  color: #f2d08a; /* lighter gold */
+  letter-spacing: 4px;
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.products-hero h1 {
+  font-size: 5rem;
+  color: #ffffff; /* change from brown to white */
+  margin: 25px 0;
+  line-height: 1.1;
+  text-shadow: 0 6px 25px rgba(0,0,0,0.55);
+}
+
+.products-hero p {
+  max-width: 700px;
+  margin: auto;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.45);
+}
+.products-hero {
+  position: relative;
+  overflow: hidden;
+}
+.products-hero img {
+  filter: brightness(0.9) contrast(1.1);
+}
+.products-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(245, 239, 230, 0.30),
+    rgba(171, 137, 89, 0.18),
+    rgba(45, 32, 18, 0.35)
+  );
+  z-index: 1;
+}
+.products-hero h1{
+    color:#fff;
+    text-shadow:0 8px 30px rgba(0,0,0,.35);
+}
+
+.products-hero p{
+    color:rgba(255,255,255,.92);
+    text-shadow:0 3px 12px rgba(0,0,0,.25);
+}
+
+.products-hero span{
+    color:#f5f5f4;
+    text-shadow:0 2px 8px rgba(0,0,0,.25);
+}
+.products-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(45, 32, 20, 0.45) 0%,
+      rgba(45, 32, 20, 0.28) 35%,
+      rgba(45, 32, 20, 0.10) 65%,
+      rgba(45, 32, 20, 0) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(30, 20, 10, 0.22),
+      rgba(30, 20, 10, 0.28)
+    );
+}
