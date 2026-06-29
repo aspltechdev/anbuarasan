@@ -1,0 +1,142 @@
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  z-index: 1000;
+}
+
+/* Container */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 28px;
+
+  background: rgba(92, 73, 47, 0.18);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 60px;
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    0 0 20px rgba(212, 175, 55, 0.08);
+}
+
+/* Logo */
+.navbar-brand {
+  text-decoration: none;
+  color: #f8f4e9;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Navigation */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-list {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: rgba(248, 244, 233, 0.9);
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #ffd700;
+}
+
+/* Underline Animation */
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  background: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* CTA */
+.navbar-cta {
+  text-decoration: none;
+
+  padding: 12px 28px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    #d4af37,
+    #8b7355
+  );
+
+  color: white;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.navbar-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.navbar-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  
+}
+.navbar-toggle {
+  display: none;   /* ← this line must be present, outside any media query */
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 1001;
+}
+.navbar-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 4px auto 0;
+  text-align: center;
+}
