@@ -17,6 +17,7 @@ const facebookPosts = [
 
 const linkedinPosts = [
   "https://www.linkedin.com/posts/anbarasan-official_anbarasanofficial-mindbodywealth-personalgrowth-activity-7478446422217097216-sZkx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGZbNX0Bw49Rv45brtLfwtwsAqfON9LIPqM",
+  "PASTE_SECOND_LINKEDIN_URL_HERE",
 ];
 
 const fillLoop = (arr) => {
@@ -87,14 +88,14 @@ export default function SocialWall() {
               <span className="sw-tab-text">Facebook</span>
             </button>
 
-            {/* <button
+            <button
               id="sw-tab-linkedin"
               className={`sw-tab-btn ${activeTab === "linkedin" ? "sw-tab-active" : ""}`}
               onClick={() => setActiveTab("linkedin")}
             >
               <FaLinkedin size={20} />
               <span className="sw-tab-text">LinkedIn</span>
-            </button> */}
+            </button>
           </div>
         </div>
       </div>
@@ -140,7 +141,7 @@ export default function SocialWall() {
               );
             })}
 
-          {/* {activeTab === "linkedin" &&
+          {activeTab === "linkedin" &&
             fillLoop(linkedinPosts).map((url, index) => (
               <div key={`li-${index}`} className="sw-card sw-card--wide">
                 <div className="sw-card-top sw-card-top--linkedin">
@@ -151,9 +152,9 @@ export default function SocialWall() {
                   <FaLinkedin size={40} />
                   <p>View this post on LinkedIn</p>
                   <span className="sw-linkedin-btn">Open Post</span>
-                </a> */}
-              {/* </div> */}
-            {/* ))} */}
+                </a>
+              </div>
+            ))}
         </div>
       </div>
     </section>

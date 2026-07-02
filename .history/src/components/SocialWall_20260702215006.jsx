@@ -12,7 +12,7 @@ const instagramPosts = [
 
 const facebookPosts = [
   "https://www.facebook.com/permalink.php?story_fbid=pfbid02snyLJSERh8QXgzJJHG1qtnky8BpZPVVfU8PUQMNUchKk9iEUJocMFmb3dpzCF5VVl&id=61591229948970",
-  "https://www.facebook.com/permalink.php?story_fbid=122102782593374331&id=61591229948970&substory_index=1337628821680595",
+  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D122102782593374331%26id%3D61591229948970%26substory_index%3D1337628821680595&show_text=true&width=500" width="500" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>,
 ];
 
 const linkedinPosts = [
@@ -115,7 +115,7 @@ export default function SocialWall() {
             ))}
 
           {activeTab === "facebook" &&
-            facebookPosts.map((url, index) => {
+            fillLoop(facebookPosts).map((url, index) => {
               const fbSrc = "https://www.facebook.com/plugins/post.php?href=" + encodeURIComponent(url) + "&show_text=true&width=480";
               return (
                 <div key={`fb-${index}`} className="sw-card sw-card--wide">

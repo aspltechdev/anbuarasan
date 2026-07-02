@@ -11,8 +11,8 @@ const instagramPosts = [
 ];
 
 const facebookPosts = [
-  "https://www.facebook.com/permalink.php?story_fbid=pfbid02snyLJSERh8QXgzJJHG1qtnky8BpZPVVfU8PUQMNUchKk9iEUJocMFmb3dpzCF5VVl&id=61591229948970",
-  "https://www.facebook.com/permalink.php?story_fbid=122102782593374331&id=61591229948970&substory_index=1337628821680595",
+  "https://www.facebook.com/share/p/1E8APngcoR/",
+  "https://www.facebook.com/share/p/1FEpL7aPCY/",
 ];
 
 const linkedinPosts = [
@@ -87,21 +87,21 @@ export default function SocialWall() {
               <span className="sw-tab-text">Facebook</span>
             </button>
 
-            {/* <button
+            <button
               id="sw-tab-linkedin"
               className={`sw-tab-btn ${activeTab === "linkedin" ? "sw-tab-active" : ""}`}
               onClick={() => setActiveTab("linkedin")}
             >
               <FaLinkedin size={20} />
               <span className="sw-tab-text">LinkedIn</span>
-            </button> */}
+            </button>
           </div>
         </div>
       </div>
 
       <div className="sw-marquee">
         <div className="sw-track">
-          {activeTab === "instagram" &&
+          {activeTab === "instagram" ? (
             fillLoop(instagramPosts).map((url, index) => (
               <div key={`ig-${index}`} className="sw-card">
                 <div className="sw-card-top sw-card-top--instagram">
@@ -112,48 +112,49 @@ export default function SocialWall() {
                   <InstagramEmbed url={url} width="100%" />
                 </div>
               </div>
-            ))}
-
-          {activeTab === "facebook" &&
-            facebookPosts.map((url, index) => {
-              const fbSrc = "https://www.facebook.com/plugins/post.php?href=" + encodeURIComponent(url) + "&show_text=true&width=480";
-              return (
-                <div key={`fb-${index}`} className="sw-card sw-card--wide">
-                  <div className="sw-card-top sw-card-top--facebook">
-                    <FaFacebook size={16} />
-                    <span>ANBUARASAN</span>
-                  </div>
-                  <div className="sw-embed-wrapper sw-embed-facebook">
-                    <iframe
-                      src={fbSrc}
-                      width="100%"
-                      height="500"
-                      style={{ border: "none", overflow: "hidden", display: "block" }}
-                      scrolling="no"
-                      allowFullScreen={true}
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      loading="lazy"
-                      title={"Facebook Post " + index}
-                    />
-                  </div>
+            ))
+          ) : activeTab === "facebook" ? (
+            fillLoop(facebookPosts).map((url, index) => (
+              <div key={`fb-${index}`} className="sw-card sw-card--wide">
+                <div className="sw-card-top sw-card-top--facebook">
+                  <FaFacebook size={16} />
+                  <span>ANBUARASAN</span>
                 </div>
-              );
-            })}
-
-          {/* {activeTab === "linkedin" &&
+                <div className="sw-embed-wrapper sw-embed-facebook">
+                  <iframe
+                    src={`https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(url)}&show_text=true&width=480`}
+                    width="100%"
+                    height="500"
+                    style={{ border: "none", overflow: "hidden", display: "block" }}
+                    scrolling="no"
+                    allowFullScreen={true}
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    loading="lazy"
+                    title={`Facebook Post ${index}`}
+                  />
+                </div>
+              </div>
+            ))
+          ) : activeTab === "linkedin" ? (
             fillLoop(linkedinPosts).map((url, index) => (
               <div key={`li-${index}`} className="sw-card sw-card--wide">
                 <div className="sw-card-top sw-card-top--linkedin">
                   <FaLinkedin size={16} />
                   <span>ANBUARASAN</span>
                 </div>
-                <a href={url} target="_blank" rel="noopener noreferrer" className="sw-embed-wrapper sw-linkedin-card">
+                
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sw-embed-wrapper sw-linkedin-card"
+                >
                   <FaLinkedin size={40} />
                   <p>View this post on LinkedIn</p>
-                  <span className="sw-linkedin-btn">Open Post</span>
-                </a> */}
-              {/* </div> */}
-            {/* ))} */}
+                  <span className="sw-linkedin-btn">Open Post →</span>
+                </a>
+              </div>
+            ))
+          ) : null}
         </div>
       </div>
     </section>

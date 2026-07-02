@@ -11,8 +11,8 @@ const instagramPosts = [
 ];
 
 const facebookPosts = [
-  "https://www.facebook.com/permalink.php?story_fbid=pfbid02snyLJSERh8QXgzJJHG1qtnky8BpZPVVfU8PUQMNUchKk9iEUJocMFmb3dpzCF5VVl&id=61591229948970",
-  "https://www.facebook.com/permalink.php?story_fbid=122102782593374331&id=61591229948970&substory_index=1337628821680595",
+  "https://www.facebook.com/share/p/1E8APngcoR/",
+  "https://www.facebook.com/share/p/1FEpL7aPCY/",
 ];
 
 const linkedinPosts = [
@@ -115,7 +115,7 @@ export default function SocialWall() {
             ))}
 
           {activeTab === "facebook" &&
-            facebookPosts.map((url, index) => {
+            fillLoop(facebookPosts).map((url, index) => {
               const fbSrc = "https://www.facebook.com/plugins/post.php?href=" + encodeURIComponent(url) + "&show_text=true&width=480";
               return (
                 <div key={`fb-${index}`} className="sw-card sw-card--wide">
