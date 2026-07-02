@@ -1,7 +1,7 @@
 import "./ProductsPage.css";
 import creambg from "../assets/creambg.png";
 import creambg1 from "../assets/creambg.png";
-import firmaxImg from "../assets/Athma8.png";
+import firmaxImg from "../assets/firmax3.png";
 import o2maxImg from "../assets/Athma9.png";
 
 function ProductsPage() {

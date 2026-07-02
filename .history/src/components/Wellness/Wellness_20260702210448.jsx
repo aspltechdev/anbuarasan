@@ -3,8 +3,8 @@
 // Cinematic Product Showcase with Premium Feel
 // Hero-style cards with imagery and immersive design
 // ============================================
-import firmax3 from "../../assets/Athma8.png";
-import o2max3 from "../../assets/Athma9.png";
+import firmax3 from "../../assets/firmax3.png";
+import o2max3 from "../../assets/Athma.png";
 import book1 from "../../assets/book1.png";
 import book2 from "../../assets/book2.png";
 import "./Wellness.css";

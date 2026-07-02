@@ -12,7 +12,7 @@ import Athma4 from "../../assets/Athma4.jpg";
 import Athma5 from "../../assets/Athma5.png";
 import Athma6 from "../../assets/Athma6.jpg";
 import Athma7 from "../../assets/Athma7.jpg";
-import Athma8 from "../../assets/Athma8.png";
+import Athma8 from "../../assets/Athma8.pg";
 import Athma9 from "../../assets/Athma9.png";
 
 function Gallery() {
