@@ -116,7 +116,7 @@ function Wellness() {
   {
     rank: "01",
     image: book1,
-    titleTamil: "வியாபாரத்தில் செய்ய கூடாத 100 தவறுகள்",
+    titleTamil: "100 Mistakes to Avoid in Business",
     titleEnglish:"100 Mistakes to Avoid in Business",
     subtitle: "Coming Soon",
     description:
@@ -125,8 +125,8 @@ function Wellness() {
   {
     rank: "02",
     image: book2,
-    titleTamil: "நம்பிக்கை துரோகத்திலிருந்து வெற்றி பெறுவது எப்படி?",
-    titleEnglish:  "How to Turn Betrayal into Success",
+    titleTamil: "How to Turn Betrayal into Success",
+    titleEnglish: "நம்பிக்கை துரோகத்திலிருந்து வெற்றி பெறுவது எப்படி?",
     subtitle: "Coming Soon",
     description:
       "A powerful guide to transforming betrayal, pain, and setbacks into strength, growth, and lasting success.",

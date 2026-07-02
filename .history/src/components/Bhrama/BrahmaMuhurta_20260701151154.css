@@ -833,7 +833,7 @@
   padding: 1rem;
 }
 
-/* .brahma-course-badge-light {
+.brahma-course-badge-light {
   background: rgba(252, 248, 244, 0.9);
   color: #5a4a32;
   font-size: 0.7rem;
@@ -842,12 +842,12 @@
   text-transform: uppercase;
   padding: 0.3rem 0.7rem;
   border-radius: 999px;
-} */
+}
 
-.brahma-course-icon-light {
+/* .brahma-course-icon-light {
   font-size: 1.4rem;
   color: rgba(252, 248, 244, 0.9);
-}
+} */
 
 .brahma-course-body-light {
   padding: 1.25rem 1.4rem 1.5rem;
@@ -934,8 +934,4 @@
   z-index: 2;
   color: rgba(252, 248, 244, 0.9);
   font-size: 1.4rem;
-}
-.brahma-cta-light,
-.brahma-course-btn-light {
-  text-decoration: none;
 }

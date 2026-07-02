@@ -99,7 +99,7 @@ function ServicesPage() {
  {/* Service 3 */}
       <section className="service-section">
         <div className="service-image">
-          <img src={water} alt="Athma Connect" />
+          <img src={yogaImg} alt="Athma Connect" />
         </div>
 
         <div className="service-content">

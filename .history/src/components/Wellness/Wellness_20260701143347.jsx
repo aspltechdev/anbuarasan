@@ -5,8 +5,8 @@
 // ============================================
 import firmax3 from "../../assets/firmax3.png";
 import o2max3 from "../../assets/o2max3.png";
-import book1 from "../../assets/book1.png";
-import book2 from "../../assets/book2.png";
+import book1 from "../../assets/f1.png";
+import book2 from "../../assets/f1.jng";
 import "./Wellness.css";
 import { useEffect, useRef, useState } from "react";
 
@@ -113,25 +113,25 @@ function Wellness() {
   ];
 
   const books = [
-  {
-    rank: "01",
-    image: book1,
-    titleTamil: "வியாபாரத்தில் செய்ய கூடாத 100 தவறுகள்",
-    titleEnglish:"100 Mistakes to Avoid in Business",
-    subtitle: "Coming Soon",
-    description:
-      "Learn the most common business mistakes and practical strategies to avoid them for sustainable success.",
-  },
-  {
-    rank: "02",
-    image: book2,
-    titleTamil: "நம்பிக்கை துரோகத்திலிருந்து வெற்றி பெறுவது எப்படி?",
-    titleEnglish:  "How to Turn Betrayal into Success",
-    subtitle: "Coming Soon",
-    description:
-      "A powerful guide to transforming betrayal, pain, and setbacks into strength, growth, and lasting success.",
-  },
-];
+    {
+      titleTamil: "ஜீவன பாதை", // TODO: confirm exact Tamil title from notes
+      titleEnglish: "Life's Path",
+      subtitle: "100 Stories", // TODO: confirm "100 அத்தியாயங்கள்" wording
+      description:
+        "A collection of a hundred stories exploring life's journey — its turns, its lessons, and the quiet wisdom found along the way.",
+      image: book1,
+      rank: "Book 01",
+    },
+    {
+      titleTamil: "", // TODO: add Tamil subtitle line from notes
+      titleEnglish: "How to Turn Betrayal into Success",
+      subtitle: "",
+      description:
+        "A guide to transforming life's hardest moments into fuel for growth — turning betrayal, setbacks, and pain into the foundation of lasting success.",
+      image: book2,
+      rank: "Book 02",
+    },
+  ];
 
   return (
     <section className="wellness" ref={sectionRef} id="wellness">
@@ -336,7 +336,7 @@ function Wellness() {
                   )}
                   <p className="wellness-book-description">{book.description}</p>
 
-                  {/* <button className="wellness-book-cta">
+                  <button className="wellness-book-cta">
                     <span>Notify Me</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16">
                       <path
@@ -346,7 +346,7 @@ function Wellness() {
                         strokeLinejoin="round"
                       />
                     </svg>
-                  </button> */}
+                  </button>
                 </div>
               </div>
             ))}

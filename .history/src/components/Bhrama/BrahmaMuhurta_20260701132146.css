@@ -833,7 +833,7 @@
   padding: 1rem;
 }
 
-/* .brahma-course-badge-light {
+.brahma-course-badge-light {
   background: rgba(252, 248, 244, 0.9);
   color: #5a4a32;
   font-size: 0.7rem;
@@ -842,7 +842,7 @@
   text-transform: uppercase;
   padding: 0.3rem 0.7rem;
   border-radius: 999px;
-} */
+}
 
 .brahma-course-icon-light {
   font-size: 1.4rem;
@@ -890,52 +890,4 @@
 
 @media (max-width: 768px) {
   .brahma-courses-grid-light { grid-template-columns: 1fr; }
-}
-.brahma-course-media-light {
-  position: relative;
-  height: 130px;
-  overflow: hidden;
-}
-
-.brahma-course-image-light {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* .brahma-course-overlay-light {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-} */
-
-.brahma-course-badge-light,
-.brahma-course-icon-light {
-  position: relative;
-  z-index: 1;
-}
-
-.brahma-course-badge-light {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 2;
-}
-
-.brahma-course-icon-light {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 2;
-  color: rgba(252, 248, 244, 0.9);
-  font-size: 1.4rem;
-}
-.brahma-cta-light,
-.brahma-course-btn-light {
-  text-decoration: none;
 }

@@ -5,8 +5,6 @@
 // ============================================
 import firmax3 from "../../assets/firmax3.png";
 import o2max3 from "../../assets/o2max3.png";
-import book1 from "../../assets/book1.png";
-import book2 from "../../assets/book2.png";
 import "./Wellness.css";
 import { useEffect, useRef, useState } from "react";
 
@@ -14,9 +12,7 @@ function Wellness() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeProduct, setActiveProduct] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [booksVisible, setBooksVisible] = useState(false);
   const sectionRef = useRef(null);
-  const booksRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,17 +22,6 @@ function Wellness() {
       { threshold: 0.15 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setBooksVisible(true);
-      },
-      { threshold: 0.15 }
-    );
-    if (booksRef.current) observer.observe(booksRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -111,27 +96,6 @@ function Wellness() {
     "Halal Certified",
     "India Licensed"
   ];
-
-  const books = [
-  {
-    rank: "01",
-    image: book1,
-    titleTamil: "வியாபாரத்தில் செய்ய கூடாத 100 தவறுகள்",
-    titleEnglish:"100 Mistakes to Avoid in Business",
-    subtitle: "Coming Soon",
-    description:
-      "Learn the most common business mistakes and practical strategies to avoid them for sustainable success.",
-  },
-  {
-    rank: "02",
-    image: book2,
-    titleTamil: "நம்பிக்கை துரோகத்திலிருந்து வெற்றி பெறுவது எப்படி?",
-    titleEnglish:  "How to Turn Betrayal into Success",
-    subtitle: "Coming Soon",
-    description:
-      "A powerful guide to transforming betrayal, pain, and setbacks into strength, growth, and lasting success.",
-  },
-];
 
   return (
     <section className="wellness" ref={sectionRef} id="wellness">
@@ -291,64 +255,92 @@ function Wellness() {
                 <span className="wellness-cert-symbol">◈</span>
                 <span className="wellness-cert-text">{cert}</span>
               </div>
-            ))}
+              // UpcomingBooks.jsx
+import "./UpcomingBooks.css";
+import { useEffect, useRef, useState } from "react";
+
+function UpcomingBooks() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.15 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const books = [
+    {
+      titleTamil: "ஜீவன பாதை", // TODO: confirm exact Tamil title from notes
+      titleEnglish: "Life's Path",
+      subtitle: "100 Stories", // TODO: confirm "100 அத்தியாயங்கள்" wording
+      description:
+        "A collection of a hundred stories exploring life's journey — its turns, its lessons, and the quiet wisdom found along the way.",
+      symbol: "✦",
+    },
+    {
+      titleTamil: "", // TODO: add Tamil subtitle line from notes
+      titleEnglish: "How to Turn Betrayal into Success",
+      subtitle: "",
+      description:
+        "A guide to transforming life's hardest moments into fuel for growth — turning betrayal, setbacks, and pain into the foundation of lasting success.",
+      symbol: "◈",
+    },
+  ];
+
+  return (
+    <section className="books" ref={sectionRef}>
+      <div className="books-container">
+        <div className={`books-header ${isVisible ? "visible" : ""}`}>
+          <div className="books-badge">
+            <span className="books-badge-line"></span>
+            <span className="books-tag">From the Author's Desk</span>
+            <span className="books-badge-line"></span>
           </div>
+          <h2 className="books-title">
+            Upcoming <span className="books-title-accent">Books</span>
+          </h2>
+          <p className="books-subtitle">
+            Two new works, written from lived experience, arriving soon
+          </p>
         </div>
 
-        {/* Upcoming Books */}
-        <div className="wellness-books" ref={booksRef}>
-          <div className={`wellness-books-header ${booksVisible ? 'visible' : ''}`}>
-            <div className="wellness-badge">
-              <span className="wellness-badge-line"></span>
-              <span className="wellness-tag">From the Author's Desk</span>
-              <span className="wellness-badge-line"></span>
-            </div>
-            <h2 className="wellness-title">
-              Upcoming <span className="wellness-title-accent">Books</span>
-            </h2>
-            <p className="wellness-subtitle">
-              Two new works, written from lived experience, arriving soon
-            </p>
-          </div>
-
-          <div className={`wellness-books-grid ${booksVisible ? 'visible' : ''}`}>
-            {books.map((book, i) => (
-              <div
-                key={i}
-                className="wellness-book-card"
-                style={{
-                  backgroundImage: `url(${book.image})`,
-                  transitionDelay: `${i * 0.12}s`,
-                }}
-              >
-                <div className="wellness-book-overlay"></div>
-
-                <span className="wellness-book-rank-badge">{book.rank}</span>
-                <span className="wellness-book-coming-soon">Coming Soon</span>
-
-                <div className="wellness-book-info">
-                  {book.titleTamil && (
-                    <span className="wellness-book-title-tamil">{book.titleTamil}</span>
-                  )}
-                  <h3 className="wellness-book-title-english">{book.titleEnglish}</h3>
-                  {book.subtitle && (
-                    <span className="wellness-book-subtitle-tag">{book.subtitle}</span>
-                  )}
-                  <p className="wellness-book-description">{book.description}</p>
-
-                  {/* <button className="wellness-book-cta">
-                    <span>Notify Me</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16">
-                      <path
-                        d="M5 12h14M12 5l7 7-7 7"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button> */}
-                </div>
+        <div className={`books-grid ${isVisible ? "visible" : ""}`}>
+          {books.map((book, i) => (
+            <div
+              key={i}
+              className="book-card"
+              style={{ transitionDelay: `${i * 0.12}s` }}
+            >
+              <div className="book-cover">
+                <span className="book-cover-symbol">{book.symbol}</span>
+                <span className="book-coming-soon">Coming Soon</span>
               </div>
+
+              <div className="book-info">
+                {book.titleTamil && (
+                  <span className="book-title-tamil">{book.titleTamil}</span>
+                )}
+                <h3 className="book-title-english">{book.titleEnglish}</h3>
+                {book.subtitle && (
+                  <span className="book-subtitle-tag">{book.subtitle}</span>
+                )}
+                <p className="book-description">{book.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default UpcomingBooks;
             ))}
           </div>
         </div>

@@ -12,7 +12,6 @@ import cryptoImg from "../assets/cryptoteach.png";
 import ethereumImg from "../assets/ethereum.png";
 import beldexImg from "../assets/beldex.png";
 import webImg from "../assets/web.png";
-import water from "../assets/water.png";
 
 function ServicesPage() {
   return (
@@ -96,36 +95,34 @@ function ServicesPage() {
           </a>
         </div>
       </section>
- {/* Service 3 */}
-      <section className="service-section">
+  {/* Service 2 */}
+      <section className="service-section reverse">
         <div className="service-image">
-          <img src={water} alt="Athma Connect" />
+          <img src={rhythmImg} alt="Brahma Muhurta" />
         </div>
 
         <div className="service-content">
 
-          <h2>Soul Verse - Global Prayer Movement</h2>
+          <h2>Brahma Muhurta Kriya</h2>
 
           <p>
-            One prayer. One humanity. A worldwide circle of hearts
-            coming together in stillness, carrying a single intention
-            forward — infinite hope for every soul on earth.
+            Sacred morning practices that improve discipline, focus,
+            clarity and spiritual alignment for a successful life. Build lasting habits
+            that nurture inner peace, confidence and purposeful living
           </p>
 
-          <button
-            className="your-button-class"
-            onClick={() =>
-              window.open(
-                "https://chat.whatsapp.com/BRqOTzBjoWj7q1k5ACx5Zg",
-                "_blank"
-              )
-            }
+          <a
+            href="https://chat.whatsapp.com/KsYLi3AKJRNInQ8IZkIksj"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Join Now
-          </button>
+            <button className="svc-fin-btn">
+              Join Now
+            </button>
+          </a>
         </div>
       </section>
-      {/* Service 4 */}
+      {/* Service 3 */}
       <section className="service-finance">
         <div className="service-finance-header">
 

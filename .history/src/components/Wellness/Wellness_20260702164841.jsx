@@ -125,8 +125,8 @@ function Wellness() {
   {
     rank: "02",
     image: book2,
-    titleTamil: "நம்பிக்கை துரோகத்திலிருந்து வெற்றி பெறுவது எப்படி?",
-    titleEnglish:  "How to Turn Betrayal into Success",
+    titleTamil: "How to Turn Betrayal into Success",
+    titleEnglish: "நம்பிக்கை துரோகத்திலிருந்து வெற்றி பெறுவது எப்படி?", "How to Turn Betrayal into Success",
     subtitle: "Coming Soon",
     description:
       "A powerful guide to transforming betrayal, pain, and setbacks into strength, growth, and lasting success.",

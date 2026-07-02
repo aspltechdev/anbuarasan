@@ -851,10 +851,9 @@
 /* Card - full-bleed image with bottom overlay content, like the reference */
 .wellness-book-card {
   position: relative;
-  min-height: 360px;
+  min-height: 480px;
   border-radius: 20px;
   overflow: hidden;
-  background-color: #1f1810 !important; /* fallback so text stays readable even if the image fails to load */
   background-size: cover;
   background-position: center;
   border: 1px solid rgba(212, 165, 116, 0.25);
@@ -863,16 +862,18 @@
   justify-content: flex-end;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-  box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.25),
-    0 24px 48px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .wellness-books-grid.visible .wellness-book-card {
   opacity: 1;
   transform: translateY(0);
+}
+
+.wellness-book-card:hover {
+  border-color: rgba(212, 165, 116, 0.55);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  transform: translateY(-6px);
 }
 
 /* Dark gradient overlay so text is readable over the cover image */
@@ -881,9 +882,9 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(20, 16, 12, 0.35) 0%,
-    rgba(20, 16, 12, 0.7) 55%,
-    rgba(15, 12, 9, 0.97) 100%
+    rgba(20, 16, 12, 0.15) 0%,
+    rgba(20, 16, 12, 0.55) 55%,
+    rgba(15, 12, 9, 0.94) 100%
   );
   z-index: 1;
 }
@@ -986,13 +987,18 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.wellness-book-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(212, 165, 116, 0.35);
+}
+
 .wellness-book-cta svg {
   flex-shrink: 0;
 }
 
 @media (max-width: 640px) {
   .wellness-books { margin-top: 4rem; padding-top: 3rem; }
-  .wellness-book-card { min-height: 320px; }
+  .wellness-book-card { min-height: 420px; }
   .wellness-book-title-english { font-size: 1.25rem; }
 }
 

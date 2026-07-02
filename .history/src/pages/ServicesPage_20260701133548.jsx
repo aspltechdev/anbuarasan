@@ -12,7 +12,6 @@ import cryptoImg from "../assets/cryptoteach.png";
 import ethereumImg from "../assets/ethereum.png";
 import beldexImg from "../assets/beldex.png";
 import webImg from "../assets/web.png";
-import water from "../assets/water.png";
 
 function ServicesPage() {
   return (
@@ -96,27 +95,27 @@ function ServicesPage() {
           </a>
         </div>
       </section>
- {/* Service 3 */}
+ {/* Service 1 */}
       <section className="service-section">
         <div className="service-image">
-          <img src={water} alt="Athma Connect" />
+          <img src={yogaImg} alt="Athma Connect" />
         </div>
 
         <div className="service-content">
 
-          <h2>Soul Verse - Global Prayer Movement</h2>
+          <h2>Be a Wonderful Creator</h2>
 
           <p>
-            One prayer. One humanity. A worldwide circle of hearts
-            coming together in stillness, carrying a single intention
-            forward — infinite hope for every soul on earth.
+            A transformative self-discovery program designed
+            to reconnect individuals with their purpose,
+            inner peace and higher consciousness.
           </p>
 
           <button
             className="your-button-class"
             onClick={() =>
               window.open(
-                "https://chat.whatsapp.com/BRqOTzBjoWj7q1k5ACx5Zg",
+                "https://chat.whatsapp.com/FqGyQcdwWwPFEDpLs3HDh8",
                 "_blank"
               )
             }
@@ -125,7 +124,7 @@ function ServicesPage() {
           </button>
         </div>
       </section>
-      {/* Service 4 */}
+      {/* Service 3 */}
       <section className="service-finance">
         <div className="service-finance-header">
 

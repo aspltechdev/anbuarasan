@@ -12,7 +12,7 @@ import cryptoImg from "../assets/cryptoteach.png";
 import ethereumImg from "../assets/ethereum.png";
 import beldexImg from "../assets/beldex.png";
 import webImg from "../assets/web.png";
-import water from "../assets/water.png";
+
 
 function ServicesPage() {
   return (
@@ -99,7 +99,7 @@ function ServicesPage() {
  {/* Service 3 */}
       <section className="service-section">
         <div className="service-image">
-          <img src={water} alt="Athma Connect" />
+          <img src={yogaImg} alt="Athma Connect" />
         </div>
 
         <div className="service-content">

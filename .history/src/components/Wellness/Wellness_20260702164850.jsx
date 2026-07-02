@@ -125,7 +125,7 @@ function Wellness() {
   {
     rank: "02",
     image: book2,
-    titleTamil: "நம்பிக்கை துரோகத்திலிருந்து வெற்றி பெறுவது எப்படி?",
+    titleTamil: "How to Turn Betrayal into Success",
     titleEnglish:  "How to Turn Betrayal into Success",
     subtitle: "Coming Soon",
     description:
