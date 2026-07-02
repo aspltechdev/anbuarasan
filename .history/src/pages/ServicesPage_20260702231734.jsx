@@ -13,7 +13,7 @@ import ethereumImg from "../assets/ethereum.png";
 import beldexImg from "../assets/beldex.png";
 import webImg from "../assets/web.png";
 import water from "../assets/water.png";
-import consul from "../assets/consul.png";
+import water from "../assets/water.png";
 import { Link } from "react-router-dom";
 
 function ServicesPage() {
@@ -129,17 +129,17 @@ function ServicesPage() {
       </section>
       <section className="service-section reverse">
   <div className="service-image">
-    <img src={consul} alt="Brahma Muhurta Kriya" />
+    <img src={rhythmImg} alt="Brahma Muhurta Kriya" />
   </div>
 
   <div className="service-content">
-    <h2>Strategic Consulting</h2>
+    <h2>Brahma Muhurta Kriya</h2>
 
     <p>
-     Empower your business with expert strategic guidance. We work closely
-  with leadership teams to streamline operations, unlock growth
-  opportunities, strengthen decision-making, and achieve sustainable
-  business success within a focused six-month roadmap.
+      Start your day with the transformative practice of Brahma Muhurta Kriya.
+      Develop discipline, mental clarity, emotional balance, and spiritual
+      awareness through guided morning sessions that help you build lifelong
+      habits for a healthier, more purposeful life.
     </p>
 
    <Link to="/#contact">

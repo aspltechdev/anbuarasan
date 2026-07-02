@@ -358,7 +358,7 @@ useEffect(() => {
           <div className="hero-bottom">
             <div className="hero-stats">
               <div className="hero-stat">
-                <span className="hero-stat-number">1000</span>
+                <span className="hero-stat-number">500+</span>
                 <span className="hero-stat-label">Souls Guided</span>
               </div>
               <div className="hero-stat-divider"></div>

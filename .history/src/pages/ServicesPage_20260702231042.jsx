@@ -13,8 +13,6 @@ import ethereumImg from "../assets/ethereum.png";
 import beldexImg from "../assets/beldex.png";
 import webImg from "../assets/web.png";
 import water from "../assets/water.png";
-import consul from "../assets/consul.png";
-import { Link } from "react-router-dom";
 
 function ServicesPage() {
   return (
@@ -127,24 +125,25 @@ function ServicesPage() {
           </button>
         </div>
       </section>
-      <section className="service-section reverse">
+      {/* Strategic Consulting */}
+<section className="service-section">
   <div className="service-image">
-    <img src={consul} alt="Brahma Muhurta Kriya" />
+    <img src={yogaImg} alt="Strategic Consulting" />
   </div>
 
   <div className="service-content">
     <h2>Strategic Consulting</h2>
 
     <p>
-     Empower your business with expert strategic guidance. We work closely
-  with leadership teams to streamline operations, unlock growth
-  opportunities, strengthen decision-making, and achieve sustainable
-  business success within a focused six-month roadmap.
+      We partner with organizations to identify business challenges,
+      develop effective growth strategies, and achieve measurable
+      business goals within six months through structured planning,
+      implementation, and continuous guidance.
     </p>
 
-   <Link to="/#contact">
-  <button className="svc-fin-btn">
-    Enroll Now
+   <Link to="/contact">
+  <button className="your-button-class">
+    Book a Consultation
   </button>
 </Link>
   </div>

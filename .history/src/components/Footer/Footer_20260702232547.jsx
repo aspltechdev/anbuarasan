@@ -63,7 +63,7 @@ function Footer() {
               </a>
 
               <a
-                href="https://www.facebook.com/profile.php?id=61591229948970"
+                href="https://www.facebook.com/people/Anbarasan/61591229948970/"
                 className="footer-social-link"
                 target="_blank"
                 rel="noopener noreferrer"

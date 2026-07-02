@@ -288,7 +288,7 @@ function BrahmaMuhurta() {
                   <span className="brahma-stat-label-light">Countries</span>
                 </div>
                 <div className="brahma-stat-light" style={{ animationDelay: "0.6s" }}>
-                  <span className="brahma-stat-number-light">1000</span>
+                  <span className="brahma-stat-number-light">1000+</span>
                   <span className="brahma-stat-label-light">Participants</span>
                 </div>
                 <div className="brahma-stat-light" style={{ animationDelay: "0.8s" }}>

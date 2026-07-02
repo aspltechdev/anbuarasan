@@ -51,7 +51,7 @@ function AboutPage() {
           </p>
           <div className="about-stats">
             <div className="stat-card">
-              <h3>30</h3>
+              <h3></h3>
               <p>Years Experience</p>
             </div>
             <div className="stat-card">
@@ -59,7 +59,7 @@ function AboutPage() {
               <p>Countries Reached</p>
             </div>
             <div className="stat-card">
-              <h3>1000</h3>
+              <h3>5000+</h3>
               <p>Lives Impacted</p>
             </div>
           </div>

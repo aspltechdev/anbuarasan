@@ -105,7 +105,7 @@ function About() {
               
               {/* Experience Badge */}
               <div className="about-experience-badge-light">
-                <span className="about-exp-number-light">30</span>
+                <span className="about-exp-number-light"></span>
                 <span className="about-exp-label-light">Years of<br/>Experience</span>
               </div>
             </div>
@@ -186,7 +186,7 @@ function About() {
         {/* Stats Bar */}
         <div className={`about-stats-bar-light ${isVisible ? "visible-light" : ""}`}>
           <div className="about-stat-item-light">
-            <span className="about-stat-number-light">1000</span>
+            <span className="about-stat-number-light">500+</span>
             <span className="about-stat-label-light">Clients Transformed</span>
           </div>
           <span className="about-stat-separator-light"></span>
@@ -196,7 +196,7 @@ function About() {
           </div>
           <span className="about-stat-separator-light"></span>
           <div className="about-stat-item-light">
-            <span className="about-stat-number-light">30</span>
+            <span className="about-stat-number-light">12+</span>
             <span className="about-stat-label-light">Years of Practice</span>
           </div>
           <span className="about-stat-separator-light"></span>

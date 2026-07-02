@@ -196,7 +196,7 @@ function About() {
           </div>
           <span className="about-stat-separator-light"></span>
           <div className="about-stat-item-light">
-            <span className="about-stat-number-light">30</span>
+            <span className="about-stat-number-light"></span>
             <span className="about-stat-label-light">Years of Practice</span>
           </div>
           <span className="about-stat-separator-light"></span>
